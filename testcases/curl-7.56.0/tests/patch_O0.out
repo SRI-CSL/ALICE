@@ -1,0 +1,8166 @@
+********* System characteristics ******** 
+* curl 7.56.0 (x86_64-pc-linux-gnu) 
+* libcurl/7.56.0 zlib/1.2.8 libssh2/1.5.0
+* Features: AsynchDNS Debug TrackMemory IPv6 Largefile libz UnixSockets 
+* Host: osboxes
+* System: Linux osboxes 4.15.0-42-generic #45~16.04.1-Ubuntu SMP Mon Nov 19 13:02:27 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+*
+*** DISABLES memory tracking when using threaded resolver
+*
+* Servers: HTTP-IPv6 HTTP-unix FTP-IPv6 
+* Env: 
+***************************************** 
+test 0001...[HTTP GET]
+-pd---e--- OK (1   out of 1120, remaining: 37:42)
+test 0002...[HTTP GET with user and password]
+-pd---e--- OK (2   out of 1120, remaining: 19:26)
+test 0003...[HTTP POST with auth and contents but with content-length set to 0]
+-pd---e--- OK (3   out of 1120, remaining: 12:59)
+test 0004...[Replaced internal and added custom HTTP headers]
+-pd---e--- OK (4   out of 1120, remaining: 10:17)
+test 0005...[HTTP over proxy]
+-pd---e--- OK (5   out of 1120, remaining: 08:26)
+test 0006...[HTTP with simple cookie send]
+-pd---e--- OK (6   out of 1120, remaining: 07:12)
+test 0007...[HTTP with cookie parser and header recording]
+-pd--oe--- OK (7   out of 1120, remaining: 06:23)
+test 0008...[HTTP with cookie parsing from header file]
+-pd---e--- OK (8   out of 1120, remaining: 05:44)
+test 0009...[HTTP RFC1867-type formposting]
+-pd---e--- OK (9   out of 1120, remaining: 05:13)
+test 0010...[simple HTTP PUT from file]
+-pd---e--- OK (10  out of 1120, remaining: 06:40)
+test 0011...[simple HTTP Location: following]
+-pd---e--- OK (11  out of 1120, remaining: 06:15)
+test 0012...[HTTP range support]
+-pd---e--- OK (12  out of 1120, remaining: 05:44)
+test 0013...[HTTP custom request 'DELETE']
+-pd---e--- OK (13  out of 1120, remaining: 05:18)
+test 0014...[HTTP HEAD with Connection: close]
+-pd---e--- OK (14  out of 1120, remaining: 04:55)
+test 0015...[--write-out test]
+sp----e--- OK (15  out of 1120, remaining: 04:36)
+test 0016...[HTTP with proxy authorization]
+-pd---e--- OK (16  out of 1120, remaining: 04:19)
+test 0017...[HTTP with config file on stdin]
+-pd---e--- OK (17  out of 1120, remaining: 04:04)
+test 0018...[multiple requests using {} in URL]
+sp----e--- OK (18  out of 1120, remaining: 03:50)
+test 0019...[attempt connect to non-listening socket]
+------e--- OK (19  out of 1120, remaining: 03:38)
+test 0020...[attempt connect to non-existing host name]
+------e--- OK (20  out of 1120, remaining: 03:28)
+test 0021...[use curl with multiple request methods]
+------e--- OK (21  out of 1120, remaining: 03:18)
+test 0022...[get HTTP with URL > 10000 bytes]
+-pd---e--- OK (22  out of 1120, remaining: 03:10)
+test 0023...[unsupported protocol:// URL]
+------e--- OK (23  out of 1120, remaining: 03:01)
+test 0024...[HTTP GET fail silently on HTTP error return]
+-p---oe--- OK (24  out of 1120, remaining: 02:54)
+test 0025...[looping HTTP Location: following with --max-redirs]
+-pd---e--- OK (25  out of 1120, remaining: 02:47)
+test 0026...[specify more -o than URLs]
+-pd---e--- OK (26  out of 1120, remaining: 02:43)
+test 0027...[Get same cookie page several times]
+-pd---e--- OK (27  out of 1120, remaining: 02:44)
+test 0028...[HTTP Location: following with extra spaces in header]
+-pd---e--- OK (28  out of 1120, remaining: 02:43)
+test 0029...[HTTP with 2 secs timeout]
+-pd---e--- OK (29  out of 1120, remaining: 09:10)
+test 0030...[HTTP with no data in server reply]
+-p----e--- OK (30  out of 1120, remaining: 08:54)
+test 0031...[HTTP with weirdly formatted cookies and cookiejar storage]
+-pd--oe--- OK (31  out of 1120, remaining: 08:37)
+test 0032...[HTTP with -d and -G]
+-pd---e--- OK (32  out of 1120, remaining: 08:20)
+test 0033...[HTTP PUT with resume]
+-pd---e--- OK (33  out of 1120, remaining: 08:40)
+test 0034...[HTTP GET with chunked Transfer-Encoding]
+-pd---e--- OK (34  out of 1120, remaining: 08:24)
+test 0035...[HTTP POST binary data with embedded NUL]
+-pd---e--- OK (35  out of 1120, remaining: 08:11)
+test 0036...[HTTP GET with bad chunked Transfer-Encoding]
+-pd---e--- OK (36  out of 1120, remaining: 07:57)
+test 0037...[HTTP GET with nothing returned from server]
+-p----e--- OK (37  out of 1120, remaining: 07:46)
+test 0038...[HTTP resume request without server supporting it]
+-p---oe--- OK (38  out of 1120, remaining: 07:33)
+test 0039...[HTTP RFC1867-type formposting with filename= and type=]
+-pd---e--- OK (39  out of 1120, remaining: 07:50)
+test 0040...[HTTP redirect with whitespace after ? (and conversion)]
+-pd---e--- OK (40  out of 1120, remaining: 07:41)
+test 0041...[HTTP formpost with missing file]
+------e--- OK (41  out of 1120, remaining: 07:56)
+test 0042...[HTTP redirect with whitespace in path (and conversion)]
+-pd---e--- OK (42  out of 1120, remaining: 07:47)
+test 0043...[HTTP Location: following over HTTP proxy]
+-pd---e--- OK (43  out of 1120, remaining: 07:38)
+test 0044...[HTTP RFC1867-type formposting without Expect: header]
+-pd---e--- OK (44  out of 1120, remaining: 07:28)
+test 0045...[simple HTTP Location: without protocol in initial URL]
+-pd---e--- OK (45  out of 1120, remaining: 07:21)
+test 0046...[HTTP, get cookies and store in cookie jar]
+-pd--oe--- OK (46  out of 1120, remaining: 07:11)
+test 0047...[simple HTTP 1.0 GET]
+-pd---e--- OK (47  out of 1120, remaining: 07:03)
+test 0048...[HTTP with -d and -G and -I]
+-pd---e--- OK (48  out of 1120, remaining: 06:54)
+test 0049...[HTTP follow redirect with ../]
+-pd---e--- OK (49  out of 1120, remaining: 06:48)
+test 0050...[HTTP follow redirect with ../../]
+-pd---e--- OK (50  out of 1120, remaining: 06:41)
+test 0051...[HTTP follow redirect with excessive ../]
+-pd---e--- OK (51  out of 1120, remaining: 06:36)
+test 0052...[HTTP follow redirect with ./-prefix]
+-pd---e--- OK (52  out of 1120, remaining: 06:30)
+test 0053...[HTTP, junk session cookies]
+-pd---e--- OK (53  out of 1120, remaining: 06:23)
+test 0054...[HTTP with blank Location:]
+-pd---e--- OK (54  out of 1120, remaining: 06:17)
+test 0055...[HTTP follow redirect with single slash in path]
+-pd---e--- OK (55  out of 1120, remaining: 06:12)
+test 0056...[HTTP POST with *HUGE* request and chunked transfer-encoding]
+-pd---e--- OK (56  out of 1120, remaining: 06:06)
+test 0057...[HTTP content-type with spaces in]
+sp----e--- OK (57  out of 1120, remaining: 06:01)
+test 0058...[HTTP PUT from file with weird letters]
+-pd---e--- OK (58  out of 1120, remaining: 06:14)
+test 0059...[HTTP URL with slash but with "parameter"]
+-pd---e--- OK (59  out of 1120, remaining: 06:08)
+test 0060...[HTTP PUT from stdin with wrong content-length]
+-pd---e--- OK (60  out of 1120, remaining: 06:21)
+test 0061...[HTTP with various cookies and custom Host:]
+-pd--oe--- OK (61  out of 1120, remaining: 06:14)
+test 0062...[HTTP, send cookies when using custom Host:]
+-pd---e--- OK (62  out of 1120, remaining: 06:09)
+test 0063...[HTTP with proxy authorization set in environment]
+-pd---e--- OK (63  out of 1120, remaining: 06:03)
+test 0064 SKIPPED: curl lacks crypto support
+test 0065 SKIPPED: curl lacks crypto support
+test 0066...[HTTP GET without headers in the response]
+-pd---e--- OK (66  out of 1120, remaining: 05:47)
+test 0067 SKIPPED: curl lacks NTLM support
+test 0068 SKIPPED: curl lacks NTLM support
+test 0069 SKIPPED: curl lacks NTLM support
+test 0071...[HTTP and -F upload in config file]
+-pd---e--- OK (71  out of 1120, remaining: 05:22)
+test 0072 SKIPPED: curl lacks crypto support
+test 0073...[HTTP, receive cookies when using custom Host:, domain using only two dots]
+-pd--oe--- OK (73  out of 1120, remaining: 05:13)
+test 0074...[HTTP, urlglob {}-retrieval and -o #[num] usage]
+-p---oe--- OK (74  out of 1120, remaining: 05:10)
+test 0075...[HTTP, urlglob retrieval with bad range]
+s-----e--- OK (75  out of 1120, remaining: 05:05)
+test 0076...[HTTP, -O with no file name part in the URL]
+------e--- OK (76  out of 1120, remaining: 05:01)
+test 0077...[HTTP with -z "older date"]
+-pd---e--- OK (77  out of 1120, remaining: 04:57)
+test 0078...[HTTP with -z "newer date"]
+-pd---e--- OK (78  out of 1120, remaining: 04:53)
+test 0079...[FTP over HTTP proxy]
+-pd---e--- OK (79  out of 1120, remaining: 04:50)
+test 0080...[HTTP 1.0 CONNECT with proxytunnel and proxy+host Basic authentication]
+-pd-P-e--- OK (80  out of 1120, remaining: 05:20)
+test 0082...[HTTP with proxy requiring NTLM, but we send Basic]
+-pd---e--- OK (82  out of 1120, remaining: 05:11)
+test 0083...[HTTP over proxy-tunnel with site authentication]
+-pd-P-e--- OK (83  out of 1120, remaining: 05:20)
+test 0084...[HTTP over proxy with site authentication]
+-pd---e--- OK (84  out of 1120, remaining: 05:16)
+test 0085...[HTTP over proxy with site and proxy authentication]
+-pd---e--- OK (85  out of 1120, remaining: 05:13)
+test 0086...[HTTP, urlglob []-retrieval and -o #[num] usage]
+-p---oe--- OK (86  out of 1120, remaining: 05:11)
+test 0087...[urlglob with out of range -o #[num] usage]
+-----oe--- OK (87  out of 1120, remaining: 05:07)
+test 0092...[HTTP resume transfer with the whole file already downloaded]
+-pd---e--- OK (92  out of 1120, remaining: 04:49)
+test 0093...[HTTP GET with failed proxy auth]
+-pd---e--- OK (93  out of 1120, remaining: 04:47)
+test 0094 SKIPPED: curl lacks SSL support
+test 0095...[HTTP over proxytunnel using POST]
+-pd-P-e--- OK (95  out of 1120, remaining: 04:47)
+test 0096 SKIPPED: curl lacks TrackMemory support
+test 0097...[HTTP POST with custom content-type]
+-pd---e--- OK (97  out of 1120, remaining: 04:41)
+test 0098...[HTTP PUT from stdin with set size, disabling chunked transfer-encoding]
+-pd---e--- OK (98  out of 1120, remaining: 04:48)
+test 0099...[HTTP GET with large-file resume point and failed resume]
+-pd---e--- OK (99  out of 1120, remaining: 04:45)
+test 0100...[FTP dir list PASV]
+-pd---e--- OK (100 out of 1120, remaining: 05:04)
+test 0101...[FTP dir list, PORT with specified IP]
+-pd---e--- OK (101 out of 1120, remaining: 05:02)
+test 0102...[FTP RETR PASV]
+-pd---e--- OK (102 out of 1120, remaining: 05:00)
+test 0103...[FTP RETR PORT with CWD]
+-pd---e--- OK (103 out of 1120, remaining: 04:58)
+test 0104...[FTP --head to get file size only]
+-p----e--- OK (104 out of 1120, remaining: 04:55)
+test 0105...[FTP user+password in URL and ASCII transfer]
+-pd---e--- OK (105 out of 1120, remaining: 04:53)
+test 0106...[FTP GET with type=A style ASCII URL using %20 codes]
+-pd---e--- OK (106 out of 1120, remaining: 04:50)
+test 0107...[FTP PASV upload file]
+-p-u--e--- OK (107 out of 1120, remaining: 04:49)
+test 0108...[FTP PORT upload with CWD]
+-p-u--e--- OK (108 out of 1120, remaining: 04:47)
+test 0109...[FTP PASV upload append]
+-p-u--e--- OK (109 out of 1120, remaining: 04:45)
+test 0110...[FTP download resume with set limit]
+-pd---e--- OK (110 out of 1120, remaining: 04:43)
+test 0111...[FTP download resume beyond file size]
+-p----e--- OK (111 out of 1120, remaining: 04:41)
+test 0112...[FTP PASV upload resume]
+-p-u--e--- OK (112 out of 1120, remaining: 04:38)
+test 0113...[FTP download, failed login: USER not valid]
+-p----e--- OK (113 out of 1120, remaining: 04:36)
+test 0114...[FTP download, failed login: PASS not valid]
+-p----e--- OK (114 out of 1120, remaining: 04:33)
+test 0115...[FTP download, failed PASV]
+-p----e--- OK (115 out of 1120, remaining: 04:31)
+test 0116...[FTP download, failed PORT]
+-p----e--- OK (116 out of 1120, remaining: 04:28)
+test 0117...[FTP download, failed TYPE]
+-p----e--- OK (117 out of 1120, remaining: 04:26)
+test 0118...[FTP download, failed RETR]
+-p----e--- OK (118 out of 1120, remaining: 04:24)
+test 0119...[FTP download, failed RETR with PORT]
+-p----e--- OK (119 out of 1120, remaining: 04:22)
+test 0120...[ftp download with post-quote delete operation]
+-pd---e--- OK (120 out of 1120, remaining: 04:20)
+test 0121...[ftp download with post- and pre-transfer delete operations]
+-pd---e--- OK (121 out of 1120, remaining: 04:19)
+test 0122...[FTP download resume with whole file already downloaded]
+-p----e--- OK (122 out of 1120, remaining: 04:17)
+test 0123...[FTP upload resume with whole file already downloaded]
+-p----e--- OK (123 out of 1120, remaining: 04:15)
+test 0124...[FTP download, failed PWD]
+-pd---e--- OK (124 out of 1120, remaining: 04:13)
+test 0125...[FTP download, failed CWD]
+-p----e--- OK (125 out of 1120, remaining: 04:11)
+test 0126...[FTP download with multiple replies at once in RETR]
+-pd---e--- OK (126 out of 1120, remaining: 04:10)
+test 0127...[FTP --disable-epsv]
+-pd---e--- OK (127 out of 1120, remaining: 04:09)
+test 0128...[FTP upload with --crlf]
+-p-u--e--- OK (128 out of 1120, remaining: 04:07)
+test 0129...[FTP GET with type=A style ASCII URL and understated server SIZE]
+-pd---e--- OK (129 out of 1120, remaining: 04:06)
+test 0130...[FTP (optional .netrc; no user/pass) dir list PASV]
+-pd---e--- OK (130 out of 1120, remaining: 04:04)
+test 0131...[FTP (optional .netrc; user/no pass) dir list PASV]
+-pd---e--- OK (131 out of 1120, remaining: 04:03)
+test 0132...[FTP (optional .netrc; user/passwd supplied) dir list PASV]
+-pd---e--- OK (132 out of 1120, remaining: 04:02)
+test 0133...[FTP (compulsory .netrc; ignored user/passwd) dir list PASV]
+-pd---e--- OK (133 out of 1120, remaining: 04:01)
+test 0134...[FTP (optional .netrc; programmatic user/passwd) dir list PASV]
+-pd---e--- OK (134 out of 1120, remaining: 03:59)
+test 0135...[FTP retrieve a byte-range]
+-pd---e--- OK (135 out of 1120, remaining: 03:58)
+test 0136...[FTP with user and no password]
+-pd---e--- OK (136 out of 1120, remaining: 03:57)
+test 0137...[FTP download without size in RETR string]
+-pd---e--- OK (137 out of 1120, remaining: 03:55)
+test 0138...[FTP download without size in RETR string and no SIZE command]
+-pd---e--- OK (138 out of 1120, remaining: 03:54)
+test 0139...[FTP download a newer file with -z]
+-pd---e--- OK (139 out of 1120, remaining: 03:53)
+test 0140...[FTP download file with -z, expected to not transfer]
+-p----e--- OK (140 out of 1120, remaining: 03:51)
+test 0141...[FTP download info with -I]
+sp----e--- OK (141 out of 1120, remaining: 03:49)
+test 0142...[FTP URL with 150 dir levels]
+-pd---e--- OK (142 out of 1120, remaining: 03:49)
+test 0143...[FTP URL with type=a]
+-pd---e--- OK (143 out of 1120, remaining: 03:48)
+test 0144...[FTP NLST dir list without contents, using PORT]
+-p----e--- OK (144 out of 1120, remaining: 03:46)
+test 0145...[FTP NLST dir list with weird reply code, using PORT]
+-p----e--- OK (145 out of 1120, remaining: 03:45)
+test 0146...[persistent FTP with different paths]
+-pd---e--- OK (146 out of 1120, remaining: 03:44)
+test 0147...[FTP with --ftp-create-dirs (failing CWD)]
+-pd---e--- OK (147 out of 1120, remaining: 03:43)
+test 0148...[FTP with --ftp-create-dirs (failing MKD)]
+-p----e--- OK (148 out of 1120, remaining: 03:41)
+test 0149...[FTP with multiple uploads]
+-p---oe--- OK (149 out of 1120, remaining: 03:40)
+test 0151...[HTTP GET with an error code that might trick authentication]
+-pd---e--- OK (151 out of 1120, remaining: 03:38)
+test 0152...[HTTP GET with an error code that might trick authentication and --fail]
+-p----e--- OK (152 out of 1120, remaining: 03:36)
+test 0156...[HTTP PUT with --anyauth (when the server requires none)]
+-pd---e--- OK (156 out of 1120, remaining: 03:36)
+test 0157...[HTTP GET with --anyauth (when the server requires none)]
+-pd---e--- OK (157 out of 1120, remaining: 03:35)
+test 0158...[HTTP multipart formpost with only a 100 reply]
+-pd---e--- OK (158 out of 1120, remaining: 03:34)
+test 0160...[HTTP with delayed close, conn reuse, connection reset and retry]
+sp----e--- OK (160 out of 1120, remaining: 03:44)
+test 0161...[FTP RETR PASV]
+-pd---e--- OK (161 out of 1120, remaining: 03:43)
+test 0163...[HTTP multipart formpost with contents from a file]
+-pd---e--- OK (163 out of 1120, remaining: 03:40)
+test 0164...[HTTP range with multiple ranges]
+-pd---e--- OK (164 out of 1120, remaining: 03:39)
+test 0165 SKIPPED: curl lacks idn support
+test 0166...[HTTP formpost a file with spaces in name]
+-pd---e--- OK (166 out of 1120, remaining: 03:36)
+test 0171...[HTTP, get cookie with dot prefixed full domain]
+-pd--oe--- OK (171 out of 1120, remaining: 03:29)
+test 0172...[HTTP with cookies file and custom added cookie]
+-pd---e--- OK (172 out of 1120, remaining: 03:27)
+test 0173...[HTTP RFC1867-formpost a file from stdin with "faked" filename]
+-pd---e--- OK (173 out of 1120, remaining: 03:32)
+test 0174...[HTTP POST --anyauth to server not requiring any auth at all]
+-pd---e--- OK (174 out of 1120, remaining: 03:31)
+test 0178...[simple HTTP GET with negative Content-Length]
+-pd---e--- OK (178 out of 1120, remaining: 03:26)
+test 0179...[HTTP using proxy and cookies with path checks]
+-pd---e--- OK (179 out of 1120, remaining: 03:24)
+test 0180...[HTTP 1.0 PUT]
+-pd---e--- OK (180 out of 1120, remaining: 03:23)
+test 0181...[HTTP 1.0 POST]
+-pd---e--- OK (181 out of 1120, remaining: 03:22)
+test 0182...[FTP download an empty file]
+-pd---e--- OK (182 out of 1120, remaining: 03:21)
+test 0183...[HTTP GET two URLs over a single proxy with persistent connection]
+-pd---e--- OK (183 out of 1120, remaining: 03:20)
+test 0184...[HTTP replace Host: when following Location: to new host]
+-pd---e--- OK (184 out of 1120, remaining: 03:19)
+test 0185...[HTTP replace Host: when following Location: on the same host]
+-pd---e--- OK (185 out of 1120, remaining: 03:18)
+test 0186...[HTTP RFC1867-type formposting with types on text fields]
+-pd---e--- OK (186 out of 1120, remaining: 03:17)
+test 0187...[HTTP redirect with bad host name separation and slash in parameters]
+-pd---e--- OK (187 out of 1120, remaining: 03:16)
+test 0188...[HTTP GET with resume and redirect]
+-pd---e--- OK (188 out of 1120, remaining: 03:14)
+test 0189...[HTTP GET with resume and redirect (to a page that doesn't resume)]
+-pd---e--- OK (189 out of 1120, remaining: 03:13)
+test 0190...[FTP download with strict timeout and slow CWD]
+-p----e--- OK (190 out of 1120, remaining: 03:55)
+test 0191...[FTP URL with ?-letters in username and password ]
+-pd---e--- OK (191 out of 1120, remaining: 04:04)
+test 0192...[HTTP GET -w num_connects with one simple connect]
+sp----e--- OK (192 out of 1120, remaining: 04:03)
+test 0193...[HTTP GET -w num_connects with redirected fetch (2 connects)]
+sp----e--- OK (193 out of 1120, remaining: 04:01)
+test 0194...[HTTP resume transfer with the whole file already downloaded and --fail]
+-pd---e--- OK (194 out of 1120, remaining: 04:00)
+test 0195...[FTP response 530 after PASS, temporarily not allowed access]
+-p----e--- OK (195 out of 1120, remaining: 03:59)
+test 0196...[FTP transient error, retry request once]
+-p----e--- OK (196 out of 1120, remaining: 04:02)
+test 0197...[HTTP GET --retry on 503 error with output to stdout]
+sp----e--- OK (197 out of 1120, remaining: 04:05)
+test 0198...[HTTP GET --retry on 503 error with output to file]
+-pd---e--- OK (198 out of 1120, remaining: 04:08)
+test 0199...[HTTP with -d, -G and {}]
+-pd---e--- OK (199 out of 1120, remaining: 04:07)
+test 0200...[basic file:// file]
+--d---e--- OK (200 out of 1120, remaining: 04:06)
+test 0201...[missing file:// file]
+------e--- OK (201 out of 1120, remaining: 04:04)
+test 0202...[two file:// URLs to stdout]
+s-----e--- OK (202 out of 1120, remaining: 04:03)
+test 0203...[file:/path URL with a single slash]
+--d---e--- OK (203 out of 1120, remaining: 04:01)
+test 0204...["upload" with file://]
+-----oe--- OK (204 out of 1120, remaining: 04:00)
+test 0205...["upload" with file://]
+------e--- OK (205 out of 1120, remaining: 03:58)
+test 0207...[HTTP GET with chunked Transfer-Encoding closed prematurely]
+-pd---e--- OK (207 out of 1120, remaining: 03:56)
+test 0208...[HTTP PUT to a FTP URL with username+password - over HTTP proxy]
+-pd---e--- OK (208 out of 1120, remaining: 03:59)
+test 0210...[Get two FTP files from the same remote dir: no second CWD]
+-pd---e--- OK (210 out of 1120, remaining: 03:57)
+test 0211...[Get two FTP files with no remote EPSV support]
+-pd---e--- OK (211 out of 1120, remaining: 03:56)
+test 0212...[Get two FTP files with no remote EPRT support]
+-pd---e--- OK (212 out of 1120, remaining: 03:56)
+test 0214...[HTTP URL with escaped { and }]
+-pd---e--- OK (214 out of 1120, remaining: 03:53)
+test 0215...[Get two FTP dir listings from the same remote dir: no second CWD]
+-pd---e--- OK (215 out of 1120, remaining: 03:52)
+test 0216...[FTP upload two files to the same dir]
+-p----e--- OK (216 out of 1120, remaining: 03:52)
+test 0217...[HTTP proxy CONNECT to proxy returning 405]
+sp----e--- OK (217 out of 1120, remaining: 03:50)
+test 0218...[HTTP PUT from a file but enforce chunked transfer-encoding]
+-pd---e--- OK (218 out of 1120, remaining: 03:53)
+test 0219...[try using proxy with unsupported scheme]
+------e--- OK (219 out of 1120, remaining: 03:52)
+test 0220...[HTTP GET gzip compressed content]
+-pd---e--- OK (220 out of 1120, remaining: 03:51)
+test 0221...[HTTP GET gzip compressed content with broken gzip header]
+-pd---e--- OK (221 out of 1120, remaining: 03:49)
+test 0222...[HTTP GET deflate compressed content]
+-pd---e--- OK (222 out of 1120, remaining: 03:48)
+test 0223...[HTTP GET deflate compressed content with broken deflate header]
+-pd---e--- OK (223 out of 1120, remaining: 03:47)
+test 0224...[HTTP GET gzip compressed content with huge comment and extra field]
+-pd---e--- OK (224 out of 1120, remaining: 03:46)
+test 0225...[FTP %0a-code in URL's name part]
+------e--- OK (225 out of 1120, remaining: 03:45)
+test 0226...[FTP %0d-code in URL's CWD part]
+------e--- OK (226 out of 1120, remaining: 03:43)
+test 0227...[FTP with quote ops]
+-pd---e--- OK (227 out of 1120, remaining: 03:43)
+test 0228...[FTP RETR with ACCT]
+-pd---e--- OK (228 out of 1120, remaining: 03:42)
+test 0229...[FTP RETR with bad ACCT]
+-p----e--- OK (229 out of 1120, remaining: 03:41)
+test 0231...[file:// with resume]
+--d---e--- OK (230 out of 1120, remaining: 03:39)
+test 0233...[HTTP, proxy, site+proxy auth and Location: to new host]
+-pd---e--- OK (231 out of 1120, remaining: 03:39)
+test 0234...[HTTP, proxy, site+proxy auth and Location: to new host using location-trusted]
+-pd---e--- OK (232 out of 1120, remaining: 03:38)
+test 0235...[FTP resumed upload but no file present remotely]
+-p-u--e--- OK (233 out of 1120, remaining: 03:37)
+test 0236...[FTP resume upload but denied access to remote file]
+-p----e--- OK (234 out of 1120, remaining: 03:36)
+test 0237...[FTP getting bad host in 227-response to PASV]
+-p----e--- OK (235 out of 1120, remaining: 03:35)
+test 0238...[FTP getting bad port in response to EPSV]
+-p----e--- OK (236 out of 1120, remaining: 03:34)
+test 0240...[HTTP-IPv6 GET]
+-pd---e--- OK (238 out of 1120, remaining: 03:39)
+test 0241...[HTTP-IPv6 GET (using ip6-localhost)]
+-pd---e--- OK (239 out of 1120, remaining: 03:38)
+test 0242...[HTTP-IPv6 GET with username+password in URL]
+-pd---e--- OK (240 out of 1120, remaining: 03:37)
+test 0247...[FTP upload time condition evaluates TRUE => skip upload]
+-p----e--- OK (244 out of 1120, remaining: 03:33)
+test 0248...[FTP upload time condition evaluates FALSE => upload anyway]
+-p-u--e--- OK (245 out of 1120, remaining: 03:32)
+test 0249...[HTTP 304 response with "illegal" Content-Length: header]
+-pd---e--- OK (246 out of 1120, remaining: 03:31)
+test 0250...[FTP dir list PASV with slow response]
+-pd---e--- OK (247 out of 1120, remaining: 04:08)
+test 0251...[FTP dir list, PORT with specified IP and slow response]
+-pd---e--- OK (248 out of 1120, remaining: 04:44)
+test 0252...[FTP IPv6 dir list PASV]
+-pd---e--- OK (249 out of 1120, remaining: 04:50)
+test 0253...[FTP IPv6 dir list with EPRT]
+-pd---e--- OK (250 out of 1120, remaining: 04:49)
+test 0254...[FTP IPv6 dir list PASV and --disable-epsv]
+-pd---e--- OK (251 out of 1120, remaining: 04:48)
+test 0255...[FTP IPv6 dir list with EPRT and --disable-eprt]
+-pd---e--- OK (252 out of 1120, remaining: 04:47)
+test 0256...[HTTP resume request over proxy with auth without server supporting it]
+-p---oe--- OK (253 out of 1120, remaining: 04:45)
+test 0257...[HTTP Location: following with --netrc-optional]
+-pd---e--- OK (254 out of 1120, remaining: 04:44)
+test 0260...[HTTP GET URL without slash but with questionmark]
+-pd---e--- OK (257 out of 1120, remaining: 04:40)
+test 0261...[FTP RETR with 226 response code to TYPE]
+-pd---e--- OK (258 out of 1120, remaining: 04:39)
+test 0262...[HTTP GET with binary zeroes in header]
+-pd---e--- OK (259 out of 1120, remaining: 04:38)
+test 0263...[HTTP-IPv6 GET with proxy specified using IPv6-numerical address]
+-pd---e--- OK (260 out of 1120, remaining: 04:36)
+test 0264...[HTTP with proxy string including http:// and user+password]
+-pd---e--- OK (261 out of 1120, remaining: 04:35)
+test 0266...[HTTP GET with chunked Transfer-Encoding and chunked trailer]
+-pd--oe--- OK (263 out of 1120, remaining: 04:32)
+test 0268...[HTTP POST a non-existing file]
+-pd---e--- OK (265 out of 1120, remaining: 04:30)
+test 0269...[HTTP --ignore-content-length]
+-pd---e--- OK (266 out of 1120, remaining: 04:29)
+test 0270...[FTP RETR PASV --ftp-skip-pasv-ip]
+-pd---e--- OK (267 out of 1120, remaining: 04:28)
+test 0271...[TFTP retrieve]
+-pd---e--- OK (268 out of 1120, remaining: 04:33)
+test 0272...[FTP timed conditioned get file with identical time stamp ]
+-p----e--- OK (269 out of 1120, remaining: 04:31)
+test 0274...[HTTP Location: following with --max-redirs 0]
+-pd---e--- OK (271 out of 1120, remaining: 04:29)
+test 0275...[HTTP CONNECT with proxytunnel getting two URLs from the same host]
+-pd-P-e--- OK (272 out of 1120, remaining: 04:29)
+test 0276...[HTTP Location: following with multiple question marks in URLs]
+-pd---e--- OK (273 out of 1120, remaining: 04:28)
+test 0277...[HTTP RFC1867-type formposting with custom Content-Type]
+-pd---e--- OK (274 out of 1120, remaining: 04:27)
+test 0278...[HTTP with proxy string including http:// and user+empty password]
+-pd---e--- OK (275 out of 1120, remaining: 04:26)
+test 0279...[HTTP with proxy string including http:// and user only]
+-pd---e--- OK (276 out of 1120, remaining: 04:25)
+test 0280...[FTP --ftp-alternative-to-user on USER failure]
+-pd---e--- OK (277 out of 1120, remaining: 04:24)
+test 0281...[HTTP PUT from file with 100 + 401 responses and -f without auth given]
+-pd---e--- OK (278 out of 1120, remaining: 04:26)
+test 0282...[HTTP GET with no response body or headers]
+-pd---e--- OK (279 out of 1120, remaining: 04:25)
+test 0283...[TFTP retrieve on invalid file]
+-p----e--- OK (280 out of 1120, remaining: 04:24)
+test 0284...[TFTP retrieve of boundary case 512 byte file]
+-pd---e--- OK (281 out of 1120, remaining: 04:22)
+test 0285...[TFTP send]
+-p-u--e--- OK (282 out of 1120, remaining: 04:36)
+test 0286...[TFTP send of boundary case 512 byte file]
+-p-u--e--- OK (283 out of 1120, remaining: 04:50)
+test 0287...[HTTP proxy CONNECT with custom User-Agent header]
+sp----e--- OK (284 out of 1120, remaining: 04:49)
+test 0288...[file:// with (unsupported) proxy, authentication and range]
+--d---e--- OK (285 out of 1120, remaining: 04:47)
+test 0289...[FTP resume upload but denied access to local file]
+------e--- OK (286 out of 1120, remaining: 04:46)
+test 0290...[FTP download maximum filesize exceeded]
+-p----e--- OK (287 out of 1120, remaining: 04:45)
+test 0291...[FTP download maximum filesize not exceeded]
+-pd---e--- OK (288 out of 1120, remaining: 04:44)
+test 0292...[HTTP GET with maximum filesize not exceeded]
+-pd---e--- OK (289 out of 1120, remaining: 04:42)
+test 0293...[HTTP GET with maximum filesize exceeded]
+-p----e--- OK (290 out of 1120, remaining: 04:41)
+test 0294...[FTP --ftp-account on ACCT request]
+-pd---e--- OK (291 out of 1120, remaining: 04:40)
+test 0295...[FTP ACCT request without --ftp-account]
+-p----e--- OK (292 out of 1120, remaining: 04:39)
+test 0296...[FTP CWD with --ftp-method multicwd]
+-pd---e--- OK (293 out of 1120, remaining: 04:38)
+test 0297...[FTP CWD with --ftp-method singlecwd]
+-pd---e--- OK (294 out of 1120, remaining: 04:37)
+test 0298...[FTP CWD with --ftp-method nocwd]
+-pd---e--- OK (295 out of 1120, remaining: 04:36)
+test 0299...[FTP over HTTP proxy with user:pass not in url]
+-pd---e--- OK (296 out of 1120, remaining: 04:35)
+test 0300 SKIPPED: curl lacks SSL support
+test 0301 SKIPPED: curl lacks SSL support
+test 0307 SKIPPED: curl lacks OpenSSL support
+test 0308 SKIPPED: curl lacks OpenSSL support
+test 0320 SKIPPED: curl lacks TLS-SRP support
+test 0321 SKIPPED: curl lacks TLS-SRP support
+test 0322 SKIPPED: curl lacks TLS-SRP support
+test 0350...[FTP root dir list multicwd]
+-pd---e--- OK (317 out of 1120, remaining: 04:10)
+test 0351...[FTP root dir list nocwd]
+-pd---e--- OK (318 out of 1120, remaining: 04:10)
+test 0352...[FTP root dir list singlecwd]
+-pd---e--- OK (319 out of 1120, remaining: 04:09)
+test 0353...[FTP home dir list singlecwd]
+-pd---e--- OK (320 out of 1120, remaining: 04:08)
+test 0354...[FTP without password]
+-pd---e--- OK (321 out of 1120, remaining: 04:07)
+test 0500...[simple libcurl HTTP GET tool]
+-pd--oe--- OK (332 out of 1120, remaining: 03:56)
+test 0501...[simple libcurl attempt operation without URL set]
+------e--- OK (333 out of 1120, remaining: 03:55)
+test 0502...[simple multi file:// get]
+--d---e--- OK (334 out of 1120, remaining: 03:54)
+test 0503...[simple multi http:// through proxytunnel with authentication info]
+-pd-P-e--- OK (335 out of 1120, remaining: 03:54)
+test 0504...[simple multi through local proxy without listener]
+------e--- OK (336 out of 1120, remaining: 03:53)
+test 0505...[FTP upload with rename after transfer]
+-p-u--e--- OK (337 out of 1120, remaining: 03:52)
+test 0506 SKIPPED: curl has threaded-resolver support
+test 0507...[multi interface get with non-existing host name]
+------e--- OK (339 out of 1120, remaining: 03:53)
+test 0508...[send HTTP POST using read callback]
+-pd---e--- OK (340 out of 1120, remaining: 03:52)
+test 0509...[initialization with memory callbacks and actual usage]
+s-----e--- OK (341 out of 1120, remaining: 03:51)
+test 0510...[send HTTP POST using read callback, using chunked transfer-encoding]
+-pd---e--- OK (342 out of 1120, remaining: 03:52)
+test 0511...[FTP with FILETIME and NOBODY but missing file]
+-p----e--- OK (343 out of 1120, remaining: 03:51)
+test 0512...[simple curl_easy_duplicate() test]
+-pd---e--- OK (344 out of 1120, remaining: 03:51)
+test 0513...[send HTTP POST using read callback that returns CURL_READFUNC_ABORT]
+-p----e--- OK (345 out of 1120, remaining: 03:52)
+test 0514...[First set options to POST and then to make HEAD]
+-pd---e--- OK (346 out of 1120, remaining: 03:53)
+test 0515...[make a POSTFIELDS set to NULL with POSTFIELDSIZE set to zero]
+-pd---e--- OK (347 out of 1120, remaining: 03:52)
+test 0516...[make a HTTPPOST set to NULL]
+-pd---e--- OK (348 out of 1120, remaining: 03:51)
+test 0517...[curl_getdate() testing]
+s-----e--- OK (349 out of 1120, remaining: 03:50)
+test 0518...[HTTP GET with more than FD_SETSIZE descriptors open]
+-pd---e--- OK (350 out of 1120, remaining: 03:50)
+test 0519...[GET same URL twice with different users]
+-pd---e--- OK (351 out of 1120, remaining: 03:49)
+test 0520...[FTP RETR with FILETIME]
+-pd---e--- OK (352 out of 1120, remaining: 03:48)
+test 0521...[FTP dir list PASV with CURLOPT_PORT]
+-pd---e--- OK (353 out of 1120, remaining: 03:47)
+test 0522...[HTTP GET with CURLOPT_PORT]
+sp----e--- OK (354 out of 1120, remaining: 03:46)
+test 0523...[HTTP GET with proxy and CURLOPT_PORT]
+sp----e--- OK (355 out of 1120, remaining: 03:46)
+test 0524...[FTP upload with target URL ending with slash]
+-p----e--- OK (356 out of 1120, remaining: 03:45)
+test 0525...[FTP PORT upload using multi interface]
+-p-u--e--- OK (357 out of 1120, remaining: 03:44)
+test 0526...[FTP RETR same file using different handles but same connection]
+-pd---e--- OK (358 out of 1120, remaining: 03:50)
+test 0527...[FTP RETR same file using different handles but same connection]
+-pd---e--- OK (359 out of 1120, remaining: 03:56)
+test 0528...[HTTP GET same file using different handles but same connection]
+-pd---e--- OK (360 out of 1120, remaining: 04:01)
+test 0529...[FTP PORT upload using multi interface (weird cleanup function sequence)]
+-p-u--e--- OK (361 out of 1120, remaining: 04:01)
+test 0530...[HTTP GET using pipelining]
+-p----e--- OK (362 out of 1120, remaining: 04:02)
+test 0531...[FTP PORT upload using multi interface and get 425 response]
+-p----e--- OK (363 out of 1120, remaining: 04:01)
+test 0532...[FTP RETR same file using reset handles between each transfer]
+-pd---e--- OK (364 out of 1120, remaining: 04:07)
+test 0533...[FTP RETR a non-existing file twice using the multi interface]
+-p----e--- OK (365 out of 1120, remaining: 04:08)
+test 0534...[FTP RETR twice using multi: non-existing host and non-existing file]
+-p----e--- OK (366 out of 1120, remaining: 04:11)
+test 0535...[HTTP GET multi two files with FAILONERROR]
+-pd---e--- OK (367 out of 1120, remaining: 04:12)
+test 0536...[HTTP GET multi two files with FAILONERROR and pipelining]
+-pd---e--- OK (368 out of 1120, remaining: 04:11)
+test 0537...[HTTP GET with a HUGE number of file descriptors open]
+-pd---e--- OK (369 out of 1120, remaining: 04:18)
+test 0538...[FTP multi-interface download, failed login: PASS not valid]
+-p----e--- OK (370 out of 1120, remaining: 04:17)
+test 0539...[Two FTP fetches using different CURLOPT_FTP_FILEMETHOD]
+-pd---e--- OK (371 out of 1120, remaining: 04:16)
+test 0541...[FTP upload and upload same file again without rewind]
+-p----e--- OK (373 out of 1120, remaining: 04:15)
+test 0542...[FTP a file with NOBODY yes and HEADER no]
+-pd---e--- OK (374 out of 1120, remaining: 04:14)
+test 0543...[curl_easy_escape]
+s-----e--- OK (375 out of 1120, remaining: 04:13)
+test 0544...[HTTP POST text data using CURLOPT_COPYPOSTFIELDS]
+-pd---e--- OK (376 out of 1120, remaining: 04:12)
+test 0545...[HTTP POST binary with embedded zero and no trailing zero]
+-pd---e--- OK (377 out of 1120, remaining: 04:11)
+test 0546...[FTP RETR a non-existing file then a found one using the multi interface]
+sp----e--- OK (378 out of 1120, remaining: 04:12)
+test 0549...[FTP RETR over proxy with CURLOPT_PROXY_TRANSFER_MODE]
+sp----e--- OK (381 out of 1120, remaining: 04:09)
+test 0550...[FTP RETR over proxy with CURLOPT_PROXY_TRANSFER_MODE and ASCII transfer]
+sp----e--- OK (382 out of 1120, remaining: 04:08)
+test 0553...[HTTP post with huge request headers and post data from callback]
+-pd---e--- OK (385 out of 1120, remaining: 04:05)
+test 0554...[HTTP multi-part formpost using read callback for the file part]
+-pd---e--- OK (386 out of 1120, remaining: 04:05)
+test 0556...[send and recv HTTP]
+-pd---e--- OK (388 out of 1120, remaining: 04:03)
+test 0557...[curl_mprintf() testing]
+s-----e--- OK (389 out of 1120, remaining: 04:02)
+test 0558 SKIPPED: curl lacks TrackMemory support
+test 0559...[use tiny CURLOPT_BUFFERSIZE]
+--d---e--- OK (391 out of 1120, remaining: 04:00)
+test 0561...[FTP RETR with CURLOPT_PROXY_TRANSFER_MODE, ASCII transfer and type=i]
+sp----e--- OK (393 out of 1120, remaining: 03:58)
+test 0562...[FTP a type=A URL and CURLOPT_PORT set]
+-pd---e--- OK (394 out of 1120, remaining: 03:58)
+test 0563...[FTP type=A URL and CURLOPT_PORT set and proxy]
+-p----e--- OK (395 out of 1120, remaining: 03:57)
+test 0564...[FTP RETR a file over a SOCKS proxy using the multi interface]
+spd---e--- OK (396 out of 1120, remaining: 04:53)
+test 0566...[HTTP GET with CURLINFO_CONTENT_LENGTH_DOWNLOAD and 0 bytes transfer]
+-pd--oe--- OK (398 out of 1120, remaining: 04:51)
+test 0567...[simple RTSP OPTIONS command]
+-pd---e--- OK (399 out of 1120, remaining: 04:53)
+test 0568...[RTSP Announce (PUT and POST style) test]
+-p----e--- OK (400 out of 1120, remaining: 04:52)
+test 0569...[RTSP Session ID parsing]
+-p---oe--- OK (401 out of 1120, remaining: 04:51)
+test 0570...[RTSP CSeq and Session Mismatch checks]
+-p----e--- OK (402 out of 1120, remaining: 04:50)
+test 0571...[RTSP RTP Interleaving Test]
+s----oe--- OK (403 out of 1120, remaining: 04:49)
+test 0572...[RTSP GET_PARAMETER (Put/Heartbeat/Post)]
+-p----e--- OK (404 out of 1120, remaining: 04:48)
+test 0573...[verify connect time with multi interface]
+-pd---e--- OK (405 out of 1120, remaining: 04:47)
+test 0574...[FTP wildcard download - changed fnmatch, 2x perform (Unix LIST response)]
+sp----e--- OK (406 out of 1120, remaining: 04:47)
+test 0575...[FTP wildcard download - dup_handle and multi interface]
+sp----e--- OK (407 out of 1120, remaining: 04:48)
+test 0576...[FTP wildcard download - skip/parser_correctness/CURLOPT_FNMATCH_FUNCTION (Unix)]
+s-----e--- OK (408 out of 1120, remaining: 04:47)
+test 0578...[HTTP POST lower than MAX_INITIAL_POST_SIZE with progress callback]
+--d--oe--- OK (409 out of 1120, remaining: 04:46)
+test 0580...[multi interface, multiple Location: headers]
+-pd---e--- OK (411 out of 1120, remaining: 04:44)
+test 0581...[multi interface, multiple Content-Type: headers]
+-pd---e--- OK (412 out of 1120, remaining: 04:43)
+test 0582...[SFTP upload using multi interface]
+-----oe--- OK (413 out of 1120, remaining: 04:42)
+test 0583...[SFTP with multi interface, remove handle early]
+------e--- OK (414 out of 1120, remaining: 04:41)
+test 0584...[HTTP GET using pipelining (nonzero length after zero length)]
+sp----e--- OK (415 out of 1120, remaining: 04:42)
+test 0585...[socket open/close callbacks]
+-pd---e--- OK (416 out of 1120, remaining: 04:41)
+test 0586...[FTP and open/close socket callbacks]
+-pd---e--- OK (417 out of 1120, remaining: 04:40)
+test 0587...[HTTP multi-part formpost with aborted read callback]
+-p----e--- OK (418 out of 1120, remaining: 04:39)
+test 0588...[FTP PORT upload using multi interface, EPRT doesn't work]
+-p-u--e--- OK (419 out of 1120, remaining: 04:38)
+test 0589...[make a HTTP MIME POST set to NULL]
+-pd---e--- OK (420 out of 1120, remaining: 04:37)
+test 0591...[FTP multi PORT and 425 on upload]
+-p----e--- OK (422 out of 1120, remaining: 04:35)
+test 0592...[FTP multi PORT and 421 on upload]
+-p----e--- OK (423 out of 1120, remaining: 04:34)
+test 0593...[FTP multi PORT upload, no data conn and no transient neg. reply]
+-p----e--- OK (424 out of 1120, remaining: 04:36)
+test 0595...[verify close callbacks with passive FTP]
+-pd---e--- OK (425 out of 1120, remaining: 04:35)
+test 0596...[verify close callbacks with active FTP]
+-pd---e--- OK (426 out of 1120, remaining: 04:34)
+test 0597...[FTP connect only option]
+-p----e--- OK (427 out of 1120, remaining: 04:33)
+test 0598...[curl_easy_reset with referer and other strings set]
+-pd---e--- OK (428 out of 1120, remaining: 04:32)
+test 0599...[HTTP GET with progress callback and redirects changing content sizes]
+--d--oe--- OK (429 out of 1120, remaining: 04:31)
+test 0600...[SFTP retrieval]
+--d---e--- OK (430 out of 1120, remaining: 04:31)
+test 0601...[SCP retrieval]
+--d---e--- OK (431 out of 1120, remaining: 04:30)
+test 0602...[SFTP put]
+---u--e--- OK (432 out of 1120, remaining: 04:29)
+test 0603...[SCP upload]
+---u--e--- OK (433 out of 1120, remaining: 04:28)
+test 0604...[SFTP retrieval of nonexistent file]
+------e--- OK (434 out of 1120, remaining: 04:27)
+test 0605...[SCP retrieval of nonexistent file]
+------e--- OK (435 out of 1120, remaining: 04:26)
+test 0606...[SFTP invalid user login]
+------e--- OK (436 out of 1120, remaining: 04:25)
+test 0607...[SCP invalid user login]
+------e--- OK (437 out of 1120, remaining: 04:24)
+test 0608...[SFTP post-quote rename]
+--d--oe--- OK (438 out of 1120, remaining: 04:24)
+test 0609...[SFTP post-quote mkdir failure]
+--d---e--- OK (439 out of 1120, remaining: 04:23)
+test 0610...[SFTP post-quote rmdir]
+--d---e--- OK (440 out of 1120, remaining: 04:22)
+test 0611...[SFTP post-quote rename]
+--d---e--- OK (441 out of 1120, remaining: 04:21)
+test 0612...[SFTP post-quote remove file]
+---u--e--- OK (442 out of 1120, remaining: 04:20)
+test 0613...[SFTP directory retrieval]
+--d---e--- OK (443 out of 1120, remaining: 04:20)
+test 0614...[SFTP pre-quote chmod]
+--d---e--- OK (444 out of 1120, remaining: 04:19)
+test 0615...[SFTP put remote failure]
+------e--- OK (445 out of 1120, remaining: 04:18)
+test 0616...[SFTP retrieval of empty file]
+--d---e--- OK (446 out of 1120, remaining: 04:17)
+test 0617...[SCP retrieval of empty file]
+--d---e--- OK (447 out of 1120, remaining: 04:16)
+test 0618...[SFTP retrieval of two files]
+s-----e--- OK (448 out of 1120, remaining: 04:16)
+test 0619...[SCP retrieval of two files]
+s-----e--- OK (449 out of 1120, remaining: 04:15)
+test 0620...[SFTP retrieval of missing file followed by good file]
+s-----e--- OK (450 out of 1120, remaining: 04:14)
+test 0621...[SCP retrieval of missing file followed by good file]
+s-----e--- OK (451 out of 1120, remaining: 04:13)
+test 0622...[SFTP put failure]
+------e--- OK (452 out of 1120, remaining: 04:12)
+test 0623...[SCP upload failure]
+------e--- OK (453 out of 1120, remaining: 04:12)
+test 0624...[SFTP put with --ftp-create-dirs]
+---u--e--- OK (454 out of 1120, remaining: 04:11)
+test 0625...[SFTP put with --ftp-create-dirs twice]
+---u--e--- OK (455 out of 1120, remaining: 04:10)
+test 0626...[SFTP invalid quote command]
+------e--- OK (456 out of 1120, remaining: 04:09)
+test 0627...[SFTP quote remove file with NOBODY]
+--d---e--- OK (457 out of 1120, remaining: 04:09)
+test 0628...[SFTP invalid user login (password authentication)]
+------e--- OK (458 out of 1120, remaining: 04:08)
+test 0629...[SCP invalid user login (password authentication)]
+------e--- OK (459 out of 1120, remaining: 04:07)
+test 0630...[SFTP incorrect host key]
+------e--- OK (460 out of 1120, remaining: 04:06)
+test 0631...[SCP incorrect host key]
+------e--- OK (461 out of 1120, remaining: 04:05)
+test 0632...[SFTP syntactically invalid host key]
+------e--- OK (462 out of 1120, remaining: 04:04)
+test 0633...[SFTP retrieval with byte range]
+--d---e--- OK (463 out of 1120, remaining: 04:04)
+test 0634...[SFTP retrieval with byte range past end of file]
+--d---e--- OK (464 out of 1120, remaining: 04:03)
+test 0635...[SFTP retrieval with byte range relative to end of file]
+--d---e--- OK (465 out of 1120, remaining: 04:02)
+test 0636...[SFTP retrieval with X- byte range]
+--d---e--- OK (466 out of 1120, remaining: 04:01)
+test 0637...[SFTP retrieval with invalid X- range]
+------e--- OK (467 out of 1120, remaining: 04:01)
+test 0638...[SFTP post-quote rename * asterisk accept-fail]
+--d---e--- OK (468 out of 1120, remaining: 04:00)
+test 0639...[SFTP post-quote rename * asterisk accept-fail]
+--d---e--- OK (469 out of 1120, remaining: 03:59)
+test 0640...[SFTP --head retrieval]
+------e--- OK (470 out of 1120, remaining: 03:58)
+test 0641...[SCP --head retrieval]
+------e--- OK (471 out of 1120, remaining: 03:58)
+test 0642...[SFTP retrieval]
+--d---e--- OK (472 out of 1120, remaining: 03:57)
+test 0643...[HTTP multi-part mimepost using read callback for the file part]
+-pd---e--- OK (473 out of 1120, remaining: 03:56)
+test 0644...[HTTP multi-part formpost with aborted read callback]
+-p----e--- OK (474 out of 1120, remaining: 03:55)
+test 0645...[HTTP multi-part chunked mimepost using read callback for the file part]
+-pd---e--- OK (475 out of 1120, remaining: 03:57)
+test 0646...[SMTP multipart using mime API]
+-p-u--e--- OK (476 out of 1120, remaining: 03:59)
+test 0647...[IMAP APPEND multipart using mime API]
+-p-u--e--- OK (477 out of 1120, remaining: 04:01)
+test 0648...[SMTP multipart with transfer content encoders]
+-p-u--e--- OK (478 out of 1120, remaining: 04:01)
+test 0649...[SMTP multipart with 7bit encoder error]
+-p-u--e--- OK (479 out of 1120, remaining: 04:00)
+test 0650...[HTTP formpost using form API]
+-pd---e--- OK (480 out of 1120, remaining: 04:00)
+test 0700...[HTTP GET via SOCKS4 proxy]
+-pd---e--- OK (481 out of 1120, remaining: 03:59)
+test 0701...[HTTP GET via SOCKS5 proxy]
+-pd---e--- OK (482 out of 1120, remaining: 03:59)
+test 0702...[Attempt connect to non-listening HTTP server via SOCKS4 proxy]
+------e--- OK (483 out of 1120, remaining: 03:58)
+test 0703...[Attempt connect to non-listening HTTP server via SOCKS5 proxy]
+------e--- OK (484 out of 1120, remaining: 03:57)
+test 0704...[Attempt connect to non-listening SOCKS4 proxy]
+------e--- OK (485 out of 1120, remaining: 03:56)
+test 0705...[Attempt connect to non-listening SOCKS5 proxy]
+------e--- OK (486 out of 1120, remaining: 03:55)
+test 0706...[FTP dir list PASV via SOCKS4]
+-pd---e--- OK (487 out of 1120, remaining: 03:55)
+test 0707...[FTP dir list PASV via SOCKS5]
+-pd---e--- OK (488 out of 1120, remaining: 03:54)
+test 0708...[HTTP GET via SOCKS4 proxy]
+-pd---e--- OK (489 out of 1120, remaining: 03:53)
+test 0709...[HTTP GET via SOCKS5 set in http_proxy environment variable]
+-pd---e--- OK (490 out of 1120, remaining: 03:52)
+test 0710...[HTTP GET via SOCKS5 set with --proxy]
+-pd---e--- OK (491 out of 1120, remaining: 03:52)
+test 0711...[FTP fetch with all_proxy set to socks5]
+-pd---e--- OK (492 out of 1120, remaining: 03:51)
+test 0712...[FTP fetch with --proxy set to socks5://]
+-pd---e--- OK (493 out of 1120, remaining: 03:51)
+test 0713...[FTP fetch with --proxy set to socks5:// and with --connect-to]
+-pd---e--- OK (494 out of 1120, remaining: 03:50)
+test 0714...[FTP fetch with --proxy set to http:// and with --connect-to]
+-p----e--- OK (495 out of 1120, remaining: 03:51)
+test 0715...[FTP fetch with --preproxy, --proxy and --connect-to]
+-p----e--- OK (496 out of 1120, remaining: 03:53)
+test 0800...[IMAP FETCH message]
+-pd---e--- OK (497 out of 1120, remaining: 03:52)
+test 0801...[IMAP FETCH message by UID and SECTION]
+-pd---e--- OK (498 out of 1120, remaining: 03:52)
+test 0802...[IMAP SELECT UIDVALIDITY Success]
+-pd---e--- OK (499 out of 1120, remaining: 03:51)
+test 0803...[IMAP SELECT UIDVALIDITY Failure]
+-p----e--- OK (500 out of 1120, remaining: 03:50)
+test 0804...[IMAP doesn't perform SELECT if re-using the same mailbox]
+-pd---e--- OK (501 out of 1120, remaining: 03:50)
+test 0805...[IMAP APPEND message]
+-p-u--e--- OK (502 out of 1120, remaining: 03:49)
+test 0806...[IMAP LIST mailbox]
+-pd---e--- OK (503 out of 1120, remaining: 03:48)
+test 0807...[IMAP LSUB mailbox]
+-pd---e--- OK (504 out of 1120, remaining: 03:48)
+test 0808...[IMAP EXAMINE mailbox (CUSTOMREQUEST)]
+-pd---e--- OK (505 out of 1120, remaining: 03:47)
+test 0809...[IMAP mailbox STATUS (CUSTOMREQUEST)]
+-pd---e--- OK (506 out of 1120, remaining: 03:46)
+test 0810...[IMAP SEARCH for NEW messages]
+-pd---e--- OK (507 out of 1120, remaining: 03:46)
+test 0811...[IMAP CREATE mailbox (CUSTOMREQUEST)]
+-p----e--- OK (508 out of 1120, remaining: 03:45)
+test 0812...[IMAP DELETE mailbox (CUSTOMREQUEST)]
+-p----e--- OK (509 out of 1120, remaining: 03:44)
+test 0813...[IMAP RENAME mailbox (CUSTOMREQUEST)]
+-p----e--- OK (510 out of 1120, remaining: 03:43)
+test 0814...[IMAP CHECK mailbox (CUSTOMREQUEST)]
+-p----e--- OK (511 out of 1120, remaining: 03:43)
+test 0815...[IMAP STORE - delete message (CUSTOMREQUEST)]
+-p----e--- OK (512 out of 1120, remaining: 03:42)
+test 0816...[IMAP STORE - delete message with confirmation (CUSTOMREQUEST)]
+-p----e--- OK (513 out of 1120, remaining: 03:42)
+test 0817...[IMAP COPY message to mailbox (CUSTOMREQUEST)]
+-p----e--- OK (514 out of 1120, remaining: 03:41)
+test 0818...[IMAP NOOP (CUSTOMREQUEST)]
+-pd---e--- OK (515 out of 1120, remaining: 03:40)
+test 0819...[IMAP plain authentication]
+-pd---e--- OK (516 out of 1120, remaining: 03:40)
+test 0820...[IMAP login authentication]
+-pd---e--- OK (517 out of 1120, remaining: 03:39)
+test 0824...[IMAP OAuth 2.0 (XOAUTH2) authentication]
+-pd---e--- OK (521 out of 1120, remaining: 03:36)
+test 0825...[IMAP plain authentication with initial response]
+-pd---e--- OK (522 out of 1120, remaining: 03:36)
+test 0826...[IMAP login authentication with initial response]
+-pd---e--- OK (523 out of 1120, remaining: 03:35)
+test 0828...[IMAP OAuth 2.0 (XOAUTH2) authentication with initial response]
+-pd---e--- OK (525 out of 1120, remaining: 03:34)
+test 0829...[IMAP with URL-encoded CR LF in the URL]
+------e--- OK (526 out of 1120, remaining: 03:33)
+test 0837...[IMAP external authentication]
+-pd---e--- OK (533 out of 1120, remaining: 03:28)
+test 0838...[IMAP external authentication without credentials]
+-pd---e--- OK (534 out of 1120, remaining: 03:27)
+test 0839...[IMAP external authentication with initial response]
+-pd---e--- OK (535 out of 1120, remaining: 03:27)
+test 0840...[IMAP external authentication with initial response without credentials]
+-pd---e--- OK (536 out of 1120, remaining: 03:26)
+test 0841...[IMAP custom request doesn't check continuation data]
+-pd---e--- OK (537 out of 1120, remaining: 03:26)
+test 0842...[IMAP OAuth 2.0 (OAUTHBEARER) authentication]
+-pd---e--- OK (538 out of 1120, remaining: 03:25)
+test 0843...[IMAP OAuth 2.0 (OAUTHBEARER) authentication with initial response]
+-pd---e--- OK (539 out of 1120, remaining: 03:25)
+test 0844...[IMAP OAuth 2.0 (OAUTHBEARER) failure as continuation]
+-p----e--- OK (540 out of 1120, remaining: 03:24)
+test 0845...[IMAP OAuth 2.0 (OAUTHBEARER) failure as continuation with initial response]
+-p----e--- OK (541 out of 1120, remaining: 03:24)
+test 0846...[IMAP PREAUTH response]
+-pd---e--- OK (542 out of 1120, remaining: 03:23)
+test 0850...[POP3 RETR message]
+-pd---e--- OK (543 out of 1120, remaining: 03:24)
+test 0851...[POP3 LIST one message]
+-p----e--- OK (544 out of 1120, remaining: 03:24)
+test 0852...[POP3 LIST invalid message]
+-p----e--- OK (545 out of 1120, remaining: 03:23)
+test 0853...[POP3 LIST messages from *SLOW* server]
+-pd---e--- OK (546 out of 1120, remaining: 03:27)
+test 0854...[POP3 LIST no messages available]
+-p----e--- OK (547 out of 1120, remaining: 03:27)
+test 0855...[POP3 RETR invalid message]
+-p----e--- OK (548 out of 1120, remaining: 03:26)
+test 0856...[POP3 invalid login]
+-p----e--- OK (549 out of 1120, remaining: 03:25)
+test 0857...[POP3 RETR message with dot-prefixed line]
+-pd---e--- OK (550 out of 1120, remaining: 03:24)
+test 0858...[POP3 DELE message (CUSTOMREQUEST)]
+-p----e--- OK (551 out of 1120, remaining: 03:24)
+test 0859...[POP3 STAT (CUSTOMREQUEST)]
+-p----e--- OK (552 out of 1120, remaining: 03:23)
+test 0860...[POP3 NOOP (CUSTOMREQUEST)]
+-p----e--- OK (553 out of 1120, remaining: 03:22)
+test 0861...[POP3 UIDL (CUSTOMREQUEST)]
+-pd---e--- OK (554 out of 1120, remaining: 03:22)
+test 0862...[POP3 retrieve message header (CUSTOMREQUEST)]
+-pd---e--- OK (555 out of 1120, remaining: 03:21)
+test 0863...[POP3 RSET (CUSTOMREQUEST)]
+-p----e--- OK (556 out of 1120, remaining: 03:20)
+test 0865...[POP3 plain authentication]
+-pd---e--- OK (558 out of 1120, remaining: 03:19)
+test 0866...[POP3 login authentication]
+-pd---e--- OK (559 out of 1120, remaining: 03:18)
+test 0870...[POP3 OAuth 2.0 (XOAUTH2) authentication]
+-pd---e--- OK (563 out of 1120, remaining: 03:16)
+test 0871...[POP3 plain authentication with initial response]
+-pd---e--- OK (564 out of 1120, remaining: 03:15)
+test 0872...[POP3 login authentication with initial response]
+-pd---e--- OK (565 out of 1120, remaining: 03:14)
+test 0874...[POP3 OAuth 2.0 (XOAUTH2) authentication with initial response]
+-pd---e--- OK (567 out of 1120, remaining: 03:13)
+test 0875...[POP3 with URL-encoded CR LF in the URL]
+------e--- OK (568 out of 1120, remaining: 03:12)
+test 0883...[POP3 external authentication]
+-pd---e--- OK (575 out of 1120, remaining: 03:08)
+test 0884...[POP3 external authentication without credentials]
+-pd---e--- OK (576 out of 1120, remaining: 03:07)
+test 0885...[POP3 external authentication with initial response]
+-pd---e--- OK (577 out of 1120, remaining: 03:07)
+test 0886...[POP3 external authentication with initial response without credentials]
+-pd---e--- OK (578 out of 1120, remaining: 03:06)
+test 0887...[POP3 OAuth 2.0 (OAUTHBEARER) authentication]
+-pd---e--- OK (579 out of 1120, remaining: 03:06)
+test 0888...[POP3 OAuth 2.0 (OAUTHBEARER) authentication with initial response]
+-pd---e--- OK (580 out of 1120, remaining: 03:05)
+test 0889...[POP3 OAuth 2.0 (OAUTHBEARER) failure as continuation]
+-p----e--- OK (581 out of 1120, remaining: 03:04)
+test 0890...[POP3 OAuth 2.0 (OAUTHBEARER) failure as continuation with initial response]
+-p----e--- OK (582 out of 1120, remaining: 03:04)
+test 0900...[SMTP]
+-p-u--e--- OK (583 out of 1120, remaining: 03:03)
+test 0901...[SMTP with CRLF-dot-CRLF in data]
+-p-u--e--- OK (584 out of 1120, remaining: 03:02)
+test 0902...[RFC821-only SMTP server (EHLO not supported)]
+-p-u--e--- OK (585 out of 1120, remaining: 03:02)
+test 0903...[SMTP plain authentication]
+-p-u--e--- OK (586 out of 1120, remaining: 03:01)
+test 0904...[SMTP login authentication]
+-p-u--e--- OK (587 out of 1120, remaining: 03:01)
+test 0908...[SMTP OAuth 2.0 (XOAUTH2) authentication]
+-p-u--e--- OK (591 out of 1120, remaining: 02:58)
+test 0909...[SMTP without SIZE support]
+-p-u--e--- OK (592 out of 1120, remaining: 02:57)
+test 0910...[SMTP without terminating CRLF]
+-p-u--e--- OK (593 out of 1120, remaining: 02:57)
+test 0911...[SMTP with no mail data]
+-p-u--e--- OK (594 out of 1120, remaining: 02:56)
+test 0912...[SMTP with SIZE support]
+-p-u--e--- OK (595 out of 1120, remaining: 02:56)
+test 0913...[SMTP with large message SIZE]
+-p----e--- OK (596 out of 1120, remaining: 02:55)
+test 0914...[SMTP invalid --mail-from]
+-p----e--- OK (597 out of 1120, remaining: 02:54)
+test 0915...[SMTP without --mail-from]
+-p-u--e--- OK (598 out of 1120, remaining: 02:54)
+test 0916...[SMTP with invalid --mail-rcpt]
+-p----e--- OK (599 out of 1120, remaining: 02:53)
+test 0917...[SMTP with multiple --mail-rcpt]
+-p-u--e--- OK (600 out of 1120, remaining: 02:53)
+test 0918...[SMTP with multiple and invalid --mail-rcpt]
+-p----e--- OK (601 out of 1120, remaining: 02:52)
+test 0919...[SMTP plain authentication with initial response]
+-p-u--e--- OK (602 out of 1120, remaining: 02:51)
+test 0920...[SMTP login authentication with initial response]
+-p-u--e--- OK (603 out of 1120, remaining: 02:51)
+test 0922...[SMTP OAuth 2.0 (XOAUTH2) authentication with initial response]
+-p-u--e--- OK (605 out of 1120, remaining: 02:50)
+test 0923...[SMTP VRFY]
+-pd---e--- OK (606 out of 1120, remaining: 02:49)
+test 0924...[SMTP ambiguous VRFY]
+-pd---e--- OK (607 out of 1120, remaining: 02:48)
+test 0925...[SMTP external VRFY]
+-pd---e--- OK (608 out of 1120, remaining: 02:48)
+test 0926...[SMTP unknown user VRFY]
+-p----e--- OK (609 out of 1120, remaining: 02:47)
+test 0927...[SMTP mailing list EXPN (CUSTOMREQUEST)]
+-pd---e--- OK (610 out of 1120, remaining: 02:47)
+test 0928...[SMTP HELP]
+-pd---e--- OK (611 out of 1120, remaining: 02:46)
+test 0929...[SMTP NOOP (CUSTOMREQUEST)]
+-p----e--- OK (612 out of 1120, remaining: 02:46)
+test 0930...[SMTP RSET (CUSTOMREQUEST)]
+-p----e--- OK (613 out of 1120, remaining: 02:45)
+test 0931...[SMTP with URL-encoded CR LF in the URL]
+------e--- OK (614 out of 1120, remaining: 02:44)
+test 0939...[RFC821-only SMTP with username and password]
+-p-u--e--- OK (621 out of 1120, remaining: 02:40)
+test 0940...[SMTP with username and password but no AUTH capability]
+-p-u--e--- OK (622 out of 1120, remaining: 02:40)
+test 0941...[SMTP with --crlf]
+-p-u--e--- OK (623 out of 1120, remaining: 02:39)
+test 0942...[SMTP external authentication]
+-p-u--e--- OK (624 out of 1120, remaining: 02:39)
+test 0943...[SMTP external authentication without credentials]
+-p-u--e--- OK (625 out of 1120, remaining: 02:38)
+test 0944...[SMTP external authentication with initial response]
+-p-u--e--- OK (626 out of 1120, remaining: 02:38)
+test 0945...[SMTP external authentication with initial response without credentials]
+-p-u--e--- OK (627 out of 1120, remaining: 02:37)
+test 0946...[SMTP OAuth 2.0 (OAUTHBEARER) authentication]
+-p-u--e--- OK (628 out of 1120, remaining: 02:37)
+test 0947...[SMTP OAuth 2.0 (OAUTHBEARER) authentication with initial response]
+-p-u--e--- OK (629 out of 1120, remaining: 02:36)
+test 0948...[SMTP OAuth 2.0 (OAUTHBEARER) failure as continuation]
+-p----e--- OK (630 out of 1120, remaining: 02:36)
+test 0949...[SMTP OAuth 2.0 (OAUTHBEARER) failure as continuation with initial response]
+-p----e--- OK (631 out of 1120, remaining: 02:35)
+test 1000...[FTP dir list PASV with -I]
+-p----e--- OK (632 out of 1120, remaining: 02:34)
+test 1003...[FTP with excessively large server command response line]
+-pd---e--- OK (635 out of 1120, remaining: 02:33)
+test 1004...[HTTP GET with empty proxy]
+-pd---e--- OK (636 out of 1120, remaining: 02:32)
+test 1005...[FTP with excessively large number of server command response lines]
+-pd---e--- OK (637 out of 1120, remaining: 02:32)
+test 1006...[FTP with excessively large number of server command response lines (boundary condition)]
+-pd---e--- OK (638 out of 1120, remaining: 02:31)
+test 1007...[TFTP send with invalid permission on server]
+-p----e--- OK (639 out of 1120, remaining: 02:31)
+test 1009...[TFTP retrieve with --local-port]
+-pd---e--- OK (641 out of 1120, remaining: 02:30)
+test 1010...[FTP dir list nocwd]
+-pd---e--- OK (642 out of 1120, remaining: 02:29)
+test 1011...[HTTP POST with 301 redirect]
+-pd---e--- OK (643 out of 1120, remaining: 02:29)
+test 1012...[HTTP POST with 301 redirect and --post301]
+-pd---e--- OK (644 out of 1120, remaining: 02:28)
+test 1013...[Compare curl --version with curl-config --protocols]
+------e--- OK (645 out of 1120, remaining: 02:28)
+test 1014...[Compare curl --version with curl-config --features]
+------e--- OK (646 out of 1120, remaining: 02:27)
+test 1015...[--data-urlencode]
+-pd---e--- OK (647 out of 1120, remaining: 02:27)
+test 1016...[X-Y range on a file:// URL to stdout]
+s-----e--- OK (648 out of 1120, remaining: 02:26)
+test 1017...[0-Y range on a file:// URL to stdout]
+s-----e--- OK (649 out of 1120, remaining: 02:26)
+test 1018...[X-X range on a file:// URL to stdout]
+s-----e--- OK (650 out of 1120, remaining: 02:25)
+test 1019...[X- range on a file:// URL to stdout]
+s-----e--- OK (651 out of 1120, remaining: 02:25)
+test 1020...[-Y range on a file:// URL to stdout]
+s-----e--- OK (652 out of 1120, remaining: 02:24)
+test 1022...[Compare curl --version with curl-config --version]
+------e--- OK (654 out of 1120, remaining: 02:23)
+test 1023...[Compare curl --version with curl-config --vernum]
+------e--- OK (655 out of 1120, remaining: 02:23)
+test 1024...[HTTP Location: following with cookies]
+-pd---e--- OK (656 out of 1120, remaining: 02:22)
+test 1025...[HTTP Location: following with command-line and server cookies]
+-pd---e--- OK (657 out of 1120, remaining: 02:22)
+test 1026...[curl --manual ]
+------e--- OK (658 out of 1120, remaining: 02:21)
+test 1027...[curl --help]
+------e--- OK (659 out of 1120, remaining: 02:20)
+test 1028...[HTTP Location: redirect to FTP URL]
+sp----e--- OK (660 out of 1120, remaining: 02:20)
+test 1029...[HTTP Location: and 'redirect_url' check]
+sp----e--- OK (661 out of 1120, remaining: 02:20)
+test 1031...[HTTP Location: following to a query string]
+-pd---e--- OK (663 out of 1120, remaining: 02:19)
+test 1032...[HTTP HEAD with --range]
+-pd---e--- OK (664 out of 1120, remaining: 02:18)
+test 1033...[HTTP GET with 102 response!]
+-pd---e--- OK (665 out of 1120, remaining: 02:18)
+test 1034 SKIPPED: curl lacks idn support
+test 1035 SKIPPED: curl lacks idn support
+test 1036...[FTP download resume from end of file]
+-p---oe--- OK (668 out of 1120, remaining: 02:16)
+test 1037...[FTP download resume from end of empty file]
+-p----e--- OK (669 out of 1120, remaining: 02:16)
+test 1038...[FTP PASV upload resume from end of file]
+-p-u--e--- OK (670 out of 1120, remaining: 02:15)
+test 1039...[FTP PASV upload resume from end of empty file]
+-p-u--e--- OK (671 out of 1120, remaining: 02:15)
+test 1040...[HTTP GET with resume from end of entirely-downloaded file]
+-pd---e--- OK (672 out of 1120, remaining: 02:14)
+test 1041...[HTTP PUT with resume from end of already-uploaded file]
+-pd---e--- OK (673 out of 1120, remaining: 02:15)
+test 1042...[HTTP GET beyond end of entirely-downloaded file, no server resume]
+-pd---e--- OK (674 out of 1120, remaining: 02:14)
+test 1043...[HTTP GET with resume from end of file]
+-pd---e--- OK (675 out of 1120, remaining: 02:14)
+test 1044...[FTP download large file info with -I]
+sp----e--- OK (676 out of 1120, remaining: 02:13)
+test 1045...[HTTP GET with numeric localhost --interface]
+-pd---e--- OK (677 out of 1120, remaining: 02:13)
+test 1046...[HTTP-IPv6 GET with numeric localhost --interface]
+-pd---e--- OK (678 out of 1120, remaining: 02:12)
+test 1047...[FTP dir list PASV with localhost --interface]
+-pd---e--- OK (679 out of 1120, remaining: 02:12)
+test 1048...[FTP-IPv6 dir list PASV with localhost --interface]
+-pd---e--- OK (680 out of 1120, remaining: 02:11)
+test 1049...[TFTP retrieve with localhost --interface]
+-pd---e--- OK (681 out of 1120, remaining: 02:11)
+test 1050...[FTP-IPv6 dir list, EPRT with specified IP]
+-pd---e--- OK (682 out of 1120, remaining: 02:10)
+test 1051...[HTTP PUT with Location: following]
+-pd---e--- OK (683 out of 1120, remaining: 02:11)
+test 1052...[HTTP 1.0 PUT with Location: following]
+-pd---e--- OK (684 out of 1120, remaining: 02:11)
+test 1053...[HTTP RFC1867-type formposting from file with Location: following]
+-pd---e--- OK (685 out of 1120, remaining: 02:10)
+test 1054...[HTTP POST from file with 301 redirect and --post301]
+-pd---e--- OK (686 out of 1120, remaining: 02:10)
+test 1055...[HTTP PUT Location: redirect to FTP URL]
+-pdu--e--- OK (687 out of 1120, remaining: 02:10)
+test 1056...[HTTP follow redirect from IPv4 to IPv6 with scope]
+-pd---e--- OK (688 out of 1120, remaining: 02:10)
+test 1057...[FTP retrieve a byte-range relative to end of file]
+-pd---e--- OK (689 out of 1120, remaining: 02:09)
+test 1058...[HTTP range relative to end of file]
+-pd---e--- OK (690 out of 1120, remaining: 02:09)
+test 1059...[HTTP CONNECT with proxytunnel to unsupported FTP URL]
+-p----e--- OK (691 out of 1120, remaining: 02:08)
+test 1062...[FTP with excessively long server command response lines, boundary condition]
+-pd---e--- OK (694 out of 1120, remaining: 02:07)
+test 1063...[Invalid large X- range on a file://]
+------e--- OK (695 out of 1120, remaining: 02:06)
+test 1064...[HTTP PUT twice]
+sp----e--- OK (696 out of 1120, remaining: 02:06)
+test 1065...[HTTP PUT with one file but two URLs]
+sp----e--- OK (697 out of 1120, remaining: 02:05)
+test 1066...[HTTP --dump-header - with two URLs]
+sp----e--- OK (698 out of 1120, remaining: 02:05)
+test 1067...[HTTP Location: following with auto-referer]
+-pd---e--- OK (699 out of 1120, remaining: 02:05)
+test 1068...[HTTP PUT from stdin]
+-pd---e--- OK (700 out of 1120, remaining: 02:05)
+test 1069...[HTTP 1.0 PUT from stdin with no content length]
+------e--- OK (701 out of 1120, remaining: 02:04)
+test 1070...[HTTP POST with server closing connection before (all) data is received]
+-pd---e--- OK (702 out of 1120, remaining: 02:04)
+test 1073...[HTTP chunked PUT to HTTP 1.0 server with redirect]
+-pd---e--- OK (705 out of 1120, remaining: 02:04)
+test 1074...[HTTP downgrade to HTTP/1.0 on second request]
+sp----e--- OK (706 out of 1120, remaining: 02:04)
+test 1075...[HTTP PUT with --anyauth authorization (picking Basic)]
+-pd---e--- OK (707 out of 1120, remaining: 02:05)
+test 1076...[HTTP POST with 302 redirect and --post302]
+-pd---e--- OK (708 out of 1120, remaining: 02:05)
+test 1077...[FTP over HTTP proxy with downgrade to HTTP 1.0]
+-pd---e--- OK (709 out of 1120, remaining: 02:04)
+test 1078...[HTTP 1.0 CONNECT with proxytunnel and downgrade GET to HTTP/1.0]
+sp--P-e--- OK (710 out of 1120, remaining: 02:04)
+test 1080...[HTTP Location: on two URLs 'redirect_url' check]
+sp----e--- OK (712 out of 1120, remaining: 02:03)
+test 1081...[HTTP no Location: on second URL 'redirect_url' check]
+sp----e--- OK (713 out of 1120, remaining: 02:03)
+test 1082...[HTTP GET with localhost --interface]
+-pd---e--- OK (714 out of 1120, remaining: 02:02)
+test 1083...[HTTP-IPv6 GET with ip6-localhost --interface]
+-pd---e--- OK (715 out of 1120, remaining: 02:02)
+test 1084...[HTTP GET with invalid --interface]
+------e--- OK (716 out of 1120, remaining: 02:02)
+test 1085...[HTTP-IPv6 GET with invalid --interface]
+------e--- OK (717 out of 1120, remaining: 02:01)
+test 1086...[FTP download with strict timeout and slow data transfer]
+-p----e--- OK (718 out of 1120, remaining: 02:08)
+test 1087...[HTTP, proxy with --anyauth and Location: to new host]
+-pd---e--- OK (719 out of 1120, remaining: 02:08)
+test 1088...[HTTP, proxy with --anyauth and Location: to new host using location-trusted]
+-pd---e--- OK (720 out of 1120, remaining: 02:07)
+test 1089...[HTTP GET --write-out with redirected fetch]
+sp----e--- OK (721 out of 1120, remaining: 02:07)
+test 1090...[HTTP GET --write-out with redirected fetch and chunked reply]
+sp----e--- OK (722 out of 1120, remaining: 02:06)
+test 1091...[FTP URL with type=i]
+-pd---e--- OK (723 out of 1120, remaining: 02:07)
+test 1092...[FTP with type=i over HTTP proxy]
+-pd---e--- OK (724 out of 1120, remaining: 02:06)
+test 1093...[TFTP retrieve with mode=i]
+-pd---e--- OK (725 out of 1120, remaining: 02:06)
+test 1094...[TFTP retrieve with mode=netascii]
+-pd---e--- OK (726 out of 1120, remaining: 02:05)
+test 1096...[Two FTP downloads, with failed RETR but re-used control connection]
+-p----e--- OK (728 out of 1120, remaining: 02:05)
+test 1098...[FTP RETR twice over proxy confirming persistent connection]
+sp----e--- OK (730 out of 1120, remaining: 02:04)
+test 1099...[TFTP get first a non-existing file then an existing]
+sp----e--- OK (731 out of 1120, remaining: 02:03)
+test 1101...[NO_PROXY test, with user name in URL]
+-pd---e--- OK (733 out of 1120, remaining: 02:02)
+test 1102...[FTP OS/400 server name format check]
+-p----e--- OK (734 out of 1120, remaining: 02:02)
+test 1103...[FTP non-OS/400 server]
+-p----e--- OK (735 out of 1120, remaining: 02:01)
+test 1104...[HTTP cookie expiry date at Jan 1 00:00:00 GMT 1970]
+-pd---e--- OK (736 out of 1120, remaining: 02:01)
+test 1105...[HTTP with cookie parser and header recording]
+-pd--oe--- OK (737 out of 1120, remaining: 02:00)
+test 1106...[FTP URL and with ftp_proxy environment variable set]
+-p----e--- OK (738 out of 1120, remaining: 02:00)
+test 1107...[FTP RETR PASV with PRET]
+-pd---e--- OK (739 out of 1120, remaining: 01:59)
+test 1108...[FTP RETR PASV with PRET not supported]
+-p----e--- OK (740 out of 1120, remaining: 01:59)
+test 1109...[HTTP GET with URL that contains fragment after the path]
+-pd---e--- OK (741 out of 1120, remaining: 01:59)
+test 1110...[HTTP GET with URL that contains a fragment after the query part]
+-pd---e--- OK (742 out of 1120, remaining: 01:58)
+test 1111...[HTTP GET with URL whose fragment contains a # (which is illegal)]
+-pd---e--- OK (743 out of 1120, remaining: 01:58)
+test 1113...[FTP wildcard download - changed fnmatch, 2x perform (DOS LIST response)]
+sp----e--- OK (745 out of 1120, remaining: 01:57)
+test 1114...[FTP wildcard download - skip/parser_correctness/CURLOPT_FNMATCH_FUNCTION (DOS)]
+s-----e--- OK (746 out of 1120, remaining: 01:57)
+test 1115...[HTTP GET with unexpected 1xx response]
+-pd---e--- OK (747 out of 1120, remaining: 01:56)
+test 1116...[HTTP GET with chunked trailer without Trailer:]
+-pd--oe--- OK (748 out of 1120, remaining: 01:56)
+test 1117...[HTTP with invalid range then another URL]
+sp----e--- OK (749 out of 1120, remaining: 02:07)
+test 1118...[URL without slash and @-letter in query]
+-pd---e--- OK (750 out of 1120, remaining: 02:07)
+test 1119...[Verify that symbols-in-versions and headers are in sync]
+------e--- OK (751 out of 1120, remaining: 02:06)
+test 1120...[FTP with 421 timeout response]
+-p----e--- OK (752 out of 1120, remaining: 02:06)
+test 1121...[HTTP multiple provided Host: headers]
+-pd---e--- OK (753 out of 1120, remaining: 02:05)
+test 1122...[HTTP GET gzip transfer-encoded content]
+-pd---e--- OK (754 out of 1120, remaining: 02:04)
+test 1123...[HTTP GET deflate transfer-encoded content]
+-pd---e--- OK (755 out of 1120, remaining: 02:04)
+test 1124...[HTTP GET gzip+chunked transfer-encoded content]
+-pd---e--- OK (756 out of 1120, remaining: 02:03)
+test 1125...[HTTP GET transfer-encoding with custom Connection:]
+-pd---e--- OK (757 out of 1120, remaining: 02:03)
+test 1126...[HTTP 200 If-Modified-Since with newer document]
+-pd---e--- OK (758 out of 1120, remaining: 02:02)
+test 1127...[HTTP 200 If-Modified-Since with older document]
+-pd---e--- OK (759 out of 1120, remaining: 02:02)
+test 1128...[HTTP 200 If-Modified-Since with old+new documents]
+sp----e--- OK (760 out of 1120, remaining: 02:01)
+test 1129...[HTTP POST expect 100-continue with a 404]
+sp----e--- OK (761 out of 1120, remaining: 02:01)
+test 1130...[HTTP POST forced expect 100-continue with a 404]
+sp----e--- OK (762 out of 1120, remaining: 02:01)
+test 1131...[HTTP PUT expect 100-continue with a 400]
+sp----e--- OK (763 out of 1120, remaining: 02:00)
+test 1132...[Verify memory #include files in libcurl's C source files]
+------e--- OK (764 out of 1120, remaining: 02:00)
+test 1133...[HTTP RFC1867-type formposting with filename contains ',', ';', '"']
+-pd---e--- OK (765 out of 1120, remaining: 01:59)
+test 1134...[HTTP connection re-use with different credentials]
+-pd---e--- OK (766 out of 1120, remaining: 01:59)
+test 1135...[Verify CURL_EXTERN order]
+s-----e--- OK (767 out of 1120, remaining: 01:58)
+test 1136 SKIPPED: curl lacks PSL support
+test 1137...[FTP RETR --ignore-content-length]
+-pd---e--- OK (769 out of 1120, remaining: 01:57)
+test 1138...[HTTP redirect with UTF-8 characters]
+-pd---e--- OK (770 out of 1120, remaining: 01:57)
+test 1139...[Verify that all libcurl options have man pages]
+------e--- OK (771 out of 1120, remaining: 01:56)
+test 1140...[Verify the nroff of man pages]
+------e--- OK (772 out of 1120, remaining: 01:56)
+test 1141...[HTTP redirect to http:/// (three slashes!)]
+-pd---e--- OK (773 out of 1120, remaining: 01:55)
+test 1142...[HTTP redirect to http://// (four slashes!)]
+-pd---e--- OK (774 out of 1120, remaining: 01:55)
+test 1143...[HTTP URL with http:/ (one slash!)]
+-pd---e--- OK (775 out of 1120, remaining: 01:54)
+test 1144...[HTTP HEAD, receive no headers only body]
+-pd---e--- OK (776 out of 1120, remaining: 01:54)
+test 1145...[file:// bad host]
+------e--- OK (777 out of 1120, remaining: 01:53)
+test 1146...[--proto-default file]
+--d---e--- OK (778 out of 1120, remaining: 01:53)
+test 1147...[Get -H headers from a file]
+-pd---e--- OK (779 out of 1120, remaining: 01:52)
+test 1148...[progress-bar]
+-pd--oe--- OK (780 out of 1120, remaining: 01:52)
+test 1149...[FTP dir list multicwd then again nocwd]
+-pd---e--- OK (781 out of 1120, remaining: 01:52)
+test 1150...[HTTP proxy with URLs using different ports]
+-pd---e--- OK (782 out of 1120, remaining: 01:51)
+test 1151...[HTTP with too long cookies]
+-pd--oe--- OK (783 out of 1120, remaining: 01:51)
+test 1152...[FTP with uneven quote in PWD response]
+-pd---e--- OK (784 out of 1120, remaining: 01:50)
+test 1153...[FTP with quoted double quotes]
+-pd---e--- OK (785 out of 1120, remaining: 01:50)
+test 1160...[HTTP with long funny format cookie]
+-pd--oe--- OK (786 out of 1120, remaining: 01:49)
+test 1161...[HTTP cookie with path set twice]
+-pd--oe--- OK (787 out of 1120, remaining: 01:49)
+test 1200...[Gopher index]
+-pd---e--- OK (788 out of 1120, remaining: 01:49)
+test 1201...[Gopher selector]
+-pd---e--- OK (789 out of 1120, remaining: 01:49)
+test 1202...[Gopher query]
+-pd---e--- OK (790 out of 1120, remaining: 01:48)
+test 1203...[Gopher IPv6 index]
+-pd---e--- OK (791 out of 1120, remaining: 01:49)
+test 1204...[HTTP with WWW-Authenticate and multiple auths in a single line]
+-pd---e--- OK (792 out of 1120, remaining: 01:48)
+test 1205...[HTTP GET with 18K HTTP header]
+-pd---e--- OK (793 out of 1120, remaining: 01:48)
+test 1206...[FTP PORT and 425 on download]
+-p----e--- OK (794 out of 1120, remaining: 01:47)
+test 1207...[FTP PORT and 421 on download]
+-p----e--- OK (795 out of 1120, remaining: 01:47)
+test 1208...[FTP PORT download, no data conn and no transient negative reply]
+-p----e--- OK (796 out of 1120, remaining: 01:47)
+test 1210...[HTTP GET with -J without Content-Disposition]
+-p---oe--- OK (797 out of 1120, remaining: 01:47)
+test 1212...[noproxy setting together with socks proxy]
+-pd---e--- OK (798 out of 1120, remaining: 01:46)
+test 1213...[HTTP with proxy and host-only URL]
+-pd---e--- OK (799 out of 1120, remaining: 01:46)
+test 1214...[HTTP with proxy and URL with ? and no slash separator]
+-pd---e--- OK (800 out of 1120, remaining: 01:46)
+test 1216...[HTTP cookie domains tailmatching the host name]
+-pd---e--- OK (802 out of 1120, remaining: 01:45)
+test 1217...[FTP with rubbish before name in 257-response]
+-pd---e--- OK (803 out of 1120, remaining: 01:44)
+test 1218...[HTTP cookies and domains with same prefix]
+-pd---e--- OK (804 out of 1120, remaining: 01:44)
+test 1219...[FTP with no user+password required (230 response)]
+-pd---e--- OK (805 out of 1120, remaining: 01:43)
+test 1220...[file:// URLs with query string]
+s-----e--- OK (806 out of 1120, remaining: 01:43)
+test 1221...[10 chars object name generation testing]
+-----oe--- OK (807 out of 1120, remaining: 01:43)
+test 1222...[8 chars object name generation testing]
+-----oe--- OK (808 out of 1120, remaining: 01:42)
+test 1223...[HTTP GET -w remote_ip and -w remote_port]
+sp----e--- OK (809 out of 1120, remaining: 01:42)
+test 1224...[FTP fetch a file from the root directory]
+-pd---e--- OK (810 out of 1120, remaining: 01:41)
+test 1225...[FTP fetch two files using absolute paths]
+-pd---e--- OK (811 out of 1120, remaining: 01:41)
+test 1226...[FTP fetch a file from the root directory with singlecwd]
+-pd---e--- OK (812 out of 1120, remaining: 01:41)
+test 1227...[FTP fetch a file from the root directory with nocwd]
+-pd---e--- OK (813 out of 1120, remaining: 01:40)
+test 1228...[HTTP cookie path match]
+-pd---e--- OK (814 out of 1120, remaining: 01:40)
+test 1230...[HTTP CONNECT to IPv6 numerical address]
+-pd---e--- OK (816 out of 1120, remaining: 01:39)
+test 1231...[HTTP URL with dotdot removal from path]
+-pd---e--- OK (817 out of 1120, remaining: 01:38)
+test 1232...[HTTP URL with dotdot removal from path using an HTTP proxy]
+-pd---e--- OK (818 out of 1120, remaining: 01:38)
+test 1233...[FTP failing to connect to EPSV port, switching to PASV]
+-pd---e--- OK (819 out of 1120, remaining: 01:38)
+test 1234...[abusing {}-globbing]
+------e--- OK (820 out of 1120, remaining: 01:37)
+test 1235...[multiple requests using {}{} in the URL]
+sp----e--- OK (821 out of 1120, remaining: 01:37)
+test 1236...[[] globbing overflowing the range counter]
+------e--- OK (822 out of 1120, remaining: 01:36)
+test 1237...[URL with 1000+ letter user name + password]
+-pd---e--- OK (823 out of 1120, remaining: 01:36)
+test 1238...[slow TFTP retrieve cancel due to -Y and -y]
+-p----e--- OK (824 out of 1120, remaining: 01:37)
+test 1239...[HTTP with -z + -w response_code and simulated 304]
+sp----e--- OK (825 out of 1120, remaining: 01:36)
+test 1240...[glob [0-1] with stuff after range (7.33.0 regression)]
+-pd---e--- OK (826 out of 1120, remaining: 01:36)
+test 1241...[HTTP _without_ dotdot removal]
+-pd---e--- OK (827 out of 1120, remaining: 01:35)
+test 1242...[TFTP retrieve without TFTP options requests]
+-pd---e--- OK (828 out of 1120, remaining: 01:35)
+test 1243...[TFTP send without TFTP options requests]
+-p-u--e--- OK (829 out of 1120, remaining: 01:36)
+test 1244 SKIPPED: curl lacks https server support
+test 1245...[--proto deny must override --proto-redir allow]
+-pd---e--- OK (831 out of 1120, remaining: 01:35)
+test 1246...[URL with '#' at end of host name instead of '/']
+-pd---e--- OK (832 out of 1120, remaining: 01:35)
+test 1247...[--fail-early]
+------e--- OK (833 out of 1120, remaining: 01:35)
+test 1248...[Access a non-proxied host with using the combination of --proxy option and --noproxy option]
+-pd---e--- OK (834 out of 1120, remaining: 01:34)
+test 1249...[Access a non-proxied host with using the combination of --proxy option and NO_PROXY env var]
+-pd---e--- OK (835 out of 1120, remaining: 01:34)
+test 1250...[Access a non-proxied host with using the combination of http_proxy env var and --noproxy option]
+-pd---e--- OK (836 out of 1120, remaining: 01:33)
+test 1251...[Access a non-proxied host with using the combination of http_proxy env var and NO_PROXY env var]
+-pd---e--- OK (837 out of 1120, remaining: 01:33)
+test 1252...[Under condition using --proxy, override NO_PROXY by --nproxy and access target URL directly]
+-pd---e--- OK (838 out of 1120, remaining: 01:32)
+test 1253...[Under condition using --proxy, override NO_PROXY by --nproxy and access target URL through proxy]
+-pd---e--- OK (839 out of 1120, remaining: 01:32)
+test 1254...[Under condition using --proxy, override NO_PROXY by --nproxy and access target URL through proxy]
+-pd---e--- OK (840 out of 1120, remaining: 01:32)
+test 1255...[Under condition using http_proxy, override NO_PROXY by --nproxy and access target URL directly]
+-pd---e--- OK (841 out of 1120, remaining: 01:31)
+test 1256...[Under condition using http_proxy, override NO_PROXY by --nproxy and access target URL through proxy]
+-pd---e--- OK (842 out of 1120, remaining: 01:31)
+test 1257...[Under condition using http_proxy, override NO_PROXY by --nproxy and access target URL through proxy]
+-pd---e--- OK (843 out of 1120, remaining: 01:30)
+test 1258...[HTTP, use cookies with localhost]
+-pd---e--- OK (844 out of 1120, remaining: 01:30)
+test 1259...[HTTP URL with semicolon in password]
+-pd---e--- OK (845 out of 1120, remaining: 01:29)
+test 1260...[HTTP URL with rubbish after port number]
+------e--- OK (846 out of 1120, remaining: 01:29)
+test 1261...['redirect_url' with --location and --max-redir]
+sp----e--- OK (847 out of 1120, remaining: 01:29)
+test 1262...[FTP request and denied to download an older file with -z]
+-p----e--- OK (848 out of 1120, remaining: 01:28)
+test 1280...[simple [a-d] globbing]
+-pd---e--- OK (849 out of 1120, remaining: 01:28)
+test 1281...[reject non-numerical port number in URL]
+------e--- OK (850 out of 1120, remaining: 01:27)
+test 1282 SKIPPED: curl lacks GSS-API support
+test 1283...[globbing range with same start and stop]
+-p---oe--- OK (852 out of 1120, remaining: 01:26)
+test 1287...[HTTP over proxy-tunnel ignore TE and CL in CONNECT 2xx responses]
+-pd-Poe--- OK (856 out of 1120, remaining: 01:25)
+test 1288...[Suppress proxy CONNECT response headers]
+sp--P-e--- OK (857 out of 1120, remaining: 01:25)
+test 1289...[globbing with overflow and bad syntxx]
+------e--- OK (858 out of 1120, remaining: 01:24)
+test 1298...[HTTP GET special path with --request-target]
+-pd---e--- OK (859 out of 1120, remaining: 01:24)
+test 1299...[Send "OPTIONS *" with --request-target]
+-pd---e--- OK (860 out of 1120, remaining: 01:24)
+test 1300...[llist unit tests]
+------e--- OK (861 out of 1120, remaining: 01:23)
+test 1301...[curl_strcasecompare unit tests]
+------e--- OK (862 out of 1120, remaining: 01:23)
+test 1302...[base64 encode/decode unit tests]
+------e--- OK (863 out of 1120, remaining: 01:22)
+test 1303...[Curl_timeleft unit tests]
+------e--- OK (864 out of 1120, remaining: 01:22)
+test 1304...[netrc parsing unit tests]
+------e--- OK (865 out of 1120, remaining: 01:21)
+test 1305...[internal hash create/destroy testing]
+------e--- OK (866 out of 1120, remaining: 01:21)
+test 1306...[internal hash create/add/destroy testing]
+------e--- OK (867 out of 1120, remaining: 01:21)
+test 1307...[internal Curl_fnmatch() testing]
+------e--- OK (868 out of 1120, remaining: 01:20)
+test 1308...[formpost unit tests]
+------e--- OK (869 out of 1120, remaining: 01:20)
+test 1309...[splay unit tests]
+s-----e--- OK (870 out of 1120, remaining: 01:19)
+test 1310 SKIPPED: curl lacks NTLM_WB support
+test 1311...[HTTP GET with -J and Content-Disposition]
+-p---oe--- OK (872 out of 1120, remaining: 01:19)
+test 1312...[HTTP GET with -J, Content-Disposition and ; in filename]
+-p---oe--- OK (873 out of 1120, remaining: 01:18)
+test 1313...[HTTP GET with -J, Content-Disposition, uneven quotes]
+-p---oe--- OK (874 out of 1120, remaining: 01:18)
+test 1314...[HTTP Location: following a // prefixed url]
+-pd---e--- OK (875 out of 1120, remaining: 01:17)
+test 1315...[HTTP RFC1867-type formposting - -F with three files, one with explicit type]
+-pd---e--- OK (876 out of 1120, remaining: 01:17)
+test 1317...[HTTP with --resolve]
+-pd---e--- OK (877 out of 1120, remaining: 01:17)
+test 1318...[HTTP with --resolve and same host name using different cases]
+-pd---e--- OK (878 out of 1120, remaining: 01:16)
+test 1319...[POP3 fetch tunneled through HTTP proxy]
+-pd-P-e--- OK (879 out of 1120, remaining: 01:16)
+test 1320...[SMTP send tunneled through HTTP proxy]
+-p-uP-e--- OK (880 out of 1120, remaining: 01:16)
+test 1321...[IMAP FETCH tunneled through HTTP proxy]
+-pd-P-e--- OK (881 out of 1120, remaining: 01:16)
+test 1322...[HTTP with --resolve and hostname with trailing dot]
+-pd---e--- OK (882 out of 1120, remaining: 01:15)
+test 1323...[curlx_tvdiff]
+------e--- OK (883 out of 1120, remaining: 01:15)
+test 1325...[HTTP 308-redirect with POST]
+-pd---e--- OK (884 out of 1120, remaining: 01:15)
+test 1326...[TELNET to HTTP server]
+-pd---e--- OK (885 out of 1120, remaining: 01:14)
+test 1327...[TELNET check of upload with stdout redirected]
+-p----e--- OK (886 out of 1120, remaining: 01:14)
+test 1328...[HTTP GET a globbed range with -f]
+-pd---e--- OK (887 out of 1120, remaining: 01:13)
+test 1329...[/-prefixed proxy name]
+------e--- OK (888 out of 1120, remaining: 01:13)
+test 1330 SKIPPED: curl lacks TrackMemory support
+test 1331...[HTTP --proxy-anyauth and 407 with cookies]
+-pd---e--- OK (890 out of 1120, remaining: 01:12)
+test 1332...[HTTP POST with 303 redirect and --post303]
+-pd---e--- OK (891 out of 1120, remaining: 01:12)
+test 1333...[HTTP POST zero length, chunked-encoded]
+-pd---e--- OK (892 out of 1120, remaining: 01:12)
+test 1334...[HTTP GET with -O without Content-Disposition, -D file]
+-p---oe--- OK (893 out of 1120, remaining: 01:11)
+test 1335...[HTTP GET with -O without Content-Disposition, -D stdout]
+-p---oe--- OK (894 out of 1120, remaining: 01:11)
+test 1336...[HTTP GET with -O and Content-Disposition, -D file]
+-p---oe--- OK (895 out of 1120, remaining: 01:10)
+test 1337...[HTTP GET with -O and Content-Disposition, -D stdout]
+-p---oe--- OK (896 out of 1120, remaining: 01:10)
+test 1338...[HTTP GET with -O -J without Content-Disposition, -D file]
+-p---oe--- OK (897 out of 1120, remaining: 01:10)
+test 1339...[HTTP GET with -O -J without Content-Disposition, -D stdout]
+-p---oe--- OK (898 out of 1120, remaining: 01:09)
+test 1340...[HTTP GET with -O -J and Content-Disposition, -D file]
+-p---oe--- OK (899 out of 1120, remaining: 01:09)
+test 1341...[HTTP GET with -O -J and Content-Disposition, -D stdout]
+-p---oe--- OK (900 out of 1120, remaining: 01:08)
+test 1342...[HTTP GET with -O -i without Content-Disposition, -D file]
+-p---oe--- OK (901 out of 1120, remaining: 01:08)
+test 1343...[HTTP GET with -O -i without Content-Disposition, -D stdout]
+-p---oe--- OK (902 out of 1120, remaining: 01:08)
+test 1344...[HTTP GET with -O -i and Content-Disposition, -D file]
+-p---oe--- OK (903 out of 1120, remaining: 01:07)
+test 1345...[HTTP GET with -O -i and Content-Disposition, -D stdout]
+-p---oe--- OK (904 out of 1120, remaining: 01:07)
+test 1346...[HTTP GET with -O -i without Content-Disposition, without -D]
+-p---oe--- OK (905 out of 1120, remaining: 01:06)
+test 1347...[HTTP GET with -O -i and Content-Disposition, without -D]
+-p---oe--- OK (906 out of 1120, remaining: 01:06)
+test 1348...[FTP download, file without Content-Disposition inside, using -O]
+-p---oe--- OK (907 out of 1120, remaining: 01:06)
+test 1349...[FTP download, file without C-D inside, using -O -D file]
+-p---oe--- OK (908 out of 1120, remaining: 01:05)
+test 1350...[FTP download, file without C-D inside, using -O -D stdout]
+-p---oe--- OK (909 out of 1120, remaining: 01:05)
+test 1351...[FTP download, file without C-D inside, using -O -J -D file]
+-p---oe--- OK (910 out of 1120, remaining: 01:05)
+test 1352...[FTP download, file without C-D inside, using -O -J -D stdout]
+-p---oe--- OK (911 out of 1120, remaining: 01:04)
+test 1353...[FTP download, file without C-D inside, using -O -i -D file]
+-p---oe--- OK (912 out of 1120, remaining: 01:04)
+test 1354...[FTP download, file without C-D inside, using -O -i -D stdout]
+-p---oe--- OK (913 out of 1120, remaining: 01:04)
+test 1355...[FTP download, file without C-D inside, using -O -i, without -D]
+-p---oe--- OK (914 out of 1120, remaining: 01:03)
+test 1356...[FTP download, file with Content-Disposition inside, using -O]
+-p---oe--- OK (915 out of 1120, remaining: 01:03)
+test 1357...[FTP download, file with C-D inside, using -O -D file]
+-p---oe--- OK (916 out of 1120, remaining: 01:03)
+test 1358...[FTP download, file with C-D inside, using -O -D stdout]
+-p---oe--- OK (917 out of 1120, remaining: 01:02)
+test 1359...[FTP download, file with C-D inside, using -O -J -D file]
+-p---oe--- OK (918 out of 1120, remaining: 01:02)
+test 1360...[FTP download, file with C-D inside, using -O -J -D stdout]
+-p---oe--- OK (919 out of 1120, remaining: 01:01)
+test 1361...[FTP download, file with C-D inside, using -O -i -D file]
+-p---oe--- OK (920 out of 1120, remaining: 01:01)
+test 1362...[FTP download, file with C-D inside, using -O -i -D stdout]
+-p---oe--- OK (921 out of 1120, remaining: 01:01)
+test 1363...[FTP download, file with C-D inside, using -O -i, without -D]
+-p---oe--- OK (922 out of 1120, remaining: 01:00)
+test 1364...[HTTP GET -o fname without Content-Disposition, -D file]
+-p---oe--- OK (923 out of 1120, remaining: 01:00)
+test 1365...[HTTP GET -o fname without Content-Disposition, -D stdout]
+-p---oe--- OK (924 out of 1120, remaining: 01:00)
+test 1366...[HTTP GET -o fname and Content-Disposition, -D file]
+-p---oe--- OK (925 out of 1120, remaining: 00:59)
+test 1367...[HTTP GET -o fname and Content-Disposition, -D stdout]
+-p---oe--- OK (926 out of 1120, remaining: 00:59)
+test 1368...[HTTP GET -o fname -J without Content-Disposition, -D file]
+-p---oe--- OK (927 out of 1120, remaining: 00:59)
+test 1369...[HTTP GET -o fname -J without Content-Disposition, -D stdout]
+-p---oe--- OK (928 out of 1120, remaining: 00:58)
+test 1370...[HTTP GET -o fname -J and Content-Disposition, -D file]
+-p---oe--- OK (929 out of 1120, remaining: 00:58)
+test 1371...[HTTP GET -o fname -J and Content-Disposition, -D stdout]
+-p---oe--- OK (930 out of 1120, remaining: 00:57)
+test 1372...[HTTP GET -o fname -i without Content-Disposition, -D file]
+-p---oe--- OK (931 out of 1120, remaining: 00:57)
+test 1373...[HTTP GET -o fname -i without Content-Disposition, -D stdout]
+-p---oe--- OK (932 out of 1120, remaining: 00:57)
+test 1374...[HTTP GET -o fname -i and Content-Disposition, -D file]
+-p---oe--- OK (933 out of 1120, remaining: 00:56)
+test 1375...[HTTP GET -o fname -i and Content-Disposition, -D stdout]
+-p---oe--- OK (934 out of 1120, remaining: 00:56)
+test 1376...[HTTP GET -o fname -i without Content-Disposition, without -D]
+-p---oe--- OK (935 out of 1120, remaining: 00:56)
+test 1377...[HTTP GET -o fname -i and Content-Disposition, without -D]
+-p---oe--- OK (936 out of 1120, remaining: 00:55)
+test 1378...[FTP DL, file without Content-Disposition inside, using -o fname]
+-p---oe--- OK (937 out of 1120, remaining: 00:55)
+test 1379...[FTP DL, file without C-D inside, using -o fname -D file]
+-p---oe--- OK (938 out of 1120, remaining: 00:55)
+test 1380...[FTP DL, file without C-D inside, using -o fname -D stdout]
+-p---oe--- OK (939 out of 1120, remaining: 00:54)
+test 1381...[FTP DL, file without C-D inside, using -o fname -J -D file]
+-p---oe--- OK (940 out of 1120, remaining: 00:54)
+test 1382...[FTP DL, file without C-D inside, using -o fname -J -D stdout]
+-p---oe--- OK (941 out of 1120, remaining: 00:54)
+test 1383...[FTP DL, file without C-D inside, using -o fname -i -D file]
+-p---oe--- OK (942 out of 1120, remaining: 00:53)
+test 1384...[FTP DL, file without C-D inside, using -o fname -i -D stdout]
+-p---oe--- OK (943 out of 1120, remaining: 00:53)
+test 1385...[FTP DL, file without C-D inside, using -o fname -i, without -D]
+-p---oe--- OK (944 out of 1120, remaining: 00:53)
+test 1386...[FTP DL, file with Content-Disposition inside, using -o fname]
+-p---oe--- OK (945 out of 1120, remaining: 00:52)
+test 1387...[FTP DL, file with C-D inside, using -o fname -D file]
+-p---oe--- OK (946 out of 1120, remaining: 00:52)
+test 1388...[FTP DL, file with C-D inside, using -o fname -D stdout]
+-p---oe--- OK (947 out of 1120, remaining: 00:52)
+test 1389...[FTP DL, file with C-D inside, using -o fname -J -D file]
+-p---oe--- OK (948 out of 1120, remaining: 00:51)
+test 1390...[FTP DL, file with C-D inside, using -o fname -J -D stdout]
+-p---oe--- OK (949 out of 1120, remaining: 00:51)
+test 1391...[FTP DL, file with C-D inside, using -o fname -i -D file]
+-p---oe--- OK (950 out of 1120, remaining: 00:51)
+test 1392...[FTP DL, file with C-D inside, using -o fname -i -D stdout]
+-p---oe--- OK (951 out of 1120, remaining: 00:50)
+test 1393...[FTP DL, file with C-D inside, using -o fname -i, without -D]
+-p---oe--- OK (952 out of 1120, remaining: 00:50)
+test 1394...[unit test for parse_cert_parameter()]
+------e--- OK (953 out of 1120, remaining: 00:50)
+test 1395...[Curl_dedotdotify]
+------e--- OK (954 out of 1120, remaining: 00:49)
+test 1396...[curl_easy_escape and curl_easy_unescape]
+------e--- OK (955 out of 1120, remaining: 00:49)
+test 1397...[Check wildcard certificate matching function Curl_cert_hostcheck]
+------e--- OK (956 out of 1120, remaining: 00:48)
+test 1398...[curl_msnprintf unit tests]
+------e--- OK (957 out of 1120, remaining: 00:48)
+test 1399...[Curl_pgrsTime unit tests]
+------e--- OK (958 out of 1120, remaining: 00:48)
+test 1400...[--libcurl for simple HTTP GET]
+-pd--oe--- OK (959 out of 1120, remaining: 00:47)
+test 1401...[--libcurl for GET with various options]
+-pd--oe--- OK (960 out of 1120, remaining: 00:47)
+test 1402...[--libcurl for simple POST]
+-pd--oe--- OK (961 out of 1120, remaining: 00:47)
+test 1403...[--libcurl for GET with query]
+-pd--oe--- OK (962 out of 1120, remaining: 00:46)
+test 1404...[--libcurl for HTTP RFC1867-type formposting - -F with 3 files, one with explicit type & encoder]
+-pd--oe--- OK (963 out of 1120, remaining: 00:46)
+test 1405...[--libcurl for FTP with quote ops]
+-pd--oe--- OK (964 out of 1120, remaining: 00:46)
+test 1406...[--libcurl for SMTP]
+-p-u-oe--- OK (965 out of 1120, remaining: 00:45)
+test 1407...[--libcurl for POP3 LIST one message]
+-p---oe--- OK (966 out of 1120, remaining: 00:45)
+test 1408...[HTTP receive cookies over IPV6]
+-p----e--- OK (967 out of 1120, remaining: 00:45)
+test 1409...[Pass in string to -C]
+------e--- OK (968 out of 1120, remaining: 00:44)
+test 1410...[Pass in negative number to --max-time]
+------e--- OK (969 out of 1120, remaining: 00:44)
+test 1411...[HTTP with zero size file PUT]
+-pd---e--- OK (970 out of 1120, remaining: 00:44)
+test 1413...[HTTP redirect with fragment in new URL]
+-pd---e--- OK (972 out of 1120, remaining: 00:43)
+test 1414...[FTP PORT without SIZE or EPRT support]
+-pd---e--- OK (973 out of 1120, remaining: 00:43)
+test 1415...[Delete expired cookies]
+-pd--oe--- OK (974 out of 1120, remaining: 00:42)
+test 1416...[HTTP GET with chunked Transfer-Encoding overflowed chunked size]
+-p----e--- OK (975 out of 1120, remaining: 00:42)
+test 1417...[HTTP GET with chunked encoding and chunked trailer without CRs]
+-pd--oe--- OK (976 out of 1120, remaining: 00:42)
+test 1419...[HTTP with --anyauth (but no auth!) and connection re-use]
+-pd---e--- OK (978 out of 1120, remaining: 00:41)
+test 1420...[--libcurl for IMAP FETCH message]
+-pd--oe--- OK (979 out of 1120, remaining: 00:41)
+test 1421...[Re-using HTTP proxy connection for two different host names]
+sp----e--- OK (980 out of 1120, remaining: 00:40)
+test 1422...[HTTP GET with -O -J and Content-Disposition (empty file)]
+-p---oe--- OK (981 out of 1120, remaining: 00:40)
+test 1423...[HTTP GET -o fname without Content-Disposition (empty file)]
+-p---oe--- OK (982 out of 1120, remaining: 00:40)
+test 1424...[HTTP GET -o fname without Content-Disposition (unmet time condition)]
+-p---oe--- OK (983 out of 1120, remaining: 00:39)
+test 1425...[Refuse binary output to terminal]
+sp----e--- OK (984 out of 1120, remaining: 00:39)
+test 1426...[Okay binary output to terminal]
+sp----e--- OK (985 out of 1120, remaining: 00:39)
+test 1427...[too large -m timeout value]
+------e--- OK (986 out of 1120, remaining: 00:38)
+test 1428...[HTTP over proxy-tunnel with --proxy-header and --header]
+-pd-P-e--- OK (987 out of 1120, remaining: 00:38)
+test 1429...[HTTP GET with 4-digit response code]
+sp----e--- OK (988 out of 1120, remaining: 00:38)
+test 1430...[HTTP GET with negative response code]
+-pd---e--- OK (989 out of 1120, remaining: 00:37)
+test 1431...[HTTP GET with single-digit response code]
+-pd---e--- OK (990 out of 1120, remaining: 00:37)
+test 1432...[HTTP GET with 100-digit response code and survive]
+-p----e--- OK (991 out of 1120, remaining: 00:37)
+test 1433...[HTTP GET with 100-digit subversion number in response]
+-p----e--- OK (992 out of 1120, remaining: 00:37)
+test 1434...[HTTP GET resume at exactly the existing file size is fine]
+-pd---e--- OK (993 out of 1120, remaining: 00:36)
+test 1435...[simple HTTP GET over Unix socket]
+-pd---e--- OK (994 out of 1120, remaining: 00:36)
+test 1436...[HTTP requests with multiple connections over Unix socket]
+sp----e--- OK (995 out of 1120, remaining: 00:36)
+test 1438...[Check if %{scheme} returns HTTP]
+sp----e--- OK (997 out of 1120, remaining: 00:35)
+test 1439...[Check if %{scheme} returns HTTP]
+sp----e--- OK (998 out of 1120, remaining: 00:35)
+test 1440...[Check --write-out with trailing %{]
+s-----e--- OK (999 out of 1120, remaining: 00:34)
+test 1441...[Check --write-out with trailing %]
+s-----e--- OK (1000 out of 1120, remaining: 00:34)
+test 1442...[Check --write-out with trailing \]
+s-----e--- OK (1001 out of 1120, remaining: 00:34)
+test 1443...[HTTP GET with -O and --remote-time]
+-p---oe--- OK (1002 out of 1120, remaining: 00:34)
+test 1444...[FTP with --remote-time]
+-pd---e--- OK (1003 out of 1120, remaining: 00:33)
+test 1445...[file:// with --remote-time]
+------e--- OK (1004 out of 1120, remaining: 00:33)
+test 1446...[SFTP with --remote-time]
+------e--- OK (1005 out of 1120, remaining: 00:33)
+test 1447...[Provide illegal proxy name ]
+------e--- OK (1006 out of 1120, remaining: 00:32)
+test 1449...[FTP download range with integer overflow]
+-p----e--- OK (1008 out of 1120, remaining: 00:32)
+test 1450...[Basic DICT lookup]
+------e--- OK (1009 out of 1120, remaining: 00:32)
+test 1451 SKIPPED: curl lacks smb support
+test 1452...[Basic TELNET negotiation]
+------e--- OK (1011 out of 1120, remaining: 00:31)
+test 1453...[Too long tftp filename]
+------e--- OK (1012 out of 1120, remaining: 00:31)
+test 1500...[curl_multi_wait]
+--d---e--- OK (1013 out of 1120, remaining: 00:30)
+test 1501...[FTP with multi interface and slow LIST response ]
+-p----e--- OK (1014 out of 1120, remaining: 00:31)
+test 1502...[HTTP multi with CURLOPT_RESOLVE, cleanup sequence UA]
+-pd---e--- OK (1015 out of 1120, remaining: 00:30)
+test 1503...[HTTP multi with CURLOPT_RESOLVE, cleanup sequence PA]
+-pd---e--- OK (1016 out of 1120, remaining: 00:30)
+test 1504...[HTTP multi with CURLOPT_RESOLVE, cleanup sequence UB]
+-pd---e--- OK (1017 out of 1120, remaining: 00:30)
+test 1505...[HTTP multi with CURLOPT_RESOLVE, cleanup sequence PB]
+-pd---e--- OK (1018 out of 1120, remaining: 00:29)
+test 1506...[HTTP GET connection cache limit (CURLMOPT_MAXCONNECTS)]
+-p---oe--- OK (1019 out of 1120, remaining: 00:29)
+test 1507...[SMTP with multi interface and CURLE_ABORTED_BY_CALLBACK]
+-p----e--- OK (1020 out of 1120, remaining: 00:29)
+test 1508...[Close a multi handle without using it]
+-----oe--- OK (1021 out of 1120, remaining: 00:28)
+test 1509...[simple multi http:// through proxytunnel with authentication info]
+-pd-P-e--- OK (1022 out of 1120, remaining: 00:28)
+test 1511...[HTTP GET time conditions in repeated requests]
+--d---e--- OK (1023 out of 1120, remaining: 00:28)
+test 1513...[return failure immediately from progress callback]
+s-----e--- OK (1024 out of 1120, remaining: 00:28)
+test 1514...[HTTP POST with read callback and unknown data size]
+-p----e--- OK (1025 out of 1120, remaining: 00:27)
+test 1515...[caching of manual libcurl DNS entries after DNS cache timeout]
+--d---e--- OK (1026 out of 1120, remaining: 00:27)
+test 1516...[caching of manual libcurl DNS entries after dead connection]
+------e--- OK (1027 out of 1120, remaining: 00:27)
+test 1517...[HTTP POST, server responds before completed send]
+-pd---e--- OK (1028 out of 1120, remaining: 00:27)
+test 1520...[SMTP with CRLF-dot-CRLF in data]
+-p-u--e--- OK (1029 out of 1120, remaining: 00:26)
+test 1521...[Test all curl_easy_setopt and curl_easy_getinfo options]
+------e--- OK (1030 out of 1120, remaining: 00:26)
+test 1525...[CURLOPT_PROXYHEADER is ignored CURLHEADER_UNIFIED]
+-pd-P-e--- OK (1031 out of 1120, remaining: 00:26)
+test 1526...[CURLOPT_PROXYHEADER: separate host/proxy headers]
+-pd-P-e--- OK (1032 out of 1120, remaining: 00:26)
+test 1527...[Check same headers are generated with CURLOPT_HEADEROPT == CURLHEADER_UNIFIED]
+-pd-P-e--- OK (1033 out of 1120, remaining: 00:25)
+test 1528...[Separately specified proxy/server headers sent in a proxy GET]
+--d-P-e--- OK (1034 out of 1120, remaining: 00:25)
+test 1529...[HTTP request-injection in URL sent over proxy]
+------e--- OK (1035 out of 1120, remaining: 00:25)
+test 1530...[CURLOPT_OPENSOCKETFUNCTION returns bad socket]
+------e--- OK (1036 out of 1120, remaining: 00:24)
+test 1531...[CURLOPT_POSTFIELDS with binary data set after multi_add_handle]
+-p----e--- OK (1037 out of 1120, remaining: 00:24)
+test 1532...[Test CURLINFO_RESPONSE_CODE]
+-p----e--- OK (1038 out of 1120, remaining: 00:24)
+test 1533...[HTTP with CURLOPT_KEEP_SENDING_ON_ERROR and an early error response]
+-p----e--- OK (1039 out of 1120, remaining: 00:24)
+test 1534...[CURLINFO_FILETIME init and reset]
+-p----e--- OK (1040 out of 1120, remaining: 00:23)
+test 1535...[Test CURLINFO_RESPONSE_CODE CURLINFO_PROTOCOL]
+-p----e--- OK (1041 out of 1120, remaining: 00:23)
+test 1536...[Test CURLINFO_RESPONSE_CODE CURLINFO_SCHEME]
+-p----e--- OK (1042 out of 1120, remaining: 00:23)
+test 1537...[libcurl URL escape/unescape tests]
+
+ 1537: stdout FAILED:
+--- log/check-expected	2019-02-19 21:08:13.094895593 -0500
++++ log/check-generated	2019-02-19 21:08:13.094895593 -0500
+@@ -4,5 +4,5 @@
+ unescape == original? YES[LF]
+ [old] outlen == 14[LF]
+ [old] unescape == original? YES[LF]
+-escape -1 length: (nil)[LF]
+-unescape -1 length: (nil) 2017[LF]
++escape -1 length: (null)[LF]
++unescape -1 length: (null) 2017[LF]
+
+ - abort tests
+Warning: dict server unexpectedly alive
+
+Test suite total running time breakdown per task...
+
+Spent 0066.104 seconds starting and verifying test harness servers.
+Spent 0003.547 seconds reading definitions and doing test preparations.
+Spent 0182.802 seconds actually running test tools.
+Spent 0042.012 seconds awaiting server logs lock removal.
+Spent 0013.698 seconds verifying test results.
+Spent 0308.164 seconds doing all of the above.
+
+Test server starting and verification time per test (full)...
+
+-time-  test
+------  ----
+31.157  0564
+02.117  0647
+02.080  1200
+02.078  0100
+02.078  0191
+02.072  0252
+02.066  0850
+02.061  1091
+02.056  1203
+02.042  0271
+02.034  1435
+02.030  0567
+02.029  0080
+02.025  0646
+02.019  0240
+02.015  0001
+02.015  1450
+02.008  1452
+00.000  0002
+00.000  0003
+00.000  0004
+00.000  0005
+00.000  0006
+00.000  0007
+00.000  0008
+00.000  0009
+00.000  0010
+00.000  0011
+00.000  0012
+00.000  0013
+00.000  0014
+00.000  0015
+00.000  0016
+00.000  0017
+00.000  0018
+00.000  0019
+00.000  0020
+00.000  0021
+00.000  0022
+00.000  0023
+00.000  0024
+00.000  0025
+00.000  0026
+00.000  0027
+00.000  0028
+00.000  0029
+00.000  0030
+00.000  0031
+00.000  0032
+00.000  0033
+00.000  0034
+00.000  0035
+00.000  0036
+00.000  0037
+00.000  0038
+00.000  0039
+00.000  0040
+00.000  0041
+00.000  0042
+00.000  0043
+00.000  0044
+00.000  0045
+00.000  0046
+00.000  0047
+00.000  0048
+00.000  0049
+00.000  0050
+00.000  0051
+00.000  0052
+00.000  0053
+00.000  0054
+00.000  0055
+00.000  0056
+00.000  0057
+00.000  0058
+00.000  0059
+00.000  0060
+00.000  0061
+00.000  0062
+00.000  0063
+00.000  0064
+00.000  0065
+00.000  0066
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0071
+00.000  0072
+00.000  0073
+00.000  0074
+00.000  0075
+00.000  0076
+00.000  0077
+00.000  0078
+00.000  0079
+00.000  0081
+00.000  0082
+00.000  0083
+00.000  0084
+00.000  0085
+00.000  0086
+00.000  0087
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0092
+00.000  0093
+00.000  0094
+00.000  0095
+00.000  0096
+00.000  0097
+00.000  0098
+00.000  0099
+00.000  0101
+00.000  0102
+00.000  0103
+00.000  0104
+00.000  0105
+00.000  0106
+00.000  0107
+00.000  0108
+00.000  0109
+00.000  0110
+00.000  0111
+00.000  0112
+00.000  0113
+00.000  0114
+00.000  0115
+00.000  0116
+00.000  0117
+00.000  0118
+00.000  0119
+00.000  0120
+00.000  0121
+00.000  0122
+00.000  0123
+00.000  0124
+00.000  0125
+00.000  0126
+00.000  0127
+00.000  0128
+00.000  0129
+00.000  0130
+00.000  0131
+00.000  0132
+00.000  0133
+00.000  0134
+00.000  0135
+00.000  0136
+00.000  0137
+00.000  0138
+00.000  0139
+00.000  0140
+00.000  0141
+00.000  0142
+00.000  0143
+00.000  0144
+00.000  0145
+00.000  0146
+00.000  0147
+00.000  0148
+00.000  0149
+00.000  0150
+00.000  0151
+00.000  0152
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0156
+00.000  0157
+00.000  0158
+00.000  0159
+00.000  0160
+00.000  0161
+00.000  0162
+00.000  0163
+00.000  0164
+00.000  0165
+00.000  0166
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0171
+00.000  0172
+00.000  0173
+00.000  0174
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0178
+00.000  0179
+00.000  0180
+00.000  0181
+00.000  0182
+00.000  0183
+00.000  0184
+00.000  0185
+00.000  0186
+00.000  0187
+00.000  0188
+00.000  0189
+00.000  0190
+00.000  0192
+00.000  0193
+00.000  0194
+00.000  0195
+00.000  0196
+00.000  0197
+00.000  0198
+00.000  0199
+00.000  0200
+00.000  0201
+00.000  0202
+00.000  0203
+00.000  0204
+00.000  0205
+00.000  0206
+00.000  0207
+00.000  0208
+00.000  0209
+00.000  0210
+00.000  0211
+00.000  0212
+00.000  0213
+00.000  0214
+00.000  0215
+00.000  0216
+00.000  0217
+00.000  0218
+00.000  0219
+00.000  0220
+00.000  0221
+00.000  0222
+00.000  0223
+00.000  0224
+00.000  0225
+00.000  0226
+00.000  0227
+00.000  0228
+00.000  0229
+00.000  0231
+00.000  0233
+00.000  0234
+00.000  0235
+00.000  0236
+00.000  0237
+00.000  0238
+00.000  0239
+00.000  0241
+00.000  0242
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0247
+00.000  0248
+00.000  0249
+00.000  0250
+00.000  0251
+00.000  0253
+00.000  0254
+00.000  0255
+00.000  0256
+00.000  0257
+00.000  0258
+00.000  0259
+00.000  0260
+00.000  0261
+00.000  0262
+00.000  0263
+00.000  0264
+00.000  0265
+00.000  0266
+00.000  0267
+00.000  0268
+00.000  0269
+00.000  0270
+00.000  0272
+00.000  0273
+00.000  0274
+00.000  0275
+00.000  0276
+00.000  0277
+00.000  0278
+00.000  0279
+00.000  0280
+00.000  0281
+00.000  0282
+00.000  0283
+00.000  0284
+00.000  0285
+00.000  0286
+00.000  0287
+00.000  0288
+00.000  0289
+00.000  0290
+00.000  0291
+00.000  0292
+00.000  0293
+00.000  0294
+00.000  0295
+00.000  0296
+00.000  0297
+00.000  0298
+00.000  0299
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0350
+00.000  0351
+00.000  0352
+00.000  0353
+00.000  0354
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0500
+00.000  0501
+00.000  0502
+00.000  0503
+00.000  0504
+00.000  0505
+00.000  0506
+00.000  0507
+00.000  0508
+00.000  0509
+00.000  0510
+00.000  0511
+00.000  0512
+00.000  0513
+00.000  0514
+00.000  0515
+00.000  0516
+00.000  0517
+00.000  0518
+00.000  0519
+00.000  0520
+00.000  0521
+00.000  0522
+00.000  0523
+00.000  0524
+00.000  0525
+00.000  0526
+00.000  0527
+00.000  0528
+00.000  0529
+00.000  0530
+00.000  0531
+00.000  0532
+00.000  0533
+00.000  0534
+00.000  0535
+00.000  0536
+00.000  0537
+00.000  0538
+00.000  0539
+00.000  0540
+00.000  0541
+00.000  0542
+00.000  0543
+00.000  0544
+00.000  0545
+00.000  0546
+00.000  0547
+00.000  0548
+00.000  0549
+00.000  0550
+00.000  0551
+00.000  0552
+00.000  0553
+00.000  0554
+00.000  0555
+00.000  0556
+00.000  0557
+00.000  0558
+00.000  0559
+00.000  0560
+00.000  0561
+00.000  0562
+00.000  0563
+00.000  0565
+00.000  0566
+00.000  0568
+00.000  0569
+00.000  0570
+00.000  0571
+00.000  0572
+00.000  0573
+00.000  0574
+00.000  0575
+00.000  0576
+00.000  0578
+00.000  0579
+00.000  0580
+00.000  0581
+00.000  0582
+00.000  0583
+00.000  0584
+00.000  0585
+00.000  0586
+00.000  0587
+00.000  0588
+00.000  0589
+00.000  0590
+00.000  0591
+00.000  0592
+00.000  0593
+00.000  0595
+00.000  0596
+00.000  0597
+00.000  0598
+00.000  0599
+00.000  0600
+00.000  0601
+00.000  0602
+00.000  0603
+00.000  0604
+00.000  0605
+00.000  0606
+00.000  0607
+00.000  0608
+00.000  0609
+00.000  0610
+00.000  0611
+00.000  0612
+00.000  0613
+00.000  0614
+00.000  0615
+00.000  0616
+00.000  0617
+00.000  0618
+00.000  0619
+00.000  0620
+00.000  0621
+00.000  0622
+00.000  0623
+00.000  0624
+00.000  0625
+00.000  0626
+00.000  0627
+00.000  0628
+00.000  0629
+00.000  0630
+00.000  0631
+00.000  0632
+00.000  0633
+00.000  0634
+00.000  0635
+00.000  0636
+00.000  0637
+00.000  0638
+00.000  0639
+00.000  0640
+00.000  0641
+00.000  0642
+00.000  0643
+00.000  0644
+00.000  0645
+00.000  0648
+00.000  0649
+00.000  0650
+00.000  0700
+00.000  0701
+00.000  0702
+00.000  0703
+00.000  0704
+00.000  0705
+00.000  0706
+00.000  0707
+00.000  0708
+00.000  0709
+00.000  0710
+00.000  0711
+00.000  0712
+00.000  0713
+00.000  0714
+00.000  0715
+00.000  0800
+00.000  0801
+00.000  0802
+00.000  0803
+00.000  0804
+00.000  0805
+00.000  0806
+00.000  0807
+00.000  0808
+00.000  0809
+00.000  0810
+00.000  0811
+00.000  0812
+00.000  0813
+00.000  0814
+00.000  0815
+00.000  0816
+00.000  0817
+00.000  0818
+00.000  0819
+00.000  0820
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0824
+00.000  0825
+00.000  0826
+00.000  0827
+00.000  0828
+00.000  0829
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0837
+00.000  0838
+00.000  0839
+00.000  0840
+00.000  0841
+00.000  0842
+00.000  0843
+00.000  0844
+00.000  0845
+00.000  0846
+00.000  0851
+00.000  0852
+00.000  0853
+00.000  0854
+00.000  0855
+00.000  0856
+00.000  0857
+00.000  0858
+00.000  0859
+00.000  0860
+00.000  0861
+00.000  0862
+00.000  0863
+00.000  0864
+00.000  0865
+00.000  0866
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0870
+00.000  0871
+00.000  0872
+00.000  0873
+00.000  0874
+00.000  0875
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0883
+00.000  0884
+00.000  0885
+00.000  0886
+00.000  0887
+00.000  0888
+00.000  0889
+00.000  0890
+00.000  0900
+00.000  0901
+00.000  0902
+00.000  0903
+00.000  0904
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0908
+00.000  0909
+00.000  0910
+00.000  0911
+00.000  0912
+00.000  0913
+00.000  0914
+00.000  0915
+00.000  0916
+00.000  0917
+00.000  0918
+00.000  0919
+00.000  0920
+00.000  0921
+00.000  0922
+00.000  0923
+00.000  0924
+00.000  0925
+00.000  0926
+00.000  0927
+00.000  0928
+00.000  0929
+00.000  0930
+00.000  0931
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  0939
+00.000  0940
+00.000  0941
+00.000  0942
+00.000  0943
+00.000  0944
+00.000  0945
+00.000  0946
+00.000  0947
+00.000  0948
+00.000  0949
+00.000  1000
+00.000  1001
+00.000  1002
+00.000  1003
+00.000  1004
+00.000  1005
+00.000  1006
+00.000  1007
+00.000  1008
+00.000  1009
+00.000  1010
+00.000  1011
+00.000  1012
+00.000  1013
+00.000  1014
+00.000  1015
+00.000  1016
+00.000  1017
+00.000  1018
+00.000  1019
+00.000  1020
+00.000  1021
+00.000  1022
+00.000  1023
+00.000  1024
+00.000  1025
+00.000  1026
+00.000  1027
+00.000  1028
+00.000  1029
+00.000  1030
+00.000  1031
+00.000  1032
+00.000  1033
+00.000  1034
+00.000  1035
+00.000  1036
+00.000  1037
+00.000  1038
+00.000  1039
+00.000  1040
+00.000  1041
+00.000  1042
+00.000  1043
+00.000  1044
+00.000  1045
+00.000  1046
+00.000  1047
+00.000  1048
+00.000  1049
+00.000  1050
+00.000  1051
+00.000  1052
+00.000  1053
+00.000  1054
+00.000  1055
+00.000  1056
+00.000  1057
+00.000  1058
+00.000  1059
+00.000  1060
+00.000  1061
+00.000  1062
+00.000  1063
+00.000  1064
+00.000  1065
+00.000  1066
+00.000  1067
+00.000  1068
+00.000  1069
+00.000  1070
+00.000  1071
+00.000  1072
+00.000  1073
+00.000  1074
+00.000  1075
+00.000  1076
+00.000  1077
+00.000  1078
+00.000  1079
+00.000  1080
+00.000  1081
+00.000  1082
+00.000  1083
+00.000  1084
+00.000  1085
+00.000  1086
+00.000  1087
+00.000  1088
+00.000  1089
+00.000  1090
+00.000  1092
+00.000  1093
+00.000  1094
+00.000  1095
+00.000  1096
+00.000  1097
+00.000  1098
+00.000  1099
+00.000  1100
+00.000  1101
+00.000  1102
+00.000  1103
+00.000  1104
+00.000  1105
+00.000  1106
+00.000  1107
+00.000  1108
+00.000  1109
+00.000  1110
+00.000  1111
+00.000  1112
+00.000  1113
+00.000  1114
+00.000  1115
+00.000  1116
+00.000  1117
+00.000  1118
+00.000  1119
+00.000  1120
+00.000  1121
+00.000  1122
+00.000  1123
+00.000  1124
+00.000  1125
+00.000  1126
+00.000  1127
+00.000  1128
+00.000  1129
+00.000  1130
+00.000  1131
+00.000  1132
+00.000  1133
+00.000  1134
+00.000  1135
+00.000  1136
+00.000  1137
+00.000  1138
+00.000  1139
+00.000  1140
+00.000  1141
+00.000  1142
+00.000  1143
+00.000  1144
+00.000  1145
+00.000  1146
+00.000  1147
+00.000  1148
+00.000  1149
+00.000  1150
+00.000  1151
+00.000  1152
+00.000  1153
+00.000  1160
+00.000  1161
+00.000  1201
+00.000  1202
+00.000  1204
+00.000  1205
+00.000  1206
+00.000  1207
+00.000  1208
+00.000  1210
+00.000  1212
+00.000  1213
+00.000  1214
+00.000  1215
+00.000  1216
+00.000  1217
+00.000  1218
+00.000  1219
+00.000  1220
+00.000  1221
+00.000  1222
+00.000  1223
+00.000  1224
+00.000  1225
+00.000  1226
+00.000  1227
+00.000  1228
+00.000  1229
+00.000  1230
+00.000  1231
+00.000  1232
+00.000  1233
+00.000  1234
+00.000  1235
+00.000  1236
+00.000  1237
+00.000  1238
+00.000  1239
+00.000  1240
+00.000  1241
+00.000  1242
+00.000  1243
+00.000  1244
+00.000  1245
+00.000  1246
+00.000  1247
+00.000  1248
+00.000  1249
+00.000  1250
+00.000  1251
+00.000  1252
+00.000  1253
+00.000  1254
+00.000  1255
+00.000  1256
+00.000  1257
+00.000  1258
+00.000  1259
+00.000  1260
+00.000  1261
+00.000  1262
+00.000  1280
+00.000  1281
+00.000  1282
+00.000  1283
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1287
+00.000  1288
+00.000  1289
+00.000  1298
+00.000  1299
+00.000  1300
+00.000  1301
+00.000  1302
+00.000  1303
+00.000  1304
+00.000  1305
+00.000  1306
+00.000  1307
+00.000  1308
+00.000  1309
+00.000  1310
+00.000  1311
+00.000  1312
+00.000  1313
+00.000  1314
+00.000  1315
+00.000  1317
+00.000  1318
+00.000  1319
+00.000  1320
+00.000  1321
+00.000  1322
+00.000  1323
+00.000  1325
+00.000  1326
+00.000  1327
+00.000  1328
+00.000  1329
+00.000  1330
+00.000  1331
+00.000  1332
+00.000  1333
+00.000  1334
+00.000  1335
+00.000  1336
+00.000  1337
+00.000  1338
+00.000  1339
+00.000  1340
+00.000  1341
+00.000  1342
+00.000  1343
+00.000  1344
+00.000  1345
+00.000  1346
+00.000  1347
+00.000  1348
+00.000  1349
+00.000  1350
+00.000  1351
+00.000  1352
+00.000  1353
+00.000  1354
+00.000  1355
+00.000  1356
+00.000  1357
+00.000  1358
+00.000  1359
+00.000  1360
+00.000  1361
+00.000  1362
+00.000  1363
+00.000  1364
+00.000  1365
+00.000  1366
+00.000  1367
+00.000  1368
+00.000  1369
+00.000  1370
+00.000  1371
+00.000  1372
+00.000  1373
+00.000  1374
+00.000  1375
+00.000  1376
+00.000  1377
+00.000  1378
+00.000  1379
+00.000  1380
+00.000  1381
+00.000  1382
+00.000  1383
+00.000  1384
+00.000  1385
+00.000  1386
+00.000  1387
+00.000  1388
+00.000  1389
+00.000  1390
+00.000  1391
+00.000  1392
+00.000  1393
+00.000  1394
+00.000  1395
+00.000  1396
+00.000  1397
+00.000  1398
+00.000  1399
+00.000  1400
+00.000  1401
+00.000  1402
+00.000  1403
+00.000  1404
+00.000  1405
+00.000  1406
+00.000  1407
+00.000  1408
+00.000  1409
+00.000  1410
+00.000  1411
+00.000  1412
+00.000  1413
+00.000  1414
+00.000  1415
+00.000  1416
+00.000  1417
+00.000  1418
+00.000  1419
+00.000  1420
+00.000  1421
+00.000  1422
+00.000  1423
+00.000  1424
+00.000  1425
+00.000  1426
+00.000  1427
+00.000  1428
+00.000  1429
+00.000  1430
+00.000  1431
+00.000  1432
+00.000  1433
+00.000  1434
+00.000  1436
+00.000  1437
+00.000  1438
+00.000  1439
+00.000  1440
+00.000  1441
+00.000  1442
+00.000  1443
+00.000  1444
+00.000  1445
+00.000  1446
+00.000  1447
+00.000  1448
+00.000  1449
+00.000  1451
+00.000  1453
+00.000  1500
+00.000  1501
+00.000  1502
+00.000  1503
+00.000  1504
+00.000  1505
+00.000  1506
+00.000  1507
+00.000  1508
+00.000  1509
+00.000  1511
+00.000  1513
+00.000  1514
+00.000  1515
+00.000  1516
+00.000  1517
+00.000  1520
+00.000  1521
+00.000  1525
+00.000  1526
+00.000  1527
+00.000  1528
+00.000  1529
+00.000  1530
+00.000  1531
+00.000  1532
+00.000  1533
+00.000  1534
+00.000  1535
+00.000  1536
+00.000  1537
+
+Test definition reading and preparation time per test (full)...
+
+-time-  test
+------  ----
+01.929  0537
+00.027  0639
+00.025  0611
+00.018  0638
+00.017  0007
+00.017  0610
+00.017  1309
+00.015  0613
+00.015  0615
+00.015  1446
+00.014  0614
+00.014  1445
+00.011  0504
+00.007  0056
+00.007  0518
+00.007  0888
+00.006  0031
+00.006  0119
+00.006  1083
+00.006  1202
+00.005  0008
+00.005  0075
+00.005  0157
+00.005  0842
+00.005  0843
+00.005  0889
+00.005  0890
+00.005  0946
+00.005  0947
+00.005  0948
+00.005  0949
+00.005  1028
+00.005  1048
+00.005  1055
+00.005  1056
+00.005  1082
+00.005  1105
+00.005  1245
+00.004  0117
+00.004  0222
+00.004  0241
+00.004  0844
+00.004  0845
+00.004  0887
+00.004  1046
+00.004  1050
+00.004  1085
+00.004  1123
+00.003  0042
+00.003  0043
+00.003  0044
+00.003  0046
+00.003  0049
+00.003  0053
+00.003  0185
+00.003  0233
+00.003  0266
+00.003  0268
+00.003  0294
+00.003  0503
+00.003  0553
+00.003  0593
+00.003  0625
+00.003  1321
+00.003  1526
+00.002  0011
+00.002  0018
+00.002  0022
+00.002  0025
+00.002  0026
+00.002  0028
+00.002  0032
+00.002  0034
+00.002  0039
+00.002  0040
+00.002  0045
+00.002  0047
+00.002  0050
+00.002  0051
+00.002  0052
+00.002  0054
+00.002  0055
+00.002  0061
+00.002  0071
+00.002  0073
+00.002  0078
+00.002  0080
+00.002  0083
+00.002  0086
+00.002  0095
+00.002  0099
+00.002  0100
+00.002  0102
+00.002  0103
+00.002  0104
+00.002  0105
+00.002  0110
+00.002  0124
+00.002  0130
+00.002  0131
+00.002  0132
+00.002  0133
+00.002  0134
+00.002  0142
+00.002  0149
+00.002  0163
+00.002  0164
+00.002  0173
+00.002  0179
+00.002  0180
+00.002  0181
+00.002  0183
+00.002  0184
+00.002  0187
+00.002  0188
+00.002  0189
+00.002  0193
+00.002  0194
+00.002  0207
+00.002  0208
+00.002  0220
+00.002  0221
+00.002  0223
+00.002  0224
+00.002  0228
+00.002  0231
+00.002  0234
+00.002  0240
+00.002  0248
+00.002  0249
+00.002  0250
+00.002  0252
+00.002  0255
+00.002  0257
+00.002  0262
+00.002  0275
+00.002  0276
+00.002  0280
+00.002  0281
+00.002  0286
+00.002  0288
+00.002  0289
+00.002  0290
+00.002  0293
+00.002  0296
+00.002  0517
+00.002  0519
+00.002  0521
+00.002  0530
+00.002  0535
+00.002  0536
+00.002  0539
+00.002  0542
+00.002  0554
+00.002  0564
+00.002  0567
+00.002  0568
+00.002  0569
+00.002  0571
+00.002  0572
+00.002  0575
+00.002  0576
+00.002  0584
+00.002  0585
+00.002  0589
+00.002  0591
+00.002  0592
+00.002  0598
+00.002  0599
+00.002  0612
+00.002  0618
+00.002  0626
+00.002  0628
+00.002  0643
+00.002  0645
+00.002  0646
+00.002  0647
+00.002  0648
+00.002  0649
+00.002  0650
+00.002  0700
+00.002  0701
+00.002  0707
+00.002  0708
+00.002  0709
+00.002  0710
+00.002  0711
+00.002  0712
+00.002  0714
+00.002  0715
+00.002  0819
+00.002  0826
+00.002  0850
+00.002  0853
+00.002  0901
+00.002  0902
+00.002  0912
+00.002  0944
+00.002  0945
+00.002  1006
+00.002  1011
+00.002  1012
+00.002  1019
+00.002  1024
+00.002  1025
+00.002  1031
+00.002  1040
+00.002  1041
+00.002  1042
+00.002  1043
+00.002  1051
+00.002  1052
+00.002  1053
+00.002  1054
+00.002  1064
+00.002  1067
+00.002  1070
+00.002  1073
+00.002  1075
+00.002  1076
+00.002  1078
+00.002  1086
+00.002  1087
+00.002  1088
+00.002  1089
+00.002  1090
+00.002  1091
+00.002  1094
+00.002  1104
+00.002  1113
+00.002  1114
+00.002  1116
+00.002  1122
+00.002  1124
+00.002  1125
+00.002  1128
+00.002  1129
+00.002  1130
+00.002  1131
+00.002  1133
+00.002  1135
+00.002  1138
+00.002  1141
+00.002  1147
+00.002  1151
+00.002  1153
+00.002  1160
+00.002  1200
+00.002  1201
+00.002  1203
+00.002  1204
+00.002  1205
+00.002  1210
+00.002  1219
+00.002  1225
+00.002  1230
+00.002  1233
+00.002  1235
+00.002  1237
+00.002  1249
+00.002  1254
+00.002  1256
+00.002  1287
+00.002  1288
+00.002  1314
+00.002  1315
+00.002  1319
+00.002  1320
+00.002  1325
+00.002  1328
+00.002  1331
+00.002  1332
+00.002  1340
+00.002  1357
+00.002  1358
+00.002  1359
+00.002  1360
+00.002  1361
+00.002  1362
+00.002  1401
+00.002  1404
+00.002  1405
+00.002  1406
+00.002  1413
+00.002  1417
+00.002  1419
+00.002  1424
+00.002  1425
+00.002  1426
+00.002  1428
+00.002  1434
+00.002  1435
+00.002  1436
+00.002  1438
+00.002  1452
+00.002  1506
+00.002  1509
+00.002  1511
+00.002  1513
+00.002  1514
+00.002  1515
+00.002  1517
+00.002  1520
+00.002  1525
+00.002  1527
+00.002  1530
+00.002  1532
+00.002  1533
+00.002  1534
+00.001  0001
+00.001  0002
+00.001  0003
+00.001  0004
+00.001  0005
+00.001  0006
+00.001  0009
+00.001  0010
+00.001  0012
+00.001  0013
+00.001  0014
+00.001  0015
+00.001  0016
+00.001  0017
+00.001  0019
+00.001  0020
+00.001  0021
+00.001  0023
+00.001  0024
+00.001  0027
+00.001  0029
+00.001  0030
+00.001  0033
+00.001  0035
+00.001  0036
+00.001  0037
+00.001  0038
+00.001  0041
+00.001  0048
+00.001  0057
+00.001  0058
+00.001  0059
+00.001  0060
+00.001  0062
+00.001  0063
+00.001  0066
+00.001  0074
+00.001  0076
+00.001  0077
+00.001  0079
+00.001  0082
+00.001  0084
+00.001  0085
+00.001  0087
+00.001  0092
+00.001  0093
+00.001  0097
+00.001  0098
+00.001  0101
+00.001  0106
+00.001  0107
+00.001  0108
+00.001  0109
+00.001  0111
+00.001  0112
+00.001  0113
+00.001  0114
+00.001  0115
+00.001  0116
+00.001  0118
+00.001  0120
+00.001  0121
+00.001  0122
+00.001  0123
+00.001  0125
+00.001  0126
+00.001  0127
+00.001  0128
+00.001  0129
+00.001  0135
+00.001  0136
+00.001  0137
+00.001  0138
+00.001  0139
+00.001  0140
+00.001  0141
+00.001  0143
+00.001  0144
+00.001  0145
+00.001  0146
+00.001  0147
+00.001  0148
+00.001  0151
+00.001  0152
+00.001  0156
+00.001  0158
+00.001  0160
+00.001  0161
+00.001  0166
+00.001  0171
+00.001  0172
+00.001  0174
+00.001  0178
+00.001  0182
+00.001  0186
+00.001  0190
+00.001  0191
+00.001  0192
+00.001  0195
+00.001  0196
+00.001  0197
+00.001  0198
+00.001  0199
+00.001  0200
+00.001  0201
+00.001  0202
+00.001  0203
+00.001  0204
+00.001  0205
+00.001  0210
+00.001  0211
+00.001  0212
+00.001  0214
+00.001  0215
+00.001  0216
+00.001  0217
+00.001  0218
+00.001  0219
+00.001  0225
+00.001  0226
+00.001  0227
+00.001  0229
+00.001  0235
+00.001  0236
+00.001  0237
+00.001  0238
+00.001  0242
+00.001  0247
+00.001  0251
+00.001  0253
+00.001  0254
+00.001  0256
+00.001  0260
+00.001  0261
+00.001  0263
+00.001  0264
+00.001  0269
+00.001  0270
+00.001  0271
+00.001  0272
+00.001  0274
+00.001  0277
+00.001  0278
+00.001  0279
+00.001  0282
+00.001  0283
+00.001  0284
+00.001  0285
+00.001  0287
+00.001  0291
+00.001  0292
+00.001  0295
+00.001  0297
+00.001  0298
+00.001  0299
+00.001  0350
+00.001  0351
+00.001  0352
+00.001  0353
+00.001  0354
+00.001  0500
+00.001  0501
+00.001  0502
+00.001  0505
+00.001  0507
+00.001  0508
+00.001  0509
+00.001  0510
+00.001  0511
+00.001  0512
+00.001  0513
+00.001  0514
+00.001  0515
+00.001  0516
+00.001  0520
+00.001  0522
+00.001  0523
+00.001  0524
+00.001  0525
+00.001  0526
+00.001  0527
+00.001  0528
+00.001  0529
+00.001  0531
+00.001  0532
+00.001  0533
+00.001  0534
+00.001  0538
+00.001  0541
+00.001  0543
+00.001  0544
+00.001  0545
+00.001  0546
+00.001  0549
+00.001  0550
+00.001  0556
+00.001  0557
+00.001  0559
+00.001  0561
+00.001  0562
+00.001  0563
+00.001  0566
+00.001  0570
+00.001  0573
+00.001  0574
+00.001  0578
+00.001  0580
+00.001  0581
+00.001  0582
+00.001  0583
+00.001  0586
+00.001  0587
+00.001  0588
+00.001  0595
+00.001  0596
+00.001  0597
+00.001  0600
+00.001  0601
+00.001  0602
+00.001  0603
+00.001  0604
+00.001  0605
+00.001  0606
+00.001  0607
+00.001  0608
+00.001  0609
+00.001  0616
+00.001  0617
+00.001  0619
+00.001  0620
+00.001  0621
+00.001  0622
+00.001  0623
+00.001  0624
+00.001  0627
+00.001  0629
+00.001  0630
+00.001  0631
+00.001  0632
+00.001  0633
+00.001  0634
+00.001  0635
+00.001  0636
+00.001  0637
+00.001  0640
+00.001  0641
+00.001  0642
+00.001  0644
+00.001  0702
+00.001  0703
+00.001  0704
+00.001  0705
+00.001  0706
+00.001  0713
+00.001  0800
+00.001  0801
+00.001  0802
+00.001  0803
+00.001  0804
+00.001  0805
+00.001  0806
+00.001  0807
+00.001  0808
+00.001  0809
+00.001  0810
+00.001  0811
+00.001  0812
+00.001  0813
+00.001  0814
+00.001  0815
+00.001  0816
+00.001  0817
+00.001  0818
+00.001  0820
+00.001  0824
+00.001  0825
+00.001  0828
+00.001  0829
+00.001  0837
+00.001  0838
+00.001  0839
+00.001  0840
+00.001  0841
+00.001  0846
+00.001  0851
+00.001  0852
+00.001  0854
+00.001  0855
+00.001  0856
+00.001  0857
+00.001  0858
+00.001  0859
+00.001  0860
+00.001  0861
+00.001  0862
+00.001  0863
+00.001  0865
+00.001  0866
+00.001  0870
+00.001  0871
+00.001  0872
+00.001  0874
+00.001  0875
+00.001  0883
+00.001  0884
+00.001  0885
+00.001  0886
+00.001  0900
+00.001  0903
+00.001  0904
+00.001  0908
+00.001  0909
+00.001  0910
+00.001  0911
+00.001  0913
+00.001  0914
+00.001  0915
+00.001  0916
+00.001  0917
+00.001  0918
+00.001  0919
+00.001  0920
+00.001  0922
+00.001  0923
+00.001  0924
+00.001  0925
+00.001  0926
+00.001  0927
+00.001  0928
+00.001  0929
+00.001  0930
+00.001  0931
+00.001  0939
+00.001  0940
+00.001  0941
+00.001  0942
+00.001  0943
+00.001  1000
+00.001  1003
+00.001  1004
+00.001  1005
+00.001  1007
+00.001  1009
+00.001  1010
+00.001  1013
+00.001  1014
+00.001  1015
+00.001  1016
+00.001  1017
+00.001  1018
+00.001  1020
+00.001  1022
+00.001  1023
+00.001  1026
+00.001  1027
+00.001  1029
+00.001  1032
+00.001  1033
+00.001  1036
+00.001  1037
+00.001  1038
+00.001  1039
+00.001  1044
+00.001  1045
+00.001  1047
+00.001  1049
+00.001  1057
+00.001  1058
+00.001  1059
+00.001  1060
+00.001  1061
+00.001  1062
+00.001  1063
+00.001  1065
+00.001  1066
+00.001  1068
+00.001  1069
+00.001  1074
+00.001  1077
+00.001  1080
+00.001  1081
+00.001  1084
+00.001  1092
+00.001  1093
+00.001  1096
+00.001  1098
+00.001  1099
+00.001  1101
+00.001  1102
+00.001  1103
+00.001  1106
+00.001  1107
+00.001  1108
+00.001  1109
+00.001  1110
+00.001  1111
+00.001  1115
+00.001  1117
+00.001  1118
+00.001  1119
+00.001  1120
+00.001  1121
+00.001  1126
+00.001  1127
+00.001  1132
+00.001  1134
+00.001  1137
+00.001  1139
+00.001  1140
+00.001  1142
+00.001  1143
+00.001  1144
+00.001  1145
+00.001  1146
+00.001  1148
+00.001  1149
+00.001  1150
+00.001  1152
+00.001  1161
+00.001  1206
+00.001  1207
+00.001  1208
+00.001  1212
+00.001  1213
+00.001  1214
+00.001  1216
+00.001  1217
+00.001  1218
+00.001  1220
+00.001  1221
+00.001  1222
+00.001  1223
+00.001  1224
+00.001  1226
+00.001  1227
+00.001  1228
+00.001  1231
+00.001  1232
+00.001  1234
+00.001  1236
+00.001  1238
+00.001  1239
+00.001  1240
+00.001  1241
+00.001  1242
+00.001  1243
+00.001  1246
+00.001  1247
+00.001  1248
+00.001  1250
+00.001  1251
+00.001  1252
+00.001  1253
+00.001  1255
+00.001  1257
+00.001  1258
+00.001  1259
+00.001  1260
+00.001  1261
+00.001  1262
+00.001  1280
+00.001  1281
+00.001  1283
+00.001  1289
+00.001  1298
+00.001  1299
+00.001  1300
+00.001  1301
+00.001  1302
+00.001  1303
+00.001  1304
+00.001  1305
+00.001  1306
+00.001  1307
+00.001  1308
+00.001  1311
+00.001  1312
+00.001  1313
+00.001  1317
+00.001  1318
+00.001  1322
+00.001  1323
+00.001  1326
+00.001  1327
+00.001  1329
+00.001  1333
+00.001  1334
+00.001  1335
+00.001  1336
+00.001  1337
+00.001  1338
+00.001  1339
+00.001  1341
+00.001  1342
+00.001  1343
+00.001  1344
+00.001  1345
+00.001  1346
+00.001  1347
+00.001  1348
+00.001  1349
+00.001  1350
+00.001  1351
+00.001  1352
+00.001  1353
+00.001  1354
+00.001  1355
+00.001  1356
+00.001  1363
+00.001  1364
+00.001  1365
+00.001  1366
+00.001  1367
+00.001  1368
+00.001  1369
+00.001  1370
+00.001  1371
+00.001  1372
+00.001  1373
+00.001  1374
+00.001  1375
+00.001  1376
+00.001  1377
+00.001  1378
+00.001  1379
+00.001  1380
+00.001  1381
+00.001  1382
+00.001  1383
+00.001  1384
+00.001  1385
+00.001  1386
+00.001  1387
+00.001  1388
+00.001  1389
+00.001  1390
+00.001  1391
+00.001  1392
+00.001  1393
+00.001  1394
+00.001  1395
+00.001  1396
+00.001  1397
+00.001  1398
+00.001  1399
+00.001  1400
+00.001  1402
+00.001  1403
+00.001  1407
+00.001  1408
+00.001  1409
+00.001  1410
+00.001  1411
+00.001  1414
+00.001  1415
+00.001  1416
+00.001  1420
+00.001  1421
+00.001  1422
+00.001  1423
+00.001  1427
+00.001  1429
+00.001  1430
+00.001  1431
+00.001  1432
+00.001  1433
+00.001  1439
+00.001  1440
+00.001  1441
+00.001  1442
+00.001  1443
+00.001  1444
+00.001  1447
+00.001  1449
+00.001  1450
+00.001  1453
+00.001  1500
+00.001  1501
+00.001  1502
+00.001  1503
+00.001  1504
+00.001  1505
+00.001  1507
+00.001  1508
+00.001  1516
+00.001  1521
+00.001  1528
+00.001  1529
+00.001  1531
+00.001  1535
+00.001  1536
+00.001  1537
+00.000  0064
+00.000  0065
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0072
+00.000  0081
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0094
+00.000  0096
+00.000  0150
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0159
+00.000  0162
+00.000  0165
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0206
+00.000  0209
+00.000  0213
+00.000  0239
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0258
+00.000  0259
+00.000  0265
+00.000  0267
+00.000  0273
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0506
+00.000  0540
+00.000  0547
+00.000  0548
+00.000  0551
+00.000  0552
+00.000  0555
+00.000  0558
+00.000  0560
+00.000  0565
+00.000  0579
+00.000  0590
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0827
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0864
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0873
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0921
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  1001
+00.000  1002
+00.000  1008
+00.000  1021
+00.000  1030
+00.000  1034
+00.000  1035
+00.000  1071
+00.000  1072
+00.000  1079
+00.000  1095
+00.000  1097
+00.000  1100
+00.000  1112
+00.000  1136
+00.000  1215
+00.000  1229
+00.000  1244
+00.000  1282
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1310
+00.000  1330
+00.000  1412
+00.000  1418
+00.000  1437
+00.000  1448
+00.000  1451
+
+Test tool execution time per test (full)...
+
+-time-  test
+------  ----
+22.612  1117
+10.691  0250
+10.555  0251
+07.004  1086
+04.640  0853
+04.626  1501
+03.245  0532
+03.243  0526
+03.224  0527
+03.016  0528
+02.158  0160
+02.144  0645
+02.138  1074
+02.033  1075
+02.032  0534
+02.029  0715
+02.021  1515
+02.020  1051
+02.019  1238
+02.018  1208
+02.017  0029
+02.017  0593
+02.016  0190
+02.011  1516
+01.857  0537
+01.586  1527
+01.561  1526
+01.559  0714
+01.180  1321
+01.086  1068
+01.080  0546
+01.071  0208
+01.071  0510
+01.071  1055
+01.070  0058
+01.070  0650
+01.068  0156
+01.067  0010
+01.063  1525
+01.061  0060
+01.057  0575
+01.056  0033
+01.028  1320
+01.027  0281
+01.027  0530
+01.024  0039
+01.023  1073
+01.022  0173
+01.020  0533
+01.018  0507
+01.017  0041
+01.014  0584
+01.013  0535
+01.011  0098
+01.011  1041
+01.008  0196
+01.008  0198
+01.006  0197
+01.006  1070
+01.005  0218
+00.975  1288
+00.951  0083
+00.916  1319
+00.707  0574
+00.690  1113
+00.597  0503
+00.589  0095
+00.573  1509
+00.526  0080
+00.519  1078
+00.515  0275
+00.511  1287
+00.510  1428
+00.501  1528
+00.379  1221
+00.332  1222
+00.323  0576
+00.311  1114
+00.213  0839
+00.213  0840
+00.213  0842
+00.212  0843
+00.209  0804
+00.206  0828
+00.205  0825
+00.205  0826
+00.202  0837
+00.197  0819
+00.192  0816
+00.189  0824
+00.188  1084
+00.187  0820
+00.182  0712
+00.179  1327
+00.178  0838
+00.177  0711
+00.170  0810
+00.166  0086
+00.165  0800
+00.155  0841
+00.154  1326
+00.153  0707
+00.152  0815
+00.150  0801
+00.147  0846
+00.146  0706
+00.145  0802
+00.143  1138
+00.141  0713
+00.139  0625
+00.138  1420
+00.132  0146
+00.132  1056
+00.130  1054
+00.124  0643
+00.123  0055
+00.122  0040
+00.121  0616
+00.121  1012
+00.118  0049
+00.118  0554
+00.116  0004
+00.116  1225
+00.115  0027
+00.115  0886
+00.115  1076
+00.114  0624
+00.113  0051
+00.113  0052
+00.113  0638
+00.112  1325
+00.111  0215
+00.110  0042
+00.110  0050
+00.110  1332
+00.109  0564
+00.109  0619
+00.109  0634
+00.108  0808
+00.107  0862
+00.107  0872
+00.107  1149
+00.106  0257
+00.106  0604
+00.106  0883
+00.106  1010
+00.106  1413
+00.105  0605
+00.105  0884
+00.104  0541
+00.103  0149
+00.103  0210
+00.103  0212
+00.103  0806
+00.102  0866
+00.101  0211
+00.101  0620
+00.101  0870
+00.101  1217
+00.100  0142
+00.100  0282
+00.100  0611
+00.100  0809
+00.100  0818
+00.100  0885
+00.099  0216
+00.099  0608
+00.099  0610
+00.099  0636
+00.099  0861
+00.099  0865
+00.099  0888
+00.098  0582
+00.097  0803
+00.097  0871
+00.097  0887
+00.096  0612
+00.096  1153
+00.095  0539
+00.095  0627
+00.095  0637
+00.094  0621
+00.094  0622
+00.094  0639
+00.094  1446
+00.093  0124
+00.093  0814
+00.092  0615
+00.092  0623
+00.092  0626
+00.092  0633
+00.091  0874
+00.090  0617
+00.088  0600
+00.088  0609
+00.088  0614
+00.088  0635
+00.088  0641
+00.087  0618
+00.087  0640
+00.086  0603
+00.084  0602
+00.084  0807
+00.082  0613
+00.082  0642
+00.081  0121
+00.081  0147
+00.081  0601
+00.080  0126
+00.079  0120
+00.079  0294
+00.077  0151
+00.076  0291
+00.075  1102
+00.073  1531
+00.070  0056
+00.070  0701
+00.068  1203
+00.068  1379
+00.067  0030
+00.067  0054
+00.067  1003
+00.066  0007
+00.066  0136
+00.065  0588
+00.065  0928
+00.064  0112
+00.063  0350
+00.063  1087
+00.063  1200
+00.063  1357
+00.062  0002
+00.062  0157
+00.062  0178
+00.062  0505
+00.062  0912
+00.062  1062
+00.062  1201
+00.062  1514
+00.061  0037
+00.061  0059
+00.061  0066
+00.061  0181
+00.061  0193
+00.061  0945
+00.061  1039
+00.061  1152
+00.060  0093
+00.060  0269
+00.060  0508
+00.060  0592
+00.060  1028
+00.060  1031
+00.059  0026
+00.059  0943
+00.059  1005
+00.059  1092
+00.059  1105
+00.058  0084
+00.058  0158
+00.058  0180
+00.058  0556
+00.058  0591
+00.058  0812
+00.058  0942
+00.058  1006
+00.058  1011
+00.058  1037
+00.058  1038
+00.058  1052
+00.058  1088
+00.058  1107
+00.058  1258
+00.057  0005
+00.057  0008
+00.057  0009
+00.057  0011
+00.057  0035
+00.057  0044
+00.057  0045
+00.057  0057
+00.057  0074
+00.057  0227
+00.057  0296
+00.057  0710
+00.057  0920
+00.057  0922
+00.057  1053
+00.057  1067
+00.057  1080
+00.057  1091
+00.057  1139
+00.057  1224
+00.057  1259
+00.056  0028
+00.056  0047
+00.056  0062
+00.056  0102
+00.056  0105
+00.056  0110
+00.056  0182
+00.056  0233
+00.056  0298
+00.056  1090
+00.056  1103
+00.056  1151
+00.056  1202
+00.055  0079
+00.055  0207
+00.055  0234
+00.055  0276
+00.055  0297
+00.055  0890
+00.055  0913
+00.055  1036
+00.055  1048
+00.055  1081
+00.055  1089
+00.055  1137
+00.055  1359
+00.055  1385
+00.055  1388
+00.055  1405
+00.055  1406
+00.054  0006
+00.054  0103
+00.054  0108
+00.054  0109
+00.054  0139
+00.054  0261
+00.054  0299
+00.054  0352
+00.054  0512
+00.054  0586
+00.054  0813
+00.054  0947
+00.054  0948
+00.054  1349
+00.054  1353
+00.054  1387
+00.053  0107
+00.053  0127
+00.053  0137
+00.053  0228
+00.053  0235
+00.053  0521
+00.053  0596
+00.053  0709
+00.053  0845
+00.053  0904
+00.053  0927
+00.053  0946
+00.053  1207
+00.053  1227
+00.053  1351
+00.053  1360
+00.053  1362
+00.053  1378
+00.053  1383
+00.053  1384
+00.053  1390
+00.053  1444
+00.052  0100
+00.052  0191
+00.052  0248
+00.052  0270
+00.052  0280
+00.052  0351
+00.052  0354
+00.052  0829
+00.052  0919
+00.052  1386
+00.052  1414
+00.051  0128
+00.051  0129
+00.051  0131
+00.051  0132
+00.051  0133
+00.051  0134
+00.051  0253
+00.051  0254
+00.051  0353
+00.051  0520
+00.051  0562
+00.051  0647
+00.051  0817
+00.051  1047
+00.051  1226
+00.051  1233
+00.051  1363
+00.051  1382
+00.051  1391
+00.050  0143
+00.050  0252
+00.050  0525
+00.050  0529
+00.050  0805
+00.050  0850
+00.050  0944
+00.050  1140
+00.050  1350
+00.050  1352
+00.050  1356
+00.050  1389
+00.049  0106
+00.049  0595
+00.049  0700
+00.049  0903
+00.049  1219
+00.049  1348
+00.049  1361
+00.048  0130
+00.048  0708
+00.048  0811
+00.048  0844
+00.048  0908
+00.048  1050
+00.048  1355
+00.047  0101
+00.047  0138
+00.047  0857
+00.047  0889
+00.047  0924
+00.047  1358
+00.047  1381
+00.046  1354
+00.045  0255
+00.044  1392
+00.043  1380
+00.043  1393
+00.042  0628
+00.042  1206
+00.041  0949
+00.037  0118
+00.036  0119
+00.036  0607
+00.036  0631
+00.035  0606
+00.034  0629
+00.033  0630
+00.032  0123
+00.032  1119
+00.025  0939
+00.022  0145
+00.021  0117
+00.021  0504
+00.020  0122
+00.020  0293
+00.020  1132
+00.019  0237
+00.019  1096
+00.018  0114
+00.018  1104
+00.017  1341
+00.016  0020
+00.016  1439
+00.015  0116
+00.015  0125
+00.015  0238
+00.015  1506
+00.014  0292
+00.014  1099
+00.014  1101
+00.013  0115
+00.013  0290
+00.013  1098
+00.012  0104
+00.012  0135
+00.012  1057
+00.011  0161
+00.011  0236
+00.010  0111
+00.010  0144
+00.010  0148
+00.010  0241
+00.010  1440
+00.010  1533
+00.009  0025
+00.009  0113
+00.009  0531
+00.009  0553
+00.009  0646
+00.009  1449
+00.008  0043
+00.008  0046
+00.008  0141
+00.008  0166
+00.008  0174
+00.008  0266
+00.008  0549
+00.008  0648
+00.008  0649
+00.008  0702
+00.008  0901
+00.008  0902
+00.008  0917
+00.008  1044
+00.008  1235
+00.008  1280
+00.008  1511
+00.008  1520
+00.007  0140
+00.007  0179
+00.007  0229
+00.007  0247
+00.007  0295
+00.007  0569
+00.007  0852
+00.007  0854
+00.007  0900
+00.007  0909
+00.007  0910
+00.007  0911
+00.007  0915
+00.007  0940
+00.007  0941
+00.007  1083
+00.007  1108
+00.007  1160
+00.007  1205
+00.007  1262
+00.006  0031
+00.006  0053
+00.006  0163
+00.006  0164
+00.006  0187
+00.006  0189
+00.006  0199
+00.006  0249
+00.006  0260
+00.006  0268
+00.006  0272
+00.006  0288
+00.006  0511
+00.006  0518
+00.006  0542
+00.006  0571
+00.006  0572
+00.006  0589
+00.006  0703
+00.006  0851
+00.006  0855
+00.006  0858
+00.006  0859
+00.006  0860
+00.006  0863
+00.006  0914
+00.006  0916
+00.006  0918
+00.006  0923
+00.006  0925
+00.006  0926
+00.006  0929
+00.006  1000
+00.006  1024
+00.006  1025
+00.006  1085
+00.006  1120
+00.006  1135
+00.006  1218
+00.006  1232
+00.006  1237
+00.006  1328
+00.006  1407
+00.006  1436
+00.005  0018
+00.005  0022
+00.005  0048
+00.005  0061
+00.005  0073
+00.005  0087
+00.005  0183
+00.005  0184
+00.005  0185
+00.005  0188
+00.005  0194
+00.005  0195
+00.005  0221
+00.005  0222
+00.005  0223
+00.005  0224
+00.005  0226
+00.005  0240
+00.005  0262
+00.005  0263
+00.005  0264
+00.005  0287
+00.005  0289
+00.005  0500
+00.005  0524
+00.005  0570
+00.005  0573
+00.005  0578
+00.005  0597
+00.005  0644
+00.005  0856
+00.005  0875
+00.005  0930
+00.005  1042
+00.005  1064
+00.005  1066
+00.005  1077
+00.005  1082
+00.005  1128
+00.005  1129
+00.005  1130
+00.005  1131
+00.005  1134
+00.005  1141
+00.005  1150
+00.005  1161
+00.005  1204
+00.005  1216
+00.005  1223
+00.005  1228
+00.005  1231
+00.005  1240
+00.005  1241
+00.005  1246
+00.005  1249
+00.005  1250
+00.005  1254
+00.005  1314
+00.005  1315
+00.005  1318
+00.005  1331
+00.005  1340
+00.005  1342
+00.005  1404
+00.005  1408
+00.005  1415
+00.005  1419
+00.005  1421
+00.005  1422
+00.005  1423
+00.005  1425
+00.005  1450
+00.005  1507
+00.005  1532
+00.005  1534
+00.004  0001
+00.004  0003
+00.004  0012
+00.004  0013
+00.004  0014
+00.004  0015
+00.004  0016
+00.004  0017
+00.004  0024
+00.004  0032
+00.004  0034
+00.004  0036
+00.004  0038
+00.004  0063
+00.004  0071
+00.004  0077
+00.004  0078
+00.004  0082
+00.004  0085
+00.004  0092
+00.004  0097
+00.004  0099
+00.004  0152
+00.004  0171
+00.004  0172
+00.004  0186
+00.004  0192
+00.004  0214
+00.004  0217
+00.004  0220
+00.004  0231
+00.004  0242
+00.004  0256
+00.004  0271
+00.004  0274
+00.004  0277
+00.004  0278
+00.004  0279
+00.004  0286
+00.004  0514
+00.004  0515
+00.004  0516
+00.004  0519
+00.004  0522
+00.004  0536
+00.004  0538
+00.004  0545
+00.004  0550
+00.004  0566
+00.004  0568
+00.004  0585
+00.004  0598
+00.004  0599
+00.004  0704
+00.004  0705
+00.004  0931
+00.004  1004
+00.004  1007
+00.004  1015
+00.004  1029
+00.004  1032
+00.004  1033
+00.004  1040
+00.004  1043
+00.004  1045
+00.004  1046
+00.004  1049
+00.004  1058
+00.004  1059
+00.004  1065
+00.004  1069
+00.004  1093
+00.004  1094
+00.004  1106
+00.004  1109
+00.004  1110
+00.004  1111
+00.004  1115
+00.004  1116
+00.004  1118
+00.004  1121
+00.004  1122
+00.004  1123
+00.004  1124
+00.004  1125
+00.004  1126
+00.004  1127
+00.004  1133
+00.004  1142
+00.004  1143
+00.004  1144
+00.004  1147
+00.004  1148
+00.004  1210
+00.004  1212
+00.004  1213
+00.004  1214
+00.004  1230
+00.004  1239
+00.004  1245
+00.004  1248
+00.004  1251
+00.004  1252
+00.004  1253
+00.004  1255
+00.004  1256
+00.004  1257
+00.004  1260
+00.004  1261
+00.004  1283
+00.004  1298
+00.004  1299
+00.004  1311
+00.004  1312
+00.004  1313
+00.004  1317
+00.004  1322
+00.004  1333
+00.004  1334
+00.004  1335
+00.004  1336
+00.004  1337
+00.004  1338
+00.004  1339
+00.004  1343
+00.004  1344
+00.004  1345
+00.004  1346
+00.004  1347
+00.004  1364
+00.004  1365
+00.004  1366
+00.004  1367
+00.004  1368
+00.004  1369
+00.004  1370
+00.004  1371
+00.004  1372
+00.004  1373
+00.004  1374
+00.004  1375
+00.004  1376
+00.004  1377
+00.004  1400
+00.004  1401
+00.004  1402
+00.004  1403
+00.004  1411
+00.004  1416
+00.004  1417
+00.004  1424
+00.004  1426
+00.004  1429
+00.004  1430
+00.004  1431
+00.004  1432
+00.004  1433
+00.004  1434
+00.004  1435
+00.004  1438
+00.004  1443
+00.004  1452
+00.004  1513
+00.004  1517
+00.004  1535
+00.004  1536
+00.003  0019
+00.003  0021
+00.003  0023
+00.003  0076
+00.003  0200
+00.003  0201
+00.003  0202
+00.003  0203
+00.003  0204
+00.003  0205
+00.003  0219
+00.003  0225
+00.003  0283
+00.003  0284
+00.003  0285
+00.003  0509
+00.003  0513
+00.003  0523
+00.003  0544
+00.003  0557
+00.003  0559
+00.003  0561
+00.003  0563
+00.003  0567
+00.003  0580
+00.003  0581
+00.003  0583
+00.003  0587
+00.003  0632
+00.003  1009
+00.003  1013
+00.003  1014
+00.003  1016
+00.003  1017
+00.003  1018
+00.003  1019
+00.003  1020
+00.003  1026
+00.003  1027
+00.003  1063
+00.003  1145
+00.003  1146
+00.003  1220
+00.003  1234
+00.003  1236
+00.003  1242
+00.003  1243
+00.003  1247
+00.003  1281
+00.003  1289
+00.003  1302
+00.003  1305
+00.003  1308
+00.003  1309
+00.003  1329
+00.003  1409
+00.003  1410
+00.003  1427
+00.003  1441
+00.003  1442
+00.003  1445
+00.003  1447
+00.003  1453
+00.003  1500
+00.003  1502
+00.003  1503
+00.003  1504
+00.003  1505
+00.003  1529
+00.003  1530
+00.003  1537
+00.002  0075
+00.002  0501
+00.002  0502
+00.002  0517
+00.002  0543
+00.002  1022
+00.002  1023
+00.002  1300
+00.002  1301
+00.002  1303
+00.002  1304
+00.002  1306
+00.002  1307
+00.002  1323
+00.002  1394
+00.002  1395
+00.002  1396
+00.002  1397
+00.002  1398
+00.002  1399
+00.002  1508
+00.002  1521
+00.000  0064
+00.000  0065
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0072
+00.000  0081
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0094
+00.000  0096
+00.000  0150
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0159
+00.000  0162
+00.000  0165
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0206
+00.000  0209
+00.000  0213
+00.000  0239
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0258
+00.000  0259
+00.000  0265
+00.000  0267
+00.000  0273
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0506
+00.000  0540
+00.000  0547
+00.000  0548
+00.000  0551
+00.000  0552
+00.000  0555
+00.000  0558
+00.000  0560
+00.000  0565
+00.000  0579
+00.000  0590
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0827
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0864
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0873
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0921
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  1001
+00.000  1002
+00.000  1008
+00.000  1021
+00.000  1030
+00.000  1034
+00.000  1035
+00.000  1060
+00.000  1061
+00.000  1071
+00.000  1072
+00.000  1079
+00.000  1095
+00.000  1097
+00.000  1100
+00.000  1112
+00.000  1136
+00.000  1215
+00.000  1229
+00.000  1244
+00.000  1282
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1310
+00.000  1330
+00.000  1412
+00.000  1418
+00.000  1437
+00.000  1448
+00.000  1451
+
+Test server logs lock removal time per test (full)...
+
+-time-  test
+------  ----
+08.435  0029
+05.059  0286
+05.037  1243
+05.009  0285
+02.029  1238
+01.077  0190
+01.069  1117
+01.000  0513
+01.000  0514
+00.115  1536
+00.111  1087
+00.104  0544
+00.104  1515
+00.101  0173
+00.064  1501
+00.059  0011
+00.059  0712
+00.059  1010
+00.059  1038
+00.059  1047
+00.059  1053
+00.058  0596
+00.058  0714
+00.058  1037
+00.058  1052
+00.057  0139
+00.057  0350
+00.057  0521
+00.057  0526
+00.057  0853
+00.057  1096
+00.057  1383
+00.057  1391
+00.056  0028
+00.056  0106
+00.056  0117
+00.056  0136
+00.056  0210
+00.056  0527
+00.056  0562
+00.056  0563
+00.056  0595
+00.056  0713
+00.056  1006
+00.056  1039
+00.056  1050
+00.056  1051
+00.056  1149
+00.056  1224
+00.055  0138
+00.055  0149
+00.055  0191
+00.055  0545
+00.055  0546
+00.055  1062
+00.054  0085
+00.054  0227
+00.054  0588
+00.054  1057
+00.054  1067
+00.053  0027
+00.053  0105
+00.053  0110
+00.053  0130
+00.053  0290
+00.053  0297
+00.053  0539
+00.053  0575
+00.053  0706
+00.053  1036
+00.053  1103
+00.053  1144
+00.053  1389
+00.052  0101
+00.052  0103
+00.052  0109
+00.052  0111
+00.052  0122
+00.052  0126
+00.052  0144
+00.052  0161
+00.052  0235
+00.052  0254
+00.052  0261
+00.052  0520
+00.052  0532
+00.052  0550
+00.052  0574
+00.052  1003
+00.052  1041
+00.052  1106
+00.052  1226
+00.052  1227
+00.052  1354
+00.052  1359
+00.052  1360
+00.052  1361
+00.052  1382
+00.052  1386
+00.051  0107
+00.051  0108
+00.051  0127
+00.051  0164
+00.051  0228
+00.051  0236
+00.051  0250
+00.051  0251
+00.051  0351
+00.051  0353
+00.051  0354
+00.051  0529
+00.051  0534
+00.051  0549
+00.051  0561
+00.051  0564
+00.051  0576
+00.051  0586
+00.051  0589
+00.051  0707
+00.051  0715
+00.051  1005
+00.051  1015
+00.051  1029
+00.051  1048
+00.051  1073
+00.051  1080
+00.051  1104
+00.051  1107
+00.051  1152
+00.051  1348
+00.051  1350
+00.051  1384
+00.051  1388
+00.050  0043
+00.050  0045
+00.050  0063
+00.050  0071
+00.050  0073
+00.050  0080
+00.050  0083
+00.050  0095
+00.050  0100
+00.050  0102
+00.050  0128
+00.050  0129
+00.050  0131
+00.050  0132
+00.050  0133
+00.050  0134
+00.050  0135
+00.050  0137
+00.050  0142
+00.050  0143
+00.050  0145
+00.050  0152
+00.050  0163
+00.050  0166
+00.050  0174
+00.050  0182
+00.050  0186
+00.050  0187
+00.050  0194
+00.050  0211
+00.050  0212
+00.050  0215
+00.050  0216
+00.050  0217
+00.050  0233
+00.050  0234
+00.050  0241
+00.050  0248
+00.050  0249
+00.050  0252
+00.050  0253
+00.050  0255
+00.050  0257
+00.050  0264
+00.050  0270
+00.050  0274
+00.050  0276
+00.050  0277
+00.050  0278
+00.050  0279
+00.050  0280
+00.050  0287
+00.050  0296
+00.050  0298
+00.050  0352
+00.050  0515
+00.050  0516
+00.050  0519
+00.050  0523
+00.050  0525
+00.050  0531
+00.050  0533
+00.050  0541
+00.050  0711
+00.050  1031
+00.050  1070
+00.050  1081
+00.050  1088
+00.050  1091
+00.050  1137
+00.050  1217
+00.050  1219
+00.050  1225
+00.050  1233
+00.050  1245
+00.050  1261
+00.050  1287
+00.050  1349
+00.050  1351
+00.050  1352
+00.050  1353
+00.050  1355
+00.050  1356
+00.050  1357
+00.050  1358
+00.050  1362
+00.050  1363
+00.050  1378
+00.050  1379
+00.050  1380
+00.050  1381
+00.050  1385
+00.050  1387
+00.050  1390
+00.050  1392
+00.050  1393
+00.050  1405
+00.050  1414
+00.050  1428
+00.050  1444
+00.050  1449
+00.050  1516
+00.050  1517
+00.050  1528
+00.050  1532
+00.050  1534
+00.050  1535
+00.000  0001
+00.000  0002
+00.000  0003
+00.000  0004
+00.000  0005
+00.000  0006
+00.000  0007
+00.000  0008
+00.000  0009
+00.000  0010
+00.000  0012
+00.000  0013
+00.000  0014
+00.000  0015
+00.000  0016
+00.000  0017
+00.000  0018
+00.000  0019
+00.000  0020
+00.000  0021
+00.000  0022
+00.000  0023
+00.000  0024
+00.000  0025
+00.000  0026
+00.000  0030
+00.000  0031
+00.000  0032
+00.000  0033
+00.000  0034
+00.000  0035
+00.000  0036
+00.000  0037
+00.000  0038
+00.000  0039
+00.000  0040
+00.000  0041
+00.000  0042
+00.000  0044
+00.000  0046
+00.000  0047
+00.000  0048
+00.000  0049
+00.000  0050
+00.000  0051
+00.000  0052
+00.000  0053
+00.000  0054
+00.000  0055
+00.000  0056
+00.000  0057
+00.000  0058
+00.000  0059
+00.000  0060
+00.000  0061
+00.000  0062
+00.000  0064
+00.000  0065
+00.000  0066
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0072
+00.000  0074
+00.000  0075
+00.000  0076
+00.000  0077
+00.000  0078
+00.000  0079
+00.000  0081
+00.000  0082
+00.000  0084
+00.000  0086
+00.000  0087
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0092
+00.000  0093
+00.000  0094
+00.000  0096
+00.000  0097
+00.000  0098
+00.000  0099
+00.000  0104
+00.000  0112
+00.000  0113
+00.000  0114
+00.000  0115
+00.000  0116
+00.000  0118
+00.000  0119
+00.000  0120
+00.000  0121
+00.000  0123
+00.000  0124
+00.000  0125
+00.000  0140
+00.000  0141
+00.000  0146
+00.000  0147
+00.000  0148
+00.000  0150
+00.000  0151
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0156
+00.000  0157
+00.000  0158
+00.000  0159
+00.000  0160
+00.000  0162
+00.000  0165
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0171
+00.000  0172
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0178
+00.000  0179
+00.000  0180
+00.000  0181
+00.000  0183
+00.000  0184
+00.000  0185
+00.000  0188
+00.000  0189
+00.000  0192
+00.000  0193
+00.000  0195
+00.000  0196
+00.000  0197
+00.000  0198
+00.000  0199
+00.000  0200
+00.000  0201
+00.000  0202
+00.000  0203
+00.000  0204
+00.000  0205
+00.000  0206
+00.000  0207
+00.000  0208
+00.000  0209
+00.000  0213
+00.000  0214
+00.000  0218
+00.000  0219
+00.000  0220
+00.000  0221
+00.000  0222
+00.000  0223
+00.000  0224
+00.000  0225
+00.000  0226
+00.000  0229
+00.000  0231
+00.000  0237
+00.000  0238
+00.000  0239
+00.000  0240
+00.000  0242
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0247
+00.000  0256
+00.000  0258
+00.000  0259
+00.000  0260
+00.000  0262
+00.000  0263
+00.000  0265
+00.000  0266
+00.000  0267
+00.000  0268
+00.000  0269
+00.000  0271
+00.000  0272
+00.000  0273
+00.000  0275
+00.000  0281
+00.000  0282
+00.000  0283
+00.000  0284
+00.000  0288
+00.000  0289
+00.000  0291
+00.000  0292
+00.000  0293
+00.000  0294
+00.000  0295
+00.000  0299
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0500
+00.000  0501
+00.000  0502
+00.000  0503
+00.000  0504
+00.000  0505
+00.000  0506
+00.000  0507
+00.000  0508
+00.000  0509
+00.000  0510
+00.000  0511
+00.000  0512
+00.000  0517
+00.000  0518
+00.000  0522
+00.000  0524
+00.000  0528
+00.000  0530
+00.000  0535
+00.000  0536
+00.000  0537
+00.000  0538
+00.000  0540
+00.000  0542
+00.000  0543
+00.000  0547
+00.000  0548
+00.000  0551
+00.000  0552
+00.000  0553
+00.000  0554
+00.000  0555
+00.000  0556
+00.000  0557
+00.000  0558
+00.000  0559
+00.000  0560
+00.000  0565
+00.000  0566
+00.000  0567
+00.000  0568
+00.000  0569
+00.000  0570
+00.000  0571
+00.000  0572
+00.000  0573
+00.000  0578
+00.000  0579
+00.000  0580
+00.000  0581
+00.000  0582
+00.000  0583
+00.000  0584
+00.000  0585
+00.000  0587
+00.000  0590
+00.000  0591
+00.000  0592
+00.000  0593
+00.000  0597
+00.000  0598
+00.000  0599
+00.000  0600
+00.000  0601
+00.000  0602
+00.000  0603
+00.000  0604
+00.000  0605
+00.000  0606
+00.000  0607
+00.000  0608
+00.000  0609
+00.000  0610
+00.000  0611
+00.000  0612
+00.000  0613
+00.000  0614
+00.000  0615
+00.000  0616
+00.000  0617
+00.000  0618
+00.000  0619
+00.000  0620
+00.000  0621
+00.000  0622
+00.000  0623
+00.000  0624
+00.000  0625
+00.000  0626
+00.000  0627
+00.000  0628
+00.000  0629
+00.000  0630
+00.000  0631
+00.000  0632
+00.000  0633
+00.000  0634
+00.000  0635
+00.000  0636
+00.000  0637
+00.000  0638
+00.000  0639
+00.000  0640
+00.000  0641
+00.000  0642
+00.000  0643
+00.000  0644
+00.000  0645
+00.000  0646
+00.000  0647
+00.000  0648
+00.000  0649
+00.000  0650
+00.000  0700
+00.000  0701
+00.000  0702
+00.000  0703
+00.000  0704
+00.000  0705
+00.000  0708
+00.000  0709
+00.000  0710
+00.000  0800
+00.000  0801
+00.000  0802
+00.000  0803
+00.000  0804
+00.000  0805
+00.000  0806
+00.000  0807
+00.000  0808
+00.000  0809
+00.000  0810
+00.000  0811
+00.000  0812
+00.000  0813
+00.000  0814
+00.000  0815
+00.000  0816
+00.000  0817
+00.000  0818
+00.000  0819
+00.000  0820
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0824
+00.000  0825
+00.000  0826
+00.000  0827
+00.000  0828
+00.000  0829
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0837
+00.000  0838
+00.000  0839
+00.000  0840
+00.000  0841
+00.000  0842
+00.000  0843
+00.000  0844
+00.000  0845
+00.000  0846
+00.000  0850
+00.000  0851
+00.000  0852
+00.000  0854
+00.000  0855
+00.000  0856
+00.000  0857
+00.000  0858
+00.000  0859
+00.000  0860
+00.000  0861
+00.000  0862
+00.000  0863
+00.000  0864
+00.000  0865
+00.000  0866
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0870
+00.000  0871
+00.000  0872
+00.000  0873
+00.000  0874
+00.000  0875
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0883
+00.000  0884
+00.000  0885
+00.000  0886
+00.000  0887
+00.000  0888
+00.000  0889
+00.000  0890
+00.000  0900
+00.000  0901
+00.000  0902
+00.000  0903
+00.000  0904
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0908
+00.000  0909
+00.000  0910
+00.000  0911
+00.000  0912
+00.000  0913
+00.000  0914
+00.000  0915
+00.000  0916
+00.000  0917
+00.000  0918
+00.000  0919
+00.000  0920
+00.000  0921
+00.000  0922
+00.000  0923
+00.000  0924
+00.000  0925
+00.000  0926
+00.000  0927
+00.000  0928
+00.000  0929
+00.000  0930
+00.000  0931
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  0939
+00.000  0940
+00.000  0941
+00.000  0942
+00.000  0943
+00.000  0944
+00.000  0945
+00.000  0946
+00.000  0947
+00.000  0948
+00.000  0949
+00.000  1000
+00.000  1001
+00.000  1002
+00.000  1004
+00.000  1007
+00.000  1008
+00.000  1009
+00.000  1011
+00.000  1012
+00.000  1013
+00.000  1014
+00.000  1016
+00.000  1017
+00.000  1018
+00.000  1019
+00.000  1020
+00.000  1021
+00.000  1022
+00.000  1023
+00.000  1024
+00.000  1025
+00.000  1026
+00.000  1027
+00.000  1028
+00.000  1030
+00.000  1032
+00.000  1033
+00.000  1034
+00.000  1035
+00.000  1040
+00.000  1042
+00.000  1043
+00.000  1044
+00.000  1045
+00.000  1046
+00.000  1049
+00.000  1054
+00.000  1055
+00.000  1056
+00.000  1058
+00.000  1059
+00.000  1060
+00.000  1061
+00.000  1063
+00.000  1064
+00.000  1065
+00.000  1066
+00.000  1068
+00.000  1069
+00.000  1071
+00.000  1072
+00.000  1074
+00.000  1075
+00.000  1076
+00.000  1077
+00.000  1078
+00.000  1079
+00.000  1082
+00.000  1083
+00.000  1084
+00.000  1085
+00.000  1086
+00.000  1089
+00.000  1090
+00.000  1092
+00.000  1093
+00.000  1094
+00.000  1095
+00.000  1097
+00.000  1098
+00.000  1099
+00.000  1100
+00.000  1101
+00.000  1102
+00.000  1105
+00.000  1108
+00.000  1109
+00.000  1110
+00.000  1111
+00.000  1112
+00.000  1113
+00.000  1114
+00.000  1115
+00.000  1116
+00.000  1118
+00.000  1119
+00.000  1120
+00.000  1121
+00.000  1122
+00.000  1123
+00.000  1124
+00.000  1125
+00.000  1126
+00.000  1127
+00.000  1128
+00.000  1129
+00.000  1130
+00.000  1131
+00.000  1132
+00.000  1133
+00.000  1134
+00.000  1135
+00.000  1136
+00.000  1138
+00.000  1139
+00.000  1140
+00.000  1141
+00.000  1142
+00.000  1143
+00.000  1145
+00.000  1146
+00.000  1147
+00.000  1148
+00.000  1150
+00.000  1151
+00.000  1153
+00.000  1160
+00.000  1161
+00.000  1200
+00.000  1201
+00.000  1202
+00.000  1203
+00.000  1204
+00.000  1205
+00.000  1206
+00.000  1207
+00.000  1208
+00.000  1210
+00.000  1212
+00.000  1213
+00.000  1214
+00.000  1215
+00.000  1216
+00.000  1218
+00.000  1220
+00.000  1221
+00.000  1222
+00.000  1223
+00.000  1228
+00.000  1229
+00.000  1230
+00.000  1231
+00.000  1232
+00.000  1234
+00.000  1235
+00.000  1236
+00.000  1237
+00.000  1239
+00.000  1240
+00.000  1241
+00.000  1242
+00.000  1244
+00.000  1246
+00.000  1247
+00.000  1248
+00.000  1249
+00.000  1250
+00.000  1251
+00.000  1252
+00.000  1253
+00.000  1254
+00.000  1255
+00.000  1256
+00.000  1257
+00.000  1258
+00.000  1259
+00.000  1260
+00.000  1262
+00.000  1280
+00.000  1281
+00.000  1282
+00.000  1283
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1288
+00.000  1289
+00.000  1298
+00.000  1299
+00.000  1300
+00.000  1301
+00.000  1302
+00.000  1303
+00.000  1304
+00.000  1305
+00.000  1306
+00.000  1307
+00.000  1308
+00.000  1309
+00.000  1310
+00.000  1311
+00.000  1312
+00.000  1313
+00.000  1314
+00.000  1315
+00.000  1317
+00.000  1318
+00.000  1319
+00.000  1320
+00.000  1321
+00.000  1322
+00.000  1323
+00.000  1325
+00.000  1326
+00.000  1327
+00.000  1328
+00.000  1329
+00.000  1330
+00.000  1331
+00.000  1332
+00.000  1333
+00.000  1334
+00.000  1335
+00.000  1336
+00.000  1337
+00.000  1338
+00.000  1339
+00.000  1340
+00.000  1341
+00.000  1342
+00.000  1343
+00.000  1344
+00.000  1345
+00.000  1346
+00.000  1347
+00.000  1364
+00.000  1365
+00.000  1366
+00.000  1367
+00.000  1368
+00.000  1369
+00.000  1370
+00.000  1371
+00.000  1372
+00.000  1373
+00.000  1374
+00.000  1375
+00.000  1376
+00.000  1377
+00.000  1394
+00.000  1395
+00.000  1396
+00.000  1397
+00.000  1398
+00.000  1399
+00.000  1400
+00.000  1401
+00.000  1402
+00.000  1403
+00.000  1404
+00.000  1406
+00.000  1407
+00.000  1408
+00.000  1409
+00.000  1410
+00.000  1411
+00.000  1412
+00.000  1413
+00.000  1415
+00.000  1416
+00.000  1417
+00.000  1418
+00.000  1419
+00.000  1420
+00.000  1421
+00.000  1422
+00.000  1423
+00.000  1424
+00.000  1425
+00.000  1426
+00.000  1427
+00.000  1429
+00.000  1430
+00.000  1431
+00.000  1432
+00.000  1433
+00.000  1434
+00.000  1435
+00.000  1436
+00.000  1437
+00.000  1438
+00.000  1439
+00.000  1440
+00.000  1441
+00.000  1442
+00.000  1443
+00.000  1445
+00.000  1446
+00.000  1447
+00.000  1448
+00.000  1450
+00.000  1451
+00.000  1452
+00.000  1453
+00.000  1500
+00.000  1502
+00.000  1503
+00.000  1504
+00.000  1505
+00.000  1506
+00.000  1507
+00.000  1508
+00.000  1509
+00.000  1511
+00.000  1513
+00.000  1514
+00.000  1520
+00.000  1521
+00.000  1525
+00.000  1526
+00.000  1527
+00.000  1529
+00.000  1530
+00.000  1531
+00.000  1533
+00.000  1537
+
+Test results verification time per test (full)...
+
+-time-  test
+------  ----
+06.152  1086
+05.683  0190
+00.024  0610
+00.024  0624
+00.024  0638
+00.024  1309
+00.023  0611
+00.023  0627
+00.021  0625
+00.018  0608
+00.018  0615
+00.016  0639
+00.015  0612
+00.015  1026
+00.015  1445
+00.015  1446
+00.014  0614
+00.013  0613
+00.011  1404
+00.010  0214
+00.010  1405
+00.008  0123
+00.008  1406
+00.007  1400
+00.007  1402
+00.007  1403
+00.007  1407
+00.007  1420
+00.006  1013
+00.006  1357
+00.006  1359
+00.006  1361
+00.006  1391
+00.006  1401
+00.006  1506
+00.005  0643
+00.005  0645
+00.005  0650
+00.005  1014
+00.005  1022
+00.005  1023
+00.005  1344
+00.005  1356
+00.005  1358
+00.005  1360
+00.005  1362
+00.005  1363
+00.005  1366
+00.005  1374
+00.005  1379
+00.005  1380
+00.005  1381
+00.005  1382
+00.005  1383
+00.005  1384
+00.005  1386
+00.005  1387
+00.005  1388
+00.005  1389
+00.005  1390
+00.005  1392
+00.005  1393
+00.004  0056
+00.004  0503
+00.004  0554
+00.004  0646
+00.004  1027
+00.004  1287
+00.004  1336
+00.004  1337
+00.004  1345
+00.004  1347
+00.004  1364
+00.004  1365
+00.004  1367
+00.004  1368
+00.004  1369
+00.004  1370
+00.004  1371
+00.004  1372
+00.004  1373
+00.004  1375
+00.004  1376
+00.004  1377
+00.004  1378
+00.004  1385
+00.004  1423
+00.004  1443
+00.004  1444
+00.003  0031
+00.003  0045
+00.003  0046
+00.003  0051
+00.003  0052
+00.003  0116
+00.003  0142
+00.003  0222
+00.003  0248
+00.003  0266
+00.003  0553
+00.003  0576
+00.003  0588
+00.003  0592
+00.003  0647
+00.003  0648
+00.003  0649
+00.003  1081
+00.003  1114
+00.003  1161
+00.003  1288
+00.003  1349
+00.003  1350
+00.003  1351
+00.003  1352
+00.003  1353
+00.003  1354
+00.003  1414
+00.002  0007
+00.002  0018
+00.002  0025
+00.002  0030
+00.002  0038
+00.002  0039
+00.002  0042
+00.002  0043
+00.002  0044
+00.002  0048
+00.002  0049
+00.002  0050
+00.002  0053
+00.002  0060
+00.002  0061
+00.002  0071
+00.002  0073
+00.002  0074
+00.002  0080
+00.002  0083
+00.002  0086
+00.002  0095
+00.002  0101
+00.002  0102
+00.002  0103
+00.002  0104
+00.002  0107
+00.002  0108
+00.002  0128
+00.002  0136
+00.002  0145
+00.002  0146
+00.002  0148
+00.002  0149
+00.002  0158
+00.002  0160
+00.002  0161
+00.002  0163
+00.002  0164
+00.002  0171
+00.002  0173
+00.002  0178
+00.002  0179
+00.002  0180
+00.002  0181
+00.002  0182
+00.002  0184
+00.002  0185
+00.002  0187
+00.002  0188
+00.002  0192
+00.002  0193
+00.002  0197
+00.002  0208
+00.002  0212
+00.002  0217
+00.002  0218
+00.002  0223
+00.002  0224
+00.002  0227
+00.002  0229
+00.002  0233
+00.002  0234
+00.002  0249
+00.002  0251
+00.002  0253
+00.002  0255
+00.002  0257
+00.002  0263
+00.002  0264
+00.002  0268
+00.002  0275
+00.002  0276
+00.002  0277
+00.002  0286
+00.002  0287
+00.002  0288
+00.002  0293
+00.002  0295
+00.002  0505
+00.002  0508
+00.002  0514
+00.002  0517
+00.002  0519
+00.002  0523
+00.002  0525
+00.002  0528
+00.002  0529
+00.002  0541
+00.002  0546
+00.002  0549
+00.002  0561
+00.002  0564
+00.002  0568
+00.002  0569
+00.002  0571
+00.002  0572
+00.002  0574
+00.002  0575
+00.002  0584
+00.002  0587
+00.002  0589
+00.002  0591
+00.002  0593
+00.002  0596
+00.002  0617
+00.002  0633
+00.002  0644
+00.002  0700
+00.002  0706
+00.002  0707
+00.002  0708
+00.002  0709
+00.002  0710
+00.002  0711
+00.002  0714
+00.002  0825
+00.002  0901
+00.002  0942
+00.002  0947
+00.002  1005
+00.002  1011
+00.002  1012
+00.002  1015
+00.002  1024
+00.002  1025
+00.002  1028
+00.002  1029
+00.002  1031
+00.002  1036
+00.002  1037
+00.002  1041
+00.002  1042
+00.002  1043
+00.002  1044
+00.002  1047
+00.002  1050
+00.002  1051
+00.002  1052
+00.002  1053
+00.002  1054
+00.002  1055
+00.002  1056
+00.002  1064
+00.002  1065
+00.002  1066
+00.002  1067
+00.002  1068
+00.002  1070
+00.002  1073
+00.002  1074
+00.002  1075
+00.002  1076
+00.002  1077
+00.002  1078
+00.002  1080
+00.002  1083
+00.002  1087
+00.002  1088
+00.002  1089
+00.002  1090
+00.002  1091
+00.002  1094
+00.002  1096
+00.002  1098
+00.002  1102
+00.002  1103
+00.002  1104
+00.002  1105
+00.002  1113
+00.002  1116
+00.002  1117
+00.002  1123
+00.002  1124
+00.002  1128
+00.002  1129
+00.002  1130
+00.002  1131
+00.002  1133
+00.002  1135
+00.002  1138
+00.002  1148
+00.002  1149
+00.002  1151
+00.002  1153
+00.002  1160
+00.002  1200
+00.002  1201
+00.002  1202
+00.002  1204
+00.002  1206
+00.002  1207
+00.002  1208
+00.002  1210
+00.002  1217
+00.002  1218
+00.002  1219
+00.002  1221
+00.002  1222
+00.002  1223
+00.002  1224
+00.002  1225
+00.002  1230
+00.002  1232
+00.002  1233
+00.002  1235
+00.002  1237
+00.002  1239
+00.002  1245
+00.002  1246
+00.002  1253
+00.002  1261
+00.002  1311
+00.002  1312
+00.002  1313
+00.002  1314
+00.002  1315
+00.002  1319
+00.002  1320
+00.002  1321
+00.002  1325
+00.002  1328
+00.002  1331
+00.002  1332
+00.002  1334
+00.002  1335
+00.002  1338
+00.002  1339
+00.002  1340
+00.002  1341
+00.002  1342
+00.002  1343
+00.002  1346
+00.002  1348
+00.002  1355
+00.002  1413
+00.002  1415
+00.002  1417
+00.002  1419
+00.002  1421
+00.002  1422
+00.002  1424
+00.002  1425
+00.002  1426
+00.002  1428
+00.002  1429
+00.002  1433
+00.002  1434
+00.002  1435
+00.002  1436
+00.002  1438
+00.002  1439
+00.002  1509
+00.002  1511
+00.002  1513
+00.002  1514
+00.002  1517
+00.002  1525
+00.002  1526
+00.002  1527
+00.002  1528
+00.002  1531
+00.002  1532
+00.002  1533
+00.002  1534
+00.001  0001
+00.001  0002
+00.001  0003
+00.001  0004
+00.001  0005
+00.001  0006
+00.001  0008
+00.001  0009
+00.001  0010
+00.001  0011
+00.001  0012
+00.001  0013
+00.001  0014
+00.001  0015
+00.001  0016
+00.001  0017
+00.001  0019
+00.001  0020
+00.001  0021
+00.001  0022
+00.001  0023
+00.001  0024
+00.001  0026
+00.001  0027
+00.001  0028
+00.001  0029
+00.001  0032
+00.001  0033
+00.001  0034
+00.001  0035
+00.001  0036
+00.001  0037
+00.001  0040
+00.001  0041
+00.001  0047
+00.001  0054
+00.001  0055
+00.001  0057
+00.001  0058
+00.001  0059
+00.001  0062
+00.001  0063
+00.001  0066
+00.001  0075
+00.001  0076
+00.001  0077
+00.001  0078
+00.001  0079
+00.001  0082
+00.001  0084
+00.001  0085
+00.001  0087
+00.001  0092
+00.001  0093
+00.001  0097
+00.001  0098
+00.001  0099
+00.001  0100
+00.001  0105
+00.001  0106
+00.001  0109
+00.001  0110
+00.001  0111
+00.001  0112
+00.001  0113
+00.001  0114
+00.001  0115
+00.001  0117
+00.001  0118
+00.001  0119
+00.001  0120
+00.001  0121
+00.001  0122
+00.001  0124
+00.001  0125
+00.001  0126
+00.001  0127
+00.001  0129
+00.001  0130
+00.001  0131
+00.001  0132
+00.001  0133
+00.001  0134
+00.001  0135
+00.001  0137
+00.001  0138
+00.001  0139
+00.001  0140
+00.001  0141
+00.001  0143
+00.001  0144
+00.001  0147
+00.001  0151
+00.001  0152
+00.001  0156
+00.001  0157
+00.001  0166
+00.001  0172
+00.001  0174
+00.001  0183
+00.001  0186
+00.001  0189
+00.001  0191
+00.001  0194
+00.001  0195
+00.001  0196
+00.001  0198
+00.001  0199
+00.001  0200
+00.001  0201
+00.001  0202
+00.001  0203
+00.001  0204
+00.001  0205
+00.001  0207
+00.001  0210
+00.001  0211
+00.001  0215
+00.001  0216
+00.001  0219
+00.001  0220
+00.001  0221
+00.001  0225
+00.001  0226
+00.001  0228
+00.001  0231
+00.001  0235
+00.001  0236
+00.001  0237
+00.001  0238
+00.001  0240
+00.001  0241
+00.001  0242
+00.001  0247
+00.001  0250
+00.001  0252
+00.001  0254
+00.001  0256
+00.001  0260
+00.001  0261
+00.001  0262
+00.001  0269
+00.001  0270
+00.001  0271
+00.001  0272
+00.001  0274
+00.001  0278
+00.001  0279
+00.001  0280
+00.001  0281
+00.001  0282
+00.001  0283
+00.001  0284
+00.001  0285
+00.001  0289
+00.001  0290
+00.001  0291
+00.001  0292
+00.001  0294
+00.001  0296
+00.001  0297
+00.001  0298
+00.001  0299
+00.001  0350
+00.001  0351
+00.001  0352
+00.001  0353
+00.001  0354
+00.001  0500
+00.001  0501
+00.001  0502
+00.001  0504
+00.001  0507
+00.001  0509
+00.001  0510
+00.001  0511
+00.001  0512
+00.001  0513
+00.001  0515
+00.001  0516
+00.001  0518
+00.001  0520
+00.001  0521
+00.001  0522
+00.001  0524
+00.001  0526
+00.001  0527
+00.001  0530
+00.001  0531
+00.001  0532
+00.001  0533
+00.001  0534
+00.001  0535
+00.001  0536
+00.001  0537
+00.001  0538
+00.001  0539
+00.001  0542
+00.001  0543
+00.001  0544
+00.001  0545
+00.001  0550
+00.001  0556
+00.001  0557
+00.001  0559
+00.001  0562
+00.001  0563
+00.001  0566
+00.001  0567
+00.001  0570
+00.001  0573
+00.001  0578
+00.001  0580
+00.001  0581
+00.001  0582
+00.001  0583
+00.001  0585
+00.001  0586
+00.001  0595
+00.001  0597
+00.001  0598
+00.001  0599
+00.001  0600
+00.001  0601
+00.001  0602
+00.001  0603
+00.001  0604
+00.001  0605
+00.001  0606
+00.001  0607
+00.001  0609
+00.001  0616
+00.001  0618
+00.001  0619
+00.001  0620
+00.001  0621
+00.001  0622
+00.001  0623
+00.001  0626
+00.001  0628
+00.001  0629
+00.001  0630
+00.001  0631
+00.001  0632
+00.001  0634
+00.001  0635
+00.001  0636
+00.001  0637
+00.001  0640
+00.001  0641
+00.001  0642
+00.001  0701
+00.001  0702
+00.001  0703
+00.001  0704
+00.001  0705
+00.001  0712
+00.001  0713
+00.001  0715
+00.001  0800
+00.001  0801
+00.001  0802
+00.001  0803
+00.001  0804
+00.001  0805
+00.001  0806
+00.001  0807
+00.001  0808
+00.001  0809
+00.001  0810
+00.001  0811
+00.001  0812
+00.001  0813
+00.001  0814
+00.001  0815
+00.001  0816
+00.001  0817
+00.001  0818
+00.001  0819
+00.001  0820
+00.001  0824
+00.001  0826
+00.001  0828
+00.001  0829
+00.001  0837
+00.001  0838
+00.001  0839
+00.001  0840
+00.001  0841
+00.001  0842
+00.001  0843
+00.001  0844
+00.001  0845
+00.001  0846
+00.001  0850
+00.001  0851
+00.001  0852
+00.001  0853
+00.001  0854
+00.001  0855
+00.001  0856
+00.001  0857
+00.001  0858
+00.001  0859
+00.001  0860
+00.001  0861
+00.001  0862
+00.001  0863
+00.001  0865
+00.001  0866
+00.001  0870
+00.001  0871
+00.001  0872
+00.001  0874
+00.001  0875
+00.001  0883
+00.001  0884
+00.001  0885
+00.001  0886
+00.001  0887
+00.001  0888
+00.001  0889
+00.001  0890
+00.001  0900
+00.001  0902
+00.001  0903
+00.001  0904
+00.001  0908
+00.001  0909
+00.001  0910
+00.001  0911
+00.001  0912
+00.001  0913
+00.001  0914
+00.001  0915
+00.001  0916
+00.001  0917
+00.001  0918
+00.001  0919
+00.001  0920
+00.001  0922
+00.001  0923
+00.001  0924
+00.001  0925
+00.001  0926
+00.001  0927
+00.001  0928
+00.001  0929
+00.001  0930
+00.001  0931
+00.001  0939
+00.001  0940
+00.001  0941
+00.001  0943
+00.001  0944
+00.001  0945
+00.001  0946
+00.001  0948
+00.001  0949
+00.001  1000
+00.001  1003
+00.001  1004
+00.001  1006
+00.001  1007
+00.001  1009
+00.001  1010
+00.001  1016
+00.001  1017
+00.001  1018
+00.001  1019
+00.001  1020
+00.001  1032
+00.001  1033
+00.001  1038
+00.001  1039
+00.001  1040
+00.001  1045
+00.001  1046
+00.001  1048
+00.001  1049
+00.001  1057
+00.001  1058
+00.001  1059
+00.001  1062
+00.001  1063
+00.001  1069
+00.001  1082
+00.001  1084
+00.001  1085
+00.001  1092
+00.001  1093
+00.001  1099
+00.001  1101
+00.001  1106
+00.001  1107
+00.001  1108
+00.001  1109
+00.001  1110
+00.001  1111
+00.001  1115
+00.001  1118
+00.001  1119
+00.001  1120
+00.001  1121
+00.001  1122
+00.001  1125
+00.001  1126
+00.001  1127
+00.001  1132
+00.001  1134
+00.001  1137
+00.001  1139
+00.001  1140
+00.001  1141
+00.001  1142
+00.001  1143
+00.001  1144
+00.001  1145
+00.001  1146
+00.001  1147
+00.001  1150
+00.001  1152
+00.001  1203
+00.001  1205
+00.001  1212
+00.001  1213
+00.001  1214
+00.001  1216
+00.001  1220
+00.001  1226
+00.001  1227
+00.001  1228
+00.001  1231
+00.001  1234
+00.001  1236
+00.001  1238
+00.001  1240
+00.001  1241
+00.001  1242
+00.001  1243
+00.001  1247
+00.001  1248
+00.001  1249
+00.001  1250
+00.001  1251
+00.001  1252
+00.001  1254
+00.001  1255
+00.001  1256
+00.001  1257
+00.001  1258
+00.001  1259
+00.001  1260
+00.001  1262
+00.001  1280
+00.001  1281
+00.001  1283
+00.001  1289
+00.001  1298
+00.001  1299
+00.001  1300
+00.001  1301
+00.001  1302
+00.001  1303
+00.001  1304
+00.001  1305
+00.001  1306
+00.001  1307
+00.001  1308
+00.001  1317
+00.001  1318
+00.001  1322
+00.001  1323
+00.001  1326
+00.001  1327
+00.001  1329
+00.001  1333
+00.001  1394
+00.001  1395
+00.001  1396
+00.001  1397
+00.001  1398
+00.001  1399
+00.001  1408
+00.001  1409
+00.001  1410
+00.001  1411
+00.001  1416
+00.001  1427
+00.001  1430
+00.001  1431
+00.001  1432
+00.001  1440
+00.001  1441
+00.001  1442
+00.001  1447
+00.001  1449
+00.001  1450
+00.001  1452
+00.001  1453
+00.001  1500
+00.001  1501
+00.001  1502
+00.001  1503
+00.001  1504
+00.001  1505
+00.001  1507
+00.001  1508
+00.001  1515
+00.001  1516
+00.001  1520
+00.001  1521
+00.001  1529
+00.001  1530
+00.001  1535
+00.001  1536
+00.001  1537
+00.000  0064
+00.000  0065
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0072
+00.000  0081
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0094
+00.000  0096
+00.000  0150
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0159
+00.000  0162
+00.000  0165
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0206
+00.000  0209
+00.000  0213
+00.000  0239
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0258
+00.000  0259
+00.000  0265
+00.000  0267
+00.000  0273
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0506
+00.000  0540
+00.000  0547
+00.000  0548
+00.000  0551
+00.000  0552
+00.000  0555
+00.000  0558
+00.000  0560
+00.000  0565
+00.000  0579
+00.000  0590
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0827
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0864
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0873
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0921
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  1001
+00.000  1002
+00.000  1008
+00.000  1021
+00.000  1030
+00.000  1034
+00.000  1035
+00.000  1060
+00.000  1061
+00.000  1071
+00.000  1072
+00.000  1079
+00.000  1095
+00.000  1097
+00.000  1100
+00.000  1112
+00.000  1136
+00.000  1215
+00.000  1229
+00.000  1244
+00.000  1282
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1310
+00.000  1330
+00.000  1412
+00.000  1418
+00.000  1437
+00.000  1448
+00.000  1451
+
+Total time per test (full)...
+
+-time-  test
+------  ----
+31.320  0564
+23.684  1117
+13.159  1086
+10.746  0250
+10.609  0251
+10.455  0029
+08.778  0190
+05.067  0286
+05.043  1243
+05.015  0285
+04.700  0853
+04.693  1501
+04.051  1238
+03.787  0537
+03.302  0526
+03.299  0532
+03.283  0527
+03.019  0528
+02.608  0080
+02.188  0191
+02.183  0100
+02.175  0252
+02.173  0647
+02.173  1091
+02.162  0160
+02.151  0645
+02.147  1200
+02.141  1074
+02.128  1515
+02.127  1203
+02.120  0850
+02.085  0534
+02.083  0715
+02.080  1051
+02.064  1516
+02.048  0271
+02.042  1435
+02.039  0646
+02.036  0567
+02.036  1075
+02.027  0240
+02.022  0001
+02.022  0593
+02.022  1450
+02.021  1208
+02.015  1452
+01.620  0714
+01.590  1527
+01.566  1526
+01.186  1321
+01.139  0546
+01.126  0173
+01.114  0575
+01.089  1068
+01.078  1055
+01.078  1073
+01.077  0650
+01.074  0208
+01.074  0510
+01.073  0058
+01.073  0533
+01.071  0156
+01.070  0010
+01.067  1525
+01.066  1041
+01.065  0060
+01.060  1070
+01.059  0033
+01.033  1320
+01.030  0281
+01.030  0530
+01.028  0039
+01.020  0507
+01.019  0041
+01.018  0584
+01.016  0535
+01.014  0098
+01.011  0196
+01.011  0198
+01.009  0197
+01.008  0218
+01.007  0514
+01.006  0513
+01.005  0083
+00.979  1288
+00.920  1319
+00.762  0574
+00.694  1113
+00.643  0095
+00.604  0503
+00.577  1509
+00.567  1287
+00.565  1428
+00.554  1528
+00.524  1078
+00.519  0275
+00.382  1221
+00.380  0576
+00.335  1222
+00.315  1114
+00.245  0712
+00.232  0711
+00.220  0842
+00.219  0843
+00.216  0839
+00.216  0840
+00.212  0804
+00.209  0826
+00.208  0707
+00.208  0825
+00.208  0828
+00.205  0837
+00.203  0706
+00.200  0713
+00.200  0819
+00.195  0816
+00.192  0824
+00.191  1084
+00.190  0820
+00.182  1327
+00.181  0838
+00.178  1087
+00.172  0810
+00.171  0027
+00.170  0086
+00.170  1225
+00.168  0800
+00.168  1010
+00.166  1149
+00.164  0215
+00.163  0625
+00.162  0210
+00.161  0149
+00.160  0257
+00.158  0841
+00.157  0212
+00.157  0541
+00.157  1326
+00.156  0142
+00.156  0638
+00.154  0211
+00.154  0815
+00.154  1217
+00.153  0801
+00.152  0216
+00.151  0539
+00.150  0846
+00.148  0611
+00.148  0802
+00.147  1138
+00.147  1420
+00.141  0610
+00.140  0624
+00.139  1056
+00.137  0639
+00.135  0126
+00.135  0146
+00.134  1054
+00.131  0643
+00.126  0055
+00.125  0040
+00.125  0136
+00.125  0615
+00.125  1012
+00.125  1379
+00.125  1446
+00.124  0554
+00.123  0049
+00.123  0350
+00.123  0588
+00.123  0616
+00.121  1003
+00.121  1357
+00.121  1536
+00.120  0627
+00.120  1037
+00.120  1039
+00.120  1052
+00.120  1053
+00.120  1062
+00.119  0011
+00.119  0608
+00.119  1038
+00.118  0004
+00.118  0051
+00.118  0052
+00.118  1076
+00.117  0886
+00.117  1006
+00.117  1383
+00.117  1405
+00.116  0028
+00.116  0614
+00.115  0042
+00.115  1152
+00.115  1224
+00.115  1325
+00.115  1391
+00.114  0050
+00.114  0139
+00.114  0227
+00.114  0596
+00.114  0612
+00.114  1031
+00.114  1067
+00.114  1359
+00.113  0045
+00.113  0521
+00.113  1005
+00.113  1048
+00.113  1332
+00.112  0105
+00.112  0110
+00.112  1047
+00.112  1088
+00.112  1103
+00.112  1107
+00.112  1388
+00.111  0233
+00.111  0297
+00.111  0613
+00.111  0619
+00.111  0634
+00.111  0808
+00.111  1036
+00.111  1050
+00.111  1080
+00.111  1360
+00.111  1387
+00.110  0102
+00.110  0103
+00.110  0296
+00.110  0544
+00.110  0562
+00.110  0862
+00.110  0872
+00.110  1081
+00.110  1362
+00.110  1382
+00.110  1384
+00.110  1385
+00.110  1386
+00.110  1389
+00.109  0109
+00.109  0182
+00.109  0234
+00.109  0261
+00.109  0298
+00.109  0883
+00.109  1378
+00.109  1390
+00.109  1413
+00.109  1444
+00.108  0106
+00.108  0108
+00.108  0235
+00.108  0276
+00.108  0352
+00.108  0586
+00.108  0595
+00.108  0604
+00.108  0884
+00.108  0888
+00.108  1137
+00.108  1227
+00.108  1349
+00.108  1351
+00.108  1353
+00.108  1361
+00.107  0107
+00.107  0228
+00.107  0520
+00.107  0605
+00.107  1356
+00.107  1363
+00.106  0127
+00.106  0137
+00.106  0248
+00.106  0254
+00.106  0351
+00.106  1226
+00.106  1414
+00.105  0131
+00.105  0138
+00.105  0270
+00.105  0280
+00.105  0354
+00.105  0806
+00.105  0866
+00.104  0128
+00.104  0129
+00.104  0132
+00.104  0133
+00.104  0134
+00.104  0253
+00.104  0353
+00.104  0529
+00.104  0870
+00.104  1233
+00.104  1350
+00.104  1352
+00.104  1358
+00.104  1381
+00.103  0101
+00.103  0130
+00.103  0525
+00.103  0620
+00.103  0809
+00.103  0818
+00.103  0887
+00.103  1348
+00.102  0143
+00.102  0282
+00.102  0636
+00.102  0865
+00.102  0885
+00.102  1219
+00.102  1354
+00.101  0861
+00.101  1355
+00.101  1392
+00.100  0582
+00.100  0803
+00.100  0871
+00.100  1153
+00.100  1380
+00.099  1393
+00.098  0255
+00.097  0637
+00.096  0124
+00.096  0621
+00.096  0622
+00.095  0623
+00.095  0626
+00.095  0633
+00.095  0814
+00.094  0874
+00.093  0617
+00.091  0600
+00.091  0609
+00.091  0618
+00.091  0635
+00.090  0641
+00.089  0603
+00.089  0640
+00.087  0602
+00.087  0807
+00.086  0007
+00.084  0121
+00.084  0147
+00.084  0601
+00.084  0642
+00.083  0117
+00.083  0294
+00.082  0120
+00.081  0056
+00.079  0151
+00.079  1096
+00.078  0291
+00.078  1102
+00.076  1531
+00.075  0145
+00.074  0122
+00.074  0701
+00.073  1104
+00.071  0054
+00.070  0030
+00.070  0290
+00.069  1057
+00.068  0157
+00.067  0161
+00.067  0928
+00.067  1028
+00.067  1201
+00.067  1514
+00.066  0112
+00.066  0178
+00.066  0505
+00.066  0912
+00.066  1105
+00.065  0002
+00.065  0111
+00.065  0135
+00.065  0144
+00.065  0181
+00.065  0241
+00.065  0592
+00.065  1406
+00.064  0043
+00.064  0193
+00.064  0236
+00.064  0508
+00.064  0945
+00.064  1202
+00.063  0008
+00.063  0037
+00.063  0059
+00.063  0066
+00.063  0093
+00.063  0180
+00.063  0269
+00.063  0531
+00.062  0026
+00.062  0044
+00.062  0163
+00.062  0545
+00.062  0549
+00.062  0563
+00.062  0943
+00.062  1092
+00.062  1449
+00.061  0085
+00.061  0158
+00.061  0164
+00.061  0166
+00.061  0174
+00.061  0249
+00.061  0589
+00.061  0591
+00.061  0710
+00.061  0812
+00.061  0890
+00.061  0942
+00.061  0947
+00.061  1011
+00.061  1245
+00.061  1258
+00.060  0009
+00.060  0035
+00.060  0057
+00.060  0074
+00.060  0084
+00.060  0187
+00.060  0556
+00.060  0920
+00.060  0922
+00.060  0948
+00.060  1090
+00.060  1151
+00.060  1259
+00.060  1532
+00.059  0005
+00.059  0047
+00.059  0062
+00.059  0071
+00.059  0207
+00.059  0287
+00.059  0550
+00.059  0845
+00.059  0946
+00.059  1089
+00.059  1106
+00.059  1139
+00.059  1144
+00.059  1534
+00.058  0073
+00.058  0079
+00.058  0194
+00.058  0264
+00.058  0519
+00.058  0561
+00.058  0913
+00.058  1015
+00.058  1029
+00.057  0006
+00.057  0152
+00.057  0186
+00.057  0217
+00.057  0274
+00.057  0277
+00.057  0279
+00.057  0299
+00.057  0515
+00.057  0709
+00.057  0813
+00.057  1207
+00.057  1261
+00.057  1517
+00.057  1535
+00.056  0063
+00.056  0278
+00.056  0512
+00.056  0516
+00.056  0523
+00.056  0904
+00.056  0927
+00.054  0844
+00.054  0919
+00.053  0700
+00.053  0708
+00.053  0817
+00.053  0829
+00.053  0889
+00.053  0944
+00.052  0805
+00.052  0903
+00.052  1140
+00.051  0908
+00.050  0811
+00.050  0857
+00.049  0924
+00.048  0949
+00.045  0628
+00.045  1206
+00.043  0119
+00.043  1309
+00.041  0123
+00.040  0118
+00.038  0607
+00.038  0631
+00.037  0606
+00.036  0629
+00.035  0630
+00.034  1119
+00.033  0504
+00.031  1445
+00.028  0939
+00.024  0293
+00.023  1506
+00.022  1132
+00.021  0237
+00.021  1341
+00.020  0114
+00.019  0116
+00.019  1026
+00.019  1439
+00.018  0020
+00.018  1404
+00.017  0125
+00.017  0238
+00.017  0292
+00.017  1098
+00.017  1099
+00.017  1101
+00.016  0104
+00.016  0115
+00.015  0031
+00.015  0046
+00.015  0214
+00.015  0518
+00.015  0553
+00.015  1083
+00.015  1407
+00.015  1533
+00.014  0025
+00.014  0266
+00.013  0148
+00.013  1235
+00.013  1402
+00.012  0222
+00.012  0648
+00.012  0649
+00.012  1082
+00.012  1085
+00.012  1400
+00.012  1401
+00.012  1403
+00.012  1440
+00.012  1511
+00.011  0053
+00.011  0113
+00.011  0179
+00.011  0295
+00.011  0702
+00.011  0901
+00.011  0902
+00.011  0917
+00.011  1044
+00.011  1123
+00.011  1160
+00.011  1205
+00.011  1280
+00.011  1520
+00.010  0141
+00.010  0185
+00.010  0189
+00.010  0229
+00.010  0247
+00.010  0268
+00.010  0288
+00.010  0542
+00.010  0569
+00.010  0571
+00.010  0572
+00.010  0854
+00.010  0900
+00.010  0909
+00.010  0910
+00.010  0915
+00.010  0940
+00.010  0941
+00.010  1013
+00.010  1024
+00.010  1025
+00.010  1046
+00.010  1135
+00.010  1218
+00.010  1232
+00.010  1237
+00.010  1262
+00.010  1336
+00.010  1337
+00.010  1344
+00.010  1345
+00.010  1347
+00.010  1366
+00.010  1371
+00.010  1372
+00.010  1374
+00.010  1375
+00.010  1377
+00.010  1423
+00.010  1436
+00.010  1443
+00.009  0018
+00.009  0022
+00.009  0061
+00.009  0140
+00.009  0183
+00.009  0199
+00.009  0223
+00.009  0224
+00.009  0260
+00.009  0262
+00.009  0851
+00.009  0852
+00.009  0855
+00.009  0863
+00.009  0911
+00.009  0916
+00.009  0918
+00.009  1000
+00.009  1014
+00.009  1022
+00.009  1042
+00.009  1077
+00.009  1108
+00.009  1128
+00.009  1129
+00.009  1130
+00.009  1131
+00.009  1161
+00.009  1204
+00.009  1246
+00.009  1314
+00.009  1328
+00.009  1340
+00.009  1364
+00.009  1365
+00.009  1367
+00.009  1368
+00.009  1369
+00.009  1370
+00.009  1373
+00.009  1376
+00.009  1415
+00.009  1421
+00.009  1425
+00.008  0032
+00.008  0048
+00.008  0075
+00.008  0087
+00.008  0099
+00.008  0184
+00.008  0188
+00.008  0221
+00.008  0231
+00.008  0263
+00.008  0272
+00.008  0289
+00.008  0500
+00.008  0511
+00.008  0568
+00.008  0573
+00.008  0585
+00.008  0597
+00.008  0598
+00.008  0599
+00.008  0644
+00.008  0703
+00.008  0856
+00.008  0858
+00.008  0859
+00.008  0860
+00.008  0914
+00.008  0923
+00.008  0925
+00.008  0926
+00.008  0929
+00.008  0930
+00.008  1023
+00.008  1027
+00.008  1043
+00.008  1064
+00.008  1065
+00.008  1066
+00.008  1094
+00.008  1120
+00.008  1133
+00.008  1134
+00.008  1141
+00.008  1210
+00.008  1216
+00.008  1223
+00.008  1228
+00.008  1230
+00.008  1231
+00.008  1240
+00.008  1241
+00.008  1249
+00.008  1250
+00.008  1254
+00.008  1256
+00.008  1311
+00.008  1312
+00.008  1313
+00.008  1315
+00.008  1318
+00.008  1331
+00.008  1334
+00.008  1338
+00.008  1342
+00.008  1343
+00.008  1408
+00.008  1417
+00.008  1419
+00.008  1422
+00.008  1424
+00.008  1426
+00.008  1429
+00.008  1434
+00.008  1438
+00.008  1507
+00.008  1513
+00.007  0003
+00.007  0012
+00.007  0024
+00.007  0034
+00.007  0036
+00.007  0038
+00.007  0077
+00.007  0078
+00.007  0082
+00.007  0097
+00.007  0171
+00.007  0172
+00.007  0192
+00.007  0195
+00.007  0220
+00.007  0226
+00.007  0242
+00.007  0256
+00.007  0517
+00.007  0522
+00.007  0524
+00.007  0536
+00.007  0538
+00.007  0570
+00.007  0578
+00.007  0875
+00.007  1004
+00.007  1032
+00.007  1033
+00.007  1040
+00.007  1058
+00.007  1059
+00.007  1093
+00.007  1109
+00.007  1115
+00.007  1116
+00.007  1118
+00.007  1122
+00.007  1124
+00.007  1125
+00.007  1127
+00.007  1142
+00.007  1147
+00.007  1148
+00.007  1150
+00.007  1212
+00.007  1213
+00.007  1214
+00.007  1239
+00.007  1248
+00.007  1251
+00.007  1252
+00.007  1253
+00.007  1255
+00.007  1257
+00.007  1283
+00.007  1298
+00.007  1299
+00.007  1317
+00.007  1322
+00.007  1333
+00.007  1335
+00.007  1339
+00.007  1346
+00.007  1411
+00.007  1416
+00.007  1431
+00.007  1432
+00.007  1433
+00.006  0013
+00.006  0014
+00.006  0015
+00.006  0016
+00.006  0017
+00.006  0092
+00.006  0283
+00.006  0284
+00.006  0509
+00.006  0559
+00.006  0566
+00.006  0580
+00.006  0581
+00.006  0587
+00.006  0704
+00.006  0705
+00.006  0931
+00.006  1007
+00.006  1009
+00.006  1016
+00.006  1019
+00.006  1045
+00.006  1049
+00.006  1063
+00.006  1069
+00.006  1110
+00.006  1111
+00.006  1121
+00.006  1126
+00.006  1143
+00.006  1234
+00.006  1242
+00.006  1260
+00.006  1430
+00.006  1502
+00.006  1503
+00.006  1504
+00.006  1505
+00.005  0019
+00.005  0021
+00.005  0023
+00.005  0076
+00.005  0200
+00.005  0201
+00.005  0202
+00.005  0203
+00.005  0204
+00.005  0205
+00.005  0219
+00.005  0225
+00.005  0502
+00.005  0557
+00.005  0583
+00.005  0632
+00.005  1017
+00.005  1018
+00.005  1020
+00.005  1145
+00.005  1146
+00.005  1220
+00.005  1236
+00.005  1247
+00.005  1281
+00.005  1304
+00.005  1305
+00.005  1308
+00.005  1329
+00.005  1410
+00.005  1427
+00.005  1441
+00.005  1442
+00.005  1447
+00.005  1453
+00.005  1500
+00.005  1529
+00.005  1530
+00.005  1537
+00.004  0501
+00.004  0543
+00.004  1289
+00.004  1300
+00.004  1301
+00.004  1302
+00.004  1303
+00.004  1306
+00.004  1307
+00.004  1323
+00.004  1394
+00.004  1395
+00.004  1396
+00.004  1397
+00.004  1398
+00.004  1399
+00.004  1409
+00.004  1508
+00.004  1521
+00.001  1060
+00.001  1061
+00.000  0064
+00.000  0065
+00.000  0067
+00.000  0068
+00.000  0069
+00.000  0070
+00.000  0072
+00.000  0081
+00.000  0088
+00.000  0089
+00.000  0090
+00.000  0091
+00.000  0094
+00.000  0096
+00.000  0150
+00.000  0153
+00.000  0154
+00.000  0155
+00.000  0159
+00.000  0162
+00.000  0165
+00.000  0167
+00.000  0168
+00.000  0169
+00.000  0170
+00.000  0175
+00.000  0176
+00.000  0177
+00.000  0206
+00.000  0209
+00.000  0213
+00.000  0239
+00.000  0243
+00.000  0245
+00.000  0246
+00.000  0258
+00.000  0259
+00.000  0265
+00.000  0267
+00.000  0273
+00.000  0300
+00.000  0301
+00.000  0302
+00.000  0303
+00.000  0304
+00.000  0305
+00.000  0306
+00.000  0307
+00.000  0308
+00.000  0309
+00.000  0310
+00.000  0311
+00.000  0312
+00.000  0313
+00.000  0320
+00.000  0321
+00.000  0322
+00.000  0323
+00.000  0324
+00.000  0325
+00.000  0400
+00.000  0401
+00.000  0402
+00.000  0403
+00.000  0404
+00.000  0405
+00.000  0406
+00.000  0407
+00.000  0408
+00.000  0409
+00.000  0506
+00.000  0540
+00.000  0547
+00.000  0548
+00.000  0551
+00.000  0552
+00.000  0555
+00.000  0558
+00.000  0560
+00.000  0565
+00.000  0579
+00.000  0590
+00.000  0821
+00.000  0822
+00.000  0823
+00.000  0827
+00.000  0830
+00.000  0831
+00.000  0832
+00.000  0833
+00.000  0834
+00.000  0835
+00.000  0864
+00.000  0867
+00.000  0868
+00.000  0869
+00.000  0873
+00.000  0876
+00.000  0877
+00.000  0878
+00.000  0879
+00.000  0880
+00.000  0881
+00.000  0905
+00.000  0906
+00.000  0907
+00.000  0921
+00.000  0932
+00.000  0933
+00.000  0934
+00.000  0935
+00.000  0936
+00.000  0937
+00.000  1001
+00.000  1002
+00.000  1008
+00.000  1021
+00.000  1030
+00.000  1034
+00.000  1035
+00.000  1071
+00.000  1072
+00.000  1079
+00.000  1095
+00.000  1097
+00.000  1100
+00.000  1112
+00.000  1136
+00.000  1215
+00.000  1229
+00.000  1244
+00.000  1282
+00.000  1284
+00.000  1285
+00.000  1286
+00.000  1310
+00.000  1330
+00.000  1412
+00.000  1418
+00.000  1437
+00.000  1448
+00.000  1451
+
+TESTDONE: 898 tests out of 899 reported OK: 99%
+TESTFAIL: These test cases failed: 1537 
+TESTDONE: 1054 tests were considered during 308 seconds.
+TESTINFO: 155 tests were skipped due to these restraints:
+TESTINFO: "configured as DISABLED" 11 times (594, 836, 882, 938, 1209, 1211, 1316, 1510, 1512 and 2 more)
+TESTINFO: "curl lacks PSL support" 1 times (1136)
+TESTINFO: "curl lacks crypto support" 56 times (64, 65, 72, 88, 153, 154, 167, 168, 175 and 47 more)
+TESTINFO: "curl lacks SSL support" 26 times (94, 300, 301, 302, 303, 304, 305, 306, 309 and 17 more)
+TESTINFO: "curl lacks idn support" 4 times (165, 1034, 1035, 1448)
+TESTINFO: "curl lacks NTLM support" 42 times (67, 68, 69, 70, 81, 89, 90, 91, 150 and 33 more)
+TESTINFO: "curl lacks smb support" 1 times (1451)
+TESTINFO: "curl lacks TrackMemory support" 3 times (96, 558, 1330)
+TESTINFO: "curl lacks OpenSSL support" 2 times (307, 308)
+TESTINFO: "curl lacks NTLM_WB support" 1 times (1310)
+TESTINFO: "curl lacks https server support" 1 times (1244)
+TESTINFO: "curl lacks GSS-API support" 1 times (1282)
+TESTINFO: "curl has threaded-resolver support" 1 times (506)
+TESTINFO: "curl lacks TLS-SRP support" 5 times (320, 321, 322, 323, 324)

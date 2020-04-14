@@ -1,0 +1,271 @@
+import collections
+import json
+import copy
+from alice_util import parse_hex, flip_list_endian
+
+def json_to_cryptodesc(json_data):
+    data = json.loads(json_data)
+    return CryptoDesc(data['name'], data['text_contain'], data['text_not_contain'], data['rodata_contain'], data['rodata_not_contain'], data['secure'])
+
+# Generic Cryptographic Primitive Description
+#class CryptoDesc(collections.namedtuple('CryptoDesc', ['name', 'text_contain', 'text_not_contain', 'rodata_contain', 'rodata_not_contain', 'secure'], verbose=False)):
+class CryptoDesc:
+
+    def __init__(self, name, text_contain, text_not_contain, rodata_contain, rodata_not_contain, secure):
+        self.name = name
+        self.text_contain = text_contain
+        self.text_not_contain = text_not_contain
+        self.rodata_contain = rodata_contain
+        self.rodata_not_contain = rodata_not_contain
+        self.secure = secure
+        self.sample_ios = None
+
+    def __str__(self):
+        return 'Crypto: ' + str(self.name) + ' / text contains: ' + str(self.text_contain) + ' / rodata contains: ' + str(self.rodata_contain)
+
+    def __hash__(self):
+        return hash(self.name)
+        #return hash((self.name, self.text_contain, self.text_not_contain, self.rodata_contain, self.rodata_not_contain, self.secure))
+    
+    def __eq__(self, other):
+        if isinstance(other, CryptoDesc):
+            return other and self.name == other.name
+        else:
+            return NotImplemented
+
+
+    def to_json(self):
+        return json.dumps(self._asdict(), indent=4)
+
+    def get_text_contain(self, out_format="bytearray"):
+        return parse_hex(self.text_contain, out_format)
+
+    def get_text_not_contain(self, out_format="bytearray"):
+        return parse_hex(self.text_not_contain, out_format)
+
+    def get_rodata_contain(self, out_format="bytearray"):
+        return parse_hex(self.rodata_contain, out_format)
+
+# Add "digest_size" field (in bytes)
+class HashDesc(CryptoDesc):
+
+    def __init__(self, name, text_contain, text_not_contain, rodata_contain, rodata_not_contain, secure, digest_size, sample_ios):
+        CryptoDesc.__init__(self, name, text_contain, text_not_contain, rodata_contain, rodata_not_contain, secure)
+        self.digest_size = digest_size
+        self.sample_ios = copy.deepcopy(sample_ios)
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
+GLOBAL_INPUT = "oakoakoak\0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+GLOBAL_INPUT_LEN = 9 # Only consider till null terminating character
+
+# ------------------------ Defined Cryptographic Primitives ---------------------------------------
+
+# SHA1 Description
+sha1_hex_const = ['01234567', '89abcdef', 'fedcba98', '76543210', 'f0e1d2c3']
+SHA1Desc = HashDesc('sha1', sha1_hex_const, [], sha1_hex_const, [], False, digest_size=20, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": '4edeb5f52d94f2be35c61385d3710d0b2e6ffb7a'}])
+
+RIPEMD160Desc = HashDesc('ripemd160', sha1_hex_const, [], [], [], False, digest_size=20, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": '4fd34b531d03a45dbe45cc50929f75f6307933e9'}])
+
+# MD5 Description
+md5_hex_const = ['01234567', '89abcdef', 'fedcba98', '76543210']
+MD5Desc = HashDesc('md5', md5_hex_const, ['f0e1d2c3'], [], [], False, digest_size=16, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": 'acd796382c9e95fb43696ca1c28826fb'}])
+
+
+# SHA2-512 - https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
+sha512_hex_const = flip_list_endian(['6a09e667f3bcc908', 'bb67ae8584caa73b', '3c6ef372fe94f82b', 'a54ff53a5f1d36f1', '510e527fade682d1', '9b05688c2b3e6c1f', '1f83d9abfb41bd6b', '5be0cd19137e2179'])
+SHA512Desc = HashDesc('sha512', sha512_hex_const, [], [], [], True, digest_size=64, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": '67d3b0db4ed851391320802385bf4b3a1ef9afec206bba34d5f4c7a8891ec36fc3b8750db3bb76d969d3ddc5e01d207803eeab426fa7e3333bfe20d4d419fe2f'}])
+
+# SHA256 Description
+# h0 := 0x6a09e667
+# h1 := 0xbb67ae85
+# h2 := 0x3c6ef372
+# h3 := 0xa54ff53a
+# h4 := 0x510e527f
+# h5 := 0x9b05688c
+# h6 := 0x1f83d9ab
+# h7 := 0x5be0cd19
+sha256_hex_const = ['67e6096a', '85ae67bb', '72f36e3c', '3af54fa5', '7f520e51', '8c68059b', 'abd9831f', '19cde05b']
+SHA256Desc = HashDesc('sha256', sha256_hex_const, sha512_hex_const, [], [], True, digest_size=32, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": '602ed9d1bc53fdaea89ae5acdabdf9fb2c3ed3cf0d5fd8207138612e80d45024'}])
+
+
+# MD2 Description
+md2_s_table = [ 0x29, 0x2E, 0x43, 0xC9, 0xA2, 0xD8, 0x7C, 0x01, 0x3D, 0x36, 0x54, 0xA1, 0xEC, 0xF0, 0x06, 0x13, 
+  0x62, 0xA7, 0x05, 0xF3, 0xC0, 0xC7, 0x73, 0x8C, 0x98, 0x93, 0x2B, 0xD9, 0xBC, 0x4C, 0x82, 0xCA, 
+  0x1E, 0x9B, 0x57, 0x3C, 0xFD, 0xD4, 0xE0, 0x16, 0x67, 0x42, 0x6F, 0x18, 0x8A, 0x17, 0xE5, 0x12, 
+  0xBE, 0x4E, 0xC4, 0xD6, 0xDA, 0x9E, 0xDE, 0x49, 0xA0, 0xFB, 0xF5, 0x8E, 0xBB, 0x2F, 0xEE, 0x7A, 
+  0xA9, 0x68, 0x79, 0x91, 0x15, 0xB2, 0x07, 0x3F, 0x94, 0xC2, 0x10, 0x89, 0x0B, 0x22, 0x5F, 0x21,
+  0x80, 0x7F, 0x5D, 0x9A, 0x5A, 0x90, 0x32, 0x27, 0x35, 0x3E, 0xCC, 0xE7, 0xBF, 0xF7, 0x97, 0x03, 
+  0xFF, 0x19, 0x30, 0xB3, 0x48, 0xA5, 0xB5, 0xD1, 0xD7, 0x5E, 0x92, 0x2A, 0xAC, 0x56, 0xAA, 0xC6, 
+  0x4F, 0xB8, 0x38, 0xD2, 0x96, 0xA4, 0x7D, 0xB6, 0x76, 0xFC, 0x6B, 0xE2, 0x9C, 0x74, 0x04, 0xF1, 
+  0x45, 0x9D, 0x70, 0x59, 0x64, 0x71, 0x87, 0x20, 0x86, 0x5B, 0xCF, 0x65, 0xE6, 0x2D, 0xA8, 0x02, 
+  0x1B, 0x60, 0x25, 0xAD, 0xAE, 0xB0, 0xB9, 0xF6, 0x1C, 0x46, 0x61, 0x69, 0x34, 0x40, 0x7E, 0x0F, 
+  0x55, 0x47, 0xA3, 0x23, 0xDD, 0x51, 0xAF, 0x3A, 0xC3, 0x5C, 0xF9, 0xCE, 0xBA, 0xC5, 0xEA, 0x26, 
+  0x2C, 0x53, 0x0D, 0x6E, 0x85, 0x28, 0x84, 0x09, 0xD3, 0xDF, 0xCD, 0xF4, 0x41, 0x81, 0x4D, 0x52, 
+  0x6A, 0xDC, 0x37, 0xC8, 0x6C, 0xC1, 0xAB, 0xFA, 0x24, 0xE1, 0x7B, 0x08, 0x0C, 0xBD, 0xB1, 0x4A, 
+  0x78, 0x88, 0x95, 0x8B, 0xE3, 0x63, 0xE8, 0x6D, 0xE9, 0xCB, 0xD5, 0xFE, 0x3B, 0x00, 0x1D, 0x39, 
+  0xF2, 0xEF, 0xB7, 0x0E, 0x66, 0x58, 0xD0, 0xE4, 0xA6, 0x77, 0x72, 0xF8, 0xEB, 0x75, 0x4B, 0x0A, 
+  0x31, 0x44, 0x50, 0xB4, 0x8F, 0xED, 0x1F, 0x1A, 0xDB, 0x99, 0x8D, 0x33, 0x9F, 0x11, 0x83, 0x14 ];
+md2_s_table = ''.join(format(x, '02x') for x in md2_s_table);
+MD2Desc = HashDesc('md2', [], [], [md2_s_table], [], False, digest_size=16, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": 'd7b8ad1c085f0e4a8d208bcd53c95e6f'}])
+
+# MD4 - TODO: similar to MD5 - what will be difference?
+MD4Desc = HashDesc('md4', md5_hex_const, ['f0e1d2c3'], [], [], False, digest_size=16, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": '71762b512412efac39e24d4f5e556085'}])
+
+# BLAKE2:b,s 
+#blake_table =  \
+#[  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15 ,
+#   14, 10,  4,  8,  9, 15, 13,  6,  1, 12,  0,  2, 11,  7,  5,  3 ,
+#   11,  8, 12,  0,  5,  2, 15, 13, 10, 14,  3,  6,  7,  1,  9,  4 ,
+#    7,  9,  3,  1, 13, 12, 11, 14,  2,  6,  5, 10,  4,  0, 15,  8 ,
+#    9,  0,  5,  7,  2,  4, 10, 15, 14,  1, 11, 12,  6,  8,  3, 13 ,
+#    2, 12,  6, 10,  0, 11,  8,  3,  4, 13,  7,  5, 15, 14,  1,  9 ,
+#   12,  5,  1, 15, 14, 13,  4, 10,  0,  7,  6,  3,  9,  2,  8, 11 ,
+#   13, 11,  7, 14, 12,  1,  3,  9,  5,  0, 15,  4,  8,  6,  2, 10 ,
+#    6, 15, 14,  9, 11,  3,  0,  8, 12,  2, 13,  7,  1,  4, 10,  5 ,
+#   10,  2,  8,  4,  7,  6,  1,  5, 15, 11,  9, 14,  3, 12, 13 , 0 ,
+#];
+#blake_table = [format(x, '02x') for x in blake_table]
+
+#BLAKE2bDesc = CryptoDesc('blake2b', sha512_hex_const, [], [], [], True) # TODO: similar to SHA512?
+#BLAKE2sDesc = CryptoDesc('blake2s', sha256_hex_const, [], [], [], True) # TODO: similar to SHA256?
+
+# Encryption Functions
+# DES, Blowfish, AES, RC4, RC5
+
+# DES
+des_init_perm_table = \
+                                        [58, 50, 42, 34, 26, 18, 10, 2,
+                                        60, 52, 44, 36, 28, 20, 12, 4,
+                                        62, 54, 46, 38, 30, 22, 14, 6,
+                                        64, 56, 48, 40, 32, 24, 16, 8,
+                                        57, 49, 41, 33, 25, 17,  9, 1,
+                                        59, 51, 43, 35, 27, 19, 11, 3,
+                                        61, 53, 45, 37, 29, 21, 13, 5,
+                                        63, 55, 47, 39, 31, 23, 15, 7];
+# TODO: does not work with openssl
+# https://github.com/openssl/openssl/blob/1c534560dc905b6d399dbde242422f0cf5543286/crypto/des/des_locl.h#L221
+des_init_perm_table = [format(x, '02x') for x in des_init_perm_table]
+des_s1 = \
+[14,  4, 13,  1,  2, 15, 11,  8,  3, 10,  6, 12,  5,  9,  0,  7,
+0, 15,  7,  4, 14,  2, 13,  1, 10,  6, 12, 11,  9,  5,  3,  8,
+4,  1, 14,  8, 13,  6,  2, 11, 15, 12,  9,  7,  3, 10,  5,  0,
+15, 12, 8, 2, 4, 9, 1, 7, 5, 11, 3, 14, 10, 0, 6, 13]
+des_s1 = ''.join(format(x, '02x') for x in des_s1)
+DESDesc = CryptoDesc('des', [], [], [des_s1], [], False)
+
+# Blowfish
+# uint32_t P[18]
+# uint32_t S[4][256]
+# https://link.springer.com/content/pdf/10.1007%2F3-540-58108-1_24.pdf
+bf_p_array = \
+flip_list_endian(['243f6a88', '85a308d3', '13198a2e', '03707344', 'a4093822', '299f31d0',
+'082efa98', 'ec4e6c89', '452821e6', '38d01377', 'be5466cf', '34e90c6c',
+'c0ac29b7', 'c97c50dd', '3f84d5b5', 'b5470917', '9216d5d9', '8979fb1b'])
+bf_p_array = ''.join(bf_p_array)
+#bf_p_array = [format(x, '08x') for x in bf_p_array]
+
+#TODO: do we need S-box?
+BlowfishDesc = CryptoDesc('blowfish', [], [], [bf_p_array], [], False)
+
+# AES
+aes_s_box = \
+[
+  0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
+  0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,
+  0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+  0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75,
+  0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,
+  0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+  0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8,
+  0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2,
+  0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+  0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,
+  0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79,
+  0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+  0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a,
+  0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e,
+  0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+  0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16 ];
+aes_s_box = ''.join(format(x, '02x') for x in aes_s_box)
+AESDesc = CryptoDesc('aes', [], [], [aes_s_box], [], True)
+
+# RC2
+# https://tools.ietf.org/html/rfc2268
+rc2_table = \
+[
+0xd9, 0x78, 0xf9, 0xc4, 0x19, 0xdd, 0xb5, 0xed, 0x28, 0xe9, 0xfd, 0x79,
+    0x4a, 0xa0, 0xd8, 0x9d, 0xc6, 0x7e, 0x37, 0x83, 0x2b, 0x76, 0x53, 0x8e,
+    0x62, 0x4c, 0x64, 0x88, 0x44, 0x8b, 0xfb, 0xa2, 0x17, 0x9a, 0x59, 0xf5,
+    0x87, 0xb3, 0x4f, 0x13, 0x61, 0x45, 0x6d, 0x8d, 0x09, 0x81, 0x7d, 0x32,
+    0xbd, 0x8f, 0x40, 0xeb, 0x86, 0xb7, 0x7b, 0x0b, 0xf0, 0x95, 0x21, 0x22,
+    0x5c, 0x6b, 0x4e, 0x82, 0x54, 0xd6, 0x65, 0x93, 0xce, 0x60, 0xb2, 0x1c,
+    0x73, 0x56, 0xc0, 0x14, 0xa7, 0x8c, 0xf1, 0xdc, 0x12, 0x75, 0xca, 0x1f,
+    0x3b, 0xbe, 0xe4, 0xd1, 0x42, 0x3d, 0xd4, 0x30, 0xa3, 0x3c, 0xb6, 0x26,
+    0x6f, 0xbf, 0x0e, 0xda, 0x46, 0x69, 0x07, 0x57, 0x27, 0xf2, 0x1d, 0x9b,
+    0xbc, 0x94, 0x43, 0x03, 0xf8, 0x11, 0xc7, 0xf6, 0x90, 0xef, 0x3e, 0xe7,
+    0x06, 0xc3, 0xd5, 0x2f, 0xc8, 0x66, 0x1e, 0xd7, 0x08, 0xe8, 0xea, 0xde,
+    0x80, 0x52, 0xee, 0xf7, 0x84, 0xaa, 0x72, 0xac, 0x35, 0x4d, 0x6a, 0x2a,
+    0x96, 0x1a, 0xd2, 0x71, 0x5a, 0x15, 0x49, 0x74, 0x4b, 0x9f, 0xd0, 0x5e,
+    0x04, 0x18, 0xa4, 0xec, 0xc2, 0xe0, 0x41, 0x6e, 0x0f, 0x51, 0xcb, 0xcc,
+    0x24, 0x91, 0xaf, 0x50, 0xa1, 0xf4, 0x70, 0x39, 0x99, 0x7c, 0x3a, 0x85,
+    0x23, 0xb8, 0xb4, 0x7a, 0xfc, 0x02, 0x36, 0x5b, 0x25, 0x55, 0x97, 0x31,
+    0x2d, 0x5d, 0xfa, 0x98, 0xe3, 0x8a, 0x92, 0xae, 0x05, 0xdf, 0x29, 0x10,
+    0x67, 0x6c, 0xba, 0xc9, 0xd3, 0x00, 0xe6, 0xcf, 0xe1, 0x9e, 0xa8, 0x2c,
+    0x63, 0x16, 0x01, 0x3f, 0x58, 0xe2, 0x89, 0xa9, 0x0d, 0x38, 0x34, 0x1b,
+    0xab, 0x33, 0xff, 0xb0, 0xbb, 0x48, 0x0c, 0x5f, 0xb9, 0xb1, 0xcd, 0x2e,
+    0xc5, 0xf3, 0xdb, 0x47, 0xe5, 0xa5, 0x9c, 0x77, 0x0a, 0xa6, 0x20, 0x68,
+    0xfe, 0x7f, 0xc1, 0xad ];
+rc2_table = ''.join(format(x, '02x') for x in rc2_table)
+RC2Desc = CryptoDesc('rc2', [], [], [rc2_table], [], False)
+
+# RC4 - does not use constant - init S box [256] is [0,1,2,3,...,255]
+
+# RC5 - constant is P and Q
+# https://www.ietf.org/rfc/rfc2040.txt
+# P64 = 0xb7e151628aed2a6b, Q64 = 0x9e3779b97f4a7c15
+# Assume the implementation uses the full P and Q
+#rc5_p_q = flip_endian(['b7e151628aed2a6b', '9e3779b97f4a7c15'])
+rc5_p_q = flip_list_endian(['b7e151628aed2a6b'])
+RC5Desc = CryptoDesc('rc5', rc5_p_q, [], [], [], False)
+
+
+
+# ECDSA, ECDH P-256
+# http://www.mathnet.or.kr/mathnet/paper_file/Auburn/Darrel/full-paper.pdf
+# https://csrc.nist.gov/csrc/media/publications/fips/186/3/archive/2009-06-25/documents/fips_186-3.pdf page 86
+# P and Gx should be enough to differentiate
+curve_p192 = ['FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFF'.lower(),
+              '188da80eb03090f67cbf20eb43a18800f4ff0afd82ff1012']
+curve_p224 = ['FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001'.lower(),
+              'b70e0cbd6bb4bf7f321390b94a03c1d356c21122343280d6115c1d21']
+curve_p256 = ['FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF'.lower(),
+              '6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296']
+curve_p384 = ['FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF'.lower(),
+              'aa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7']
+curve_p512 = ['1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'.lower(),
+              'c6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66'] 
+
+CurveNISTP192Desc = CryptoDesc('nist-p192', [], [], curve_p192, [], False)
+CurveNISTP224Desc = CryptoDesc('nist-p224', [], [], curve_p224, [], False)
+CurveNISTP256Desc = CryptoDesc('nist-p256', [], [], curve_p256, [], True)
+CurveNISTP384Desc = CryptoDesc('nist-p384', [], [], curve_p384, [], True)
+CurveNISTP512Desc = CryptoDesc('nist-p512', [], [], curve_p224, [], True)
+
+HashSuiteDesc = [MD2Desc, MD5Desc, SHA1Desc, SHA256Desc, SHA512Desc]
+BlockCipherSuiteDesc = [RC2Desc, RC5Desc, DESDesc, BlowfishDesc, AESDesc]
+CurveSuiteDesc = [CurveNISTP192Desc, CurveNISTP224Desc, CurveNISTP256Desc, CurveNISTP384Desc, CurveNISTP512Desc]
+
+KnownCryptoDesc = HashSuiteDesc + BlockCipherSuiteDesc + CurveSuiteDesc
+
+
+def dumps(list_crypto, folder):
+    for c in list_crypto:
+        path = folder + '/' + c.name + '.json'
+        with open(path, 'w') as f:
+            f.write(c.to_json())
+#dumps(AllCryptoDesc, '../crypto-desc')

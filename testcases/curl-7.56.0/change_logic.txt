@@ -1,0 +1,19 @@
+
+47dd1b:       83 7d fc 0f             cmpl   $0xf,-0x4(%rbp)
+451605:       4c 8d 66 20             lea    0x20(%rsi),%r12
+455182:       4c 8d 66 20             lea    0x20(%rsi),%r12
+446150:       48 83 fb 10             cmp    $0x10,%rbx
+
+O0_change = {"old-desp": 0xf, "new-desp": 0x1f}
+O1_change = {"old-desp": 0x20, "new-desp": 0x40}
+O2_change = {"old-desp": 0x20, "new-desp": 0x40}
+Os_change = {"old-desp": 0x10, "new-desp": 0x20}
+fns = [
+	0x47dcc3, #O0
+	0x4515f5, #O1
+	0x455180, #O2
+	0x446118  #Os
+	]
+force_insts = {0x47dd1b: O0_change, 0x451605: O1_change, 0x455182: O2_change, 0x446150: Os_change}
+
+

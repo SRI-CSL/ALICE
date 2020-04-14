@@ -1,0 +1,32 @@
+O0
+477afc:       48 83 7d b8 21          cmpq   $0x21,-0x48(%rbp)
+0x21 -> 0x31
+477b33:       b9 14 00 00 00          mov    $0x14,%ecx
+0x14 -> 0x20
+477b44:       48 83 7d d8 1c          cmpq   $0x1c,-0x28(%rbp)
+0x1c -> 0x2c
+
+force_insts = {0x477afc: {"old-desp": 0x21, "new-desp": 0x31}, 0x477b33: {"old-desp": 0x14, "new-desp": 0x20}, 0x477b44: {"old-desp": 0x1c, "new-desp": 0x2c}}a
+
+
+O1
+44f00c:       48 83 f8 1c             cmp    $0x1c,%rax
+0x1c -> 0x2c
+44eff5:       b9 14 00 00 00          mov    $0x14,%ecx
+0x14 -> 0x20
+force_insts = {0x44f00c: {"old-desp": 0x1c, "new-desp": 0x2c}, 0x44eff5: {"old-desp": 0x14, "new-desp": 0x20}}
+
+O2
+451b45:       b9 14 00 00 00          mov    $0x14,%ecx
+451b67:       48 83 f8 1c             cmp    $0x1c,%rax
+force_insts = {0x451b67: {"old-desp": 0x1c, "new-desp": 0x2c}, 0x451b45: {"old-desp": 0x14, "new-desp": 0x20}}
+
+O3
+45e2a6:       b9 14 00 00 00          mov    $0x14,%ecxa
+45e2c8:       48 83 f8 1c             cmp    $0x1c,%rax
+force_insts = {0x45e2c8: {"old-desp": 0x1c, "new-desp": 0x2c}, 0x45e2a6: {"old-desp": 0x14, "new-desp": 0x20}}
+
+Os
+441d51:       b9 14 00 00 00          mov    $0x14,%ecx
+441d73:       48 83 f8 1c             cmp    $0x1c,%rax
+force_insts = {0x441d73: {"old-desp": 0x1c, "new-desp": 0x2c}, 0x441d51: {"old-desp": 0x14, "new-desp": 0x20}}

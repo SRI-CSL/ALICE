@@ -1,2 +1,1 @@
-# ALICE
-Code and documentation will be uploaded soon.
+See python/README.md

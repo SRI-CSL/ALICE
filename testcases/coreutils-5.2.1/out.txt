@@ -1,0 +1,446 @@
+make  all-recursive
+make[1]: Entering directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1'
+Making all in lib
+make[2]: Entering directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/lib'
+cp ./alloca_.h alloca.h-t
+mv alloca.h-t alloca.h
+make  all-am
+make[3]: Entering directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/lib'
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT acl.o -MD -MP -MF ".deps/acl.Tpo" -c -o acl.o acl.c; \
+then mv -f ".deps/acl.Tpo" ".deps/acl.Po"; else rm -f ".deps/acl.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getdate.o -MD -MP -MF ".deps/getdate.Tpo" -c -o getdate.o getdate.c; \
+then mv -f ".deps/getdate.Tpo" ".deps/getdate.Po"; else rm -f ".deps/getdate.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT posixtm.o -MD -MP -MF ".deps/posixtm.Tpo" -c -o posixtm.o posixtm.c; \
+then mv -f ".deps/posixtm.Tpo" ".deps/posixtm.Po"; else rm -f ".deps/posixtm.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT posixver.o -MD -MP -MF ".deps/posixver.Tpo" -c -o posixver.o posixver.c; \
+then mv -f ".deps/posixver.Tpo" ".deps/posixver.Po"; else rm -f ".deps/posixver.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT strftime.o -MD -MP -MF ".deps/strftime.Tpo" -c -o strftime.o strftime.c; \
+then mv -f ".deps/strftime.Tpo" ".deps/strftime.Po"; else rm -f ".deps/strftime.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getopt.o -MD -MP -MF ".deps/getopt.Tpo" -c -o getopt.o getopt.c; \
+then mv -f ".deps/getopt.Tpo" ".deps/getopt.Po"; else rm -f ".deps/getopt.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getopt1.o -MD -MP -MF ".deps/getopt1.Tpo" -c -o getopt1.o getopt1.c; \
+then mv -f ".deps/getopt1.Tpo" ".deps/getopt1.Po"; else rm -f ".deps/getopt1.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT hash.o -MD -MP -MF ".deps/hash.Tpo" -c -o hash.o hash.c; \
+then mv -f ".deps/hash.Tpo" ".deps/hash.Po"; else rm -f ".deps/hash.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT hash-pjw.o -MD -MP -MF ".deps/hash-pjw.Tpo" -c -o hash-pjw.o hash-pjw.c; \
+then mv -f ".deps/hash-pjw.Tpo" ".deps/hash-pjw.Po"; else rm -f ".deps/hash-pjw.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT addext.o -MD -MP -MF ".deps/addext.Tpo" -c -o addext.o addext.c; \
+then mv -f ".deps/addext.Tpo" ".deps/addext.Po"; else rm -f ".deps/addext.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT argmatch.o -MD -MP -MF ".deps/argmatch.Tpo" -c -o argmatch.o argmatch.c; \
+then mv -f ".deps/argmatch.Tpo" ".deps/argmatch.Po"; else rm -f ".deps/argmatch.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT backupfile.o -MD -MP -MF ".deps/backupfile.Tpo" -c -o backupfile.o backupfile.c; \
+then mv -f ".deps/backupfile.Tpo" ".deps/backupfile.Po"; else rm -f ".deps/backupfile.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT basename.o -MD -MP -MF ".deps/basename.Tpo" -c -o basename.o basename.c; \
+then mv -f ".deps/basename.Tpo" ".deps/basename.Po"; else rm -f ".deps/basename.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT c-strtod.o -MD -MP -MF ".deps/c-strtod.Tpo" -c -o c-strtod.o c-strtod.c; \
+then mv -f ".deps/c-strtod.Tpo" ".deps/c-strtod.Po"; else rm -f ".deps/c-strtod.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT canon-host.o -MD -MP -MF ".deps/canon-host.Tpo" -c -o canon-host.o canon-host.c; \
+then mv -f ".deps/canon-host.Tpo" ".deps/canon-host.Po"; else rm -f ".deps/canon-host.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT cloexec.o -MD -MP -MF ".deps/cloexec.Tpo" -c -o cloexec.o cloexec.c; \
+then mv -f ".deps/cloexec.Tpo" ".deps/cloexec.Po"; else rm -f ".deps/cloexec.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT closeout.o -MD -MP -MF ".deps/closeout.Tpo" -c -o closeout.o closeout.c; \
+then mv -f ".deps/closeout.Tpo" ".deps/closeout.Po"; else rm -f ".deps/closeout.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT cycle-check.o -MD -MP -MF ".deps/cycle-check.Tpo" -c -o cycle-check.o cycle-check.c; \
+then mv -f ".deps/cycle-check.Tpo" ".deps/cycle-check.Po"; else rm -f ".deps/cycle-check.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT diacrit.o -MD -MP -MF ".deps/diacrit.Tpo" -c -o diacrit.o diacrit.c; \
+then mv -f ".deps/diacrit.Tpo" ".deps/diacrit.Po"; else rm -f ".deps/diacrit.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT dirname.o -MD -MP -MF ".deps/dirname.Tpo" -c -o dirname.o dirname.c; \
+then mv -f ".deps/dirname.Tpo" ".deps/dirname.Po"; else rm -f ".deps/dirname.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT dup-safer.o -MD -MP -MF ".deps/dup-safer.Tpo" -c -o dup-safer.o dup-safer.c; \
+then mv -f ".deps/dup-safer.Tpo" ".deps/dup-safer.Po"; else rm -f ".deps/dup-safer.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT exclude.o -MD -MP -MF ".deps/exclude.Tpo" -c -o exclude.o exclude.c; \
+then mv -f ".deps/exclude.Tpo" ".deps/exclude.Po"; else rm -f ".deps/exclude.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT exitfail.o -MD -MP -MF ".deps/exitfail.Tpo" -c -o exitfail.o exitfail.c; \
+then mv -f ".deps/exitfail.Tpo" ".deps/exitfail.Po"; else rm -f ".deps/exitfail.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT filemode.o -MD -MP -MF ".deps/filemode.Tpo" -c -o filemode.o filemode.c; \
+then mv -f ".deps/filemode.Tpo" ".deps/filemode.Po"; else rm -f ".deps/filemode.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT file-type.o -MD -MP -MF ".deps/file-type.Tpo" -c -o file-type.o file-type.c; \
+then mv -f ".deps/file-type.Tpo" ".deps/file-type.Po"; else rm -f ".deps/file-type.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT fopen-safer.o -MD -MP -MF ".deps/fopen-safer.Tpo" -c -o fopen-safer.o fopen-safer.c; \
+then mv -f ".deps/fopen-safer.Tpo" ".deps/fopen-safer.Po"; else rm -f ".deps/fopen-safer.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT fts.o -MD -MP -MF ".deps/fts.Tpo" -c -o fts.o fts.c; \
+then mv -f ".deps/fts.Tpo" ".deps/fts.Po"; else rm -f ".deps/fts.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT full-read.o -MD -MP -MF ".deps/full-read.Tpo" -c -o full-read.o full-read.c; \
+then mv -f ".deps/full-read.Tpo" ".deps/full-read.Po"; else rm -f ".deps/full-read.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT full-write.o -MD -MP -MF ".deps/full-write.Tpo" -c -o full-write.o full-write.c; \
+then mv -f ".deps/full-write.Tpo" ".deps/full-write.Po"; else rm -f ".deps/full-write.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT gettime.o -MD -MP -MF ".deps/gettime.Tpo" -c -o gettime.o gettime.c; \
+then mv -f ".deps/gettime.Tpo" ".deps/gettime.Po"; else rm -f ".deps/gettime.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getugroups.o -MD -MP -MF ".deps/getugroups.Tpo" -c -o getugroups.o getugroups.c; \
+then mv -f ".deps/getugroups.Tpo" ".deps/getugroups.Po"; else rm -f ".deps/getugroups.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT hard-locale.o -MD -MP -MF ".deps/hard-locale.Tpo" -c -o hard-locale.o hard-locale.c; \
+then mv -f ".deps/hard-locale.Tpo" ".deps/hard-locale.Po"; else rm -f ".deps/hard-locale.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT human.o -MD -MP -MF ".deps/human.Tpo" -c -o human.o human.c; \
+then mv -f ".deps/human.Tpo" ".deps/human.Po"; else rm -f ".deps/human.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT idcache.o -MD -MP -MF ".deps/idcache.Tpo" -c -o idcache.o idcache.c; \
+then mv -f ".deps/idcache.Tpo" ".deps/idcache.Po"; else rm -f ".deps/idcache.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT isdir.o -MD -MP -MF ".deps/isdir.Tpo" -c -o isdir.o isdir.c; \
+then mv -f ".deps/isdir.Tpo" ".deps/isdir.Po"; else rm -f ".deps/isdir.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT imaxtostr.o -MD -MP -MF ".deps/imaxtostr.Tpo" -c -o imaxtostr.o imaxtostr.c; \
+then mv -f ".deps/imaxtostr.Tpo" ".deps/imaxtostr.Po"; else rm -f ".deps/imaxtostr.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT linebuffer.o -MD -MP -MF ".deps/linebuffer.Tpo" -c -o linebuffer.o linebuffer.c; \
+then mv -f ".deps/linebuffer.Tpo" ".deps/linebuffer.Po"; else rm -f ".deps/linebuffer.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT localcharset.o -MD -MP -MF ".deps/localcharset.Tpo" -c -o localcharset.o localcharset.c; \
+then mv -f ".deps/localcharset.Tpo" ".deps/localcharset.Po"; else rm -f ".deps/localcharset.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT long-options.o -MD -MP -MF ".deps/long-options.Tpo" -c -o long-options.o long-options.c; \
+then mv -f ".deps/long-options.Tpo" ".deps/long-options.Po"; else rm -f ".deps/long-options.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT makepath.o -MD -MP -MF ".deps/makepath.Tpo" -c -o makepath.o makepath.c; \
+then mv -f ".deps/makepath.Tpo" ".deps/makepath.Po"; else rm -f ".deps/makepath.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT mbswidth.o -MD -MP -MF ".deps/mbswidth.Tpo" -c -o mbswidth.o mbswidth.c; \
+then mv -f ".deps/mbswidth.Tpo" ".deps/mbswidth.Po"; else rm -f ".deps/mbswidth.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT md5.o -MD -MP -MF ".deps/md5.Tpo" -c -o md5.o md5.c; \
+then mv -f ".deps/md5.Tpo" ".deps/md5.Po"; else rm -f ".deps/md5.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT memcasecmp.o -MD -MP -MF ".deps/memcasecmp.Tpo" -c -o memcasecmp.o memcasecmp.c; \
+then mv -f ".deps/memcasecmp.Tpo" ".deps/memcasecmp.Po"; else rm -f ".deps/memcasecmp.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT memcoll.o -MD -MP -MF ".deps/memcoll.Tpo" -c -o memcoll.o memcoll.c; \
+then mv -f ".deps/memcoll.Tpo" ".deps/memcoll.Po"; else rm -f ".deps/memcoll.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT modechange.o -MD -MP -MF ".deps/modechange.Tpo" -c -o modechange.o modechange.c; \
+then mv -f ".deps/modechange.Tpo" ".deps/modechange.Po"; else rm -f ".deps/modechange.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT offtostr.o -MD -MP -MF ".deps/offtostr.Tpo" -c -o offtostr.o offtostr.c; \
+then mv -f ".deps/offtostr.Tpo" ".deps/offtostr.Po"; else rm -f ".deps/offtostr.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT path-concat.o -MD -MP -MF ".deps/path-concat.Tpo" -c -o path-concat.o path-concat.c; \
+then mv -f ".deps/path-concat.Tpo" ".deps/path-concat.Po"; else rm -f ".deps/path-concat.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT physmem.o -MD -MP -MF ".deps/physmem.Tpo" -c -o physmem.o physmem.c; \
+then mv -f ".deps/physmem.Tpo" ".deps/physmem.Po"; else rm -f ".deps/physmem.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT quote.o -MD -MP -MF ".deps/quote.Tpo" -c -o quote.o quote.c; \
+then mv -f ".deps/quote.Tpo" ".deps/quote.Po"; else rm -f ".deps/quote.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT quotearg.o -MD -MP -MF ".deps/quotearg.Tpo" -c -o quotearg.o quotearg.c; \
+then mv -f ".deps/quotearg.Tpo" ".deps/quotearg.Po"; else rm -f ".deps/quotearg.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT readtokens.o -MD -MP -MF ".deps/readtokens.Tpo" -c -o readtokens.o readtokens.c; \
+then mv -f ".deps/readtokens.Tpo" ".deps/readtokens.Po"; else rm -f ".deps/readtokens.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT root-dev-ino.o -MD -MP -MF ".deps/root-dev-ino.Tpo" -c -o root-dev-ino.o root-dev-ino.c; \
+then mv -f ".deps/root-dev-ino.Tpo" ".deps/root-dev-ino.Po"; else rm -f ".deps/root-dev-ino.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT safe-read.o -MD -MP -MF ".deps/safe-read.Tpo" -c -o safe-read.o safe-read.c; \
+then mv -f ".deps/safe-read.Tpo" ".deps/safe-read.Po"; else rm -f ".deps/safe-read.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT safe-write.o -MD -MP -MF ".deps/safe-write.Tpo" -c -o safe-write.o safe-write.c; \
+then mv -f ".deps/safe-write.Tpo" ".deps/safe-write.Po"; else rm -f ".deps/safe-write.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT same.o -MD -MP -MF ".deps/same.Tpo" -c -o same.o same.c; \
+then mv -f ".deps/same.Tpo" ".deps/same.Po"; else rm -f ".deps/same.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT save-cwd.o -MD -MP -MF ".deps/save-cwd.Tpo" -c -o save-cwd.o save-cwd.c; \
+then mv -f ".deps/save-cwd.Tpo" ".deps/save-cwd.Po"; else rm -f ".deps/save-cwd.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT savedir.o -MD -MP -MF ".deps/savedir.Tpo" -c -o savedir.o savedir.c; \
+then mv -f ".deps/savedir.Tpo" ".deps/savedir.Po"; else rm -f ".deps/savedir.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT settime.o -MD -MP -MF ".deps/settime.Tpo" -c -o settime.o settime.c; \
+then mv -f ".deps/settime.Tpo" ".deps/settime.Po"; else rm -f ".deps/settime.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT sha1.o -MD -MP -MF ".deps/sha1.Tpo" -c -o sha1.o sha1.c; \
+then mv -f ".deps/sha1.Tpo" ".deps/sha1.Po"; else rm -f ".deps/sha1.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT stripslash.o -MD -MP -MF ".deps/stripslash.Tpo" -c -o stripslash.o stripslash.c; \
+then mv -f ".deps/stripslash.Tpo" ".deps/stripslash.Po"; else rm -f ".deps/stripslash.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT time_r.o -MD -MP -MF ".deps/time_r.Tpo" -c -o time_r.o time_r.c; \
+then mv -f ".deps/time_r.Tpo" ".deps/time_r.Po"; else rm -f ".deps/time_r.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT umaxtostr.o -MD -MP -MF ".deps/umaxtostr.Tpo" -c -o umaxtostr.o umaxtostr.c; \
+then mv -f ".deps/umaxtostr.Tpo" ".deps/umaxtostr.Po"; else rm -f ".deps/umaxtostr.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT unicodeio.o -MD -MP -MF ".deps/unicodeio.Tpo" -c -o unicodeio.o unicodeio.c; \
+then mv -f ".deps/unicodeio.Tpo" ".deps/unicodeio.Po"; else rm -f ".deps/unicodeio.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT userspec.o -MD -MP -MF ".deps/userspec.Tpo" -c -o userspec.o userspec.c; \
+then mv -f ".deps/userspec.Tpo" ".deps/userspec.Po"; else rm -f ".deps/userspec.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT utimens.o -MD -MP -MF ".deps/utimens.Tpo" -c -o utimens.o utimens.c; \
+then mv -f ".deps/utimens.Tpo" ".deps/utimens.Po"; else rm -f ".deps/utimens.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT version-etc.o -MD -MP -MF ".deps/version-etc.Tpo" -c -o version-etc.o version-etc.c; \
+then mv -f ".deps/version-etc.Tpo" ".deps/version-etc.Po"; else rm -f ".deps/version-etc.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xfts.o -MD -MP -MF ".deps/xfts.Tpo" -c -o xfts.o xfts.c; \
+then mv -f ".deps/xfts.Tpo" ".deps/xfts.Po"; else rm -f ".deps/xfts.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xgetcwd.o -MD -MP -MF ".deps/xgetcwd.Tpo" -c -o xgetcwd.o xgetcwd.c; \
+then mv -f ".deps/xgetcwd.Tpo" ".deps/xgetcwd.Po"; else rm -f ".deps/xgetcwd.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xgethostname.o -MD -MP -MF ".deps/xgethostname.Tpo" -c -o xgethostname.o xgethostname.c; \
+then mv -f ".deps/xgethostname.Tpo" ".deps/xgethostname.Po"; else rm -f ".deps/xgethostname.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xmalloc.o -MD -MP -MF ".deps/xmalloc.Tpo" -c -o xmalloc.o xmalloc.c; \
+then mv -f ".deps/xmalloc.Tpo" ".deps/xmalloc.Po"; else rm -f ".deps/xmalloc.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xmemcoll.o -MD -MP -MF ".deps/xmemcoll.Tpo" -c -o xmemcoll.o xmemcoll.c; \
+then mv -f ".deps/xmemcoll.Tpo" ".deps/xmemcoll.Po"; else rm -f ".deps/xmemcoll.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xnanosleep.o -MD -MP -MF ".deps/xnanosleep.Tpo" -c -o xnanosleep.o xnanosleep.c; \
+then mv -f ".deps/xnanosleep.Tpo" ".deps/xnanosleep.Po"; else rm -f ".deps/xnanosleep.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xreadlink.o -MD -MP -MF ".deps/xreadlink.Tpo" -c -o xreadlink.o xreadlink.c; \
+then mv -f ".deps/xreadlink.Tpo" ".deps/xreadlink.Po"; else rm -f ".deps/xreadlink.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrdup.o -MD -MP -MF ".deps/xstrdup.Tpo" -c -o xstrdup.o xstrdup.c; \
+then mv -f ".deps/xstrdup.Tpo" ".deps/xstrdup.Po"; else rm -f ".deps/xstrdup.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrndup.o -MD -MP -MF ".deps/xstrndup.Tpo" -c -o xstrndup.o xstrndup.c; \
+then mv -f ".deps/xstrndup.Tpo" ".deps/xstrndup.Po"; else rm -f ".deps/xstrndup.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrtod.o -MD -MP -MF ".deps/xstrtod.Tpo" -c -o xstrtod.o xstrtod.c; \
+then mv -f ".deps/xstrtod.Tpo" ".deps/xstrtod.Po"; else rm -f ".deps/xstrtod.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrtoimax.o -MD -MP -MF ".deps/xstrtoimax.Tpo" -c -o xstrtoimax.o xstrtoimax.c; \
+then mv -f ".deps/xstrtoimax.Tpo" ".deps/xstrtoimax.Po"; else rm -f ".deps/xstrtoimax.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrtol.o -MD -MP -MF ".deps/xstrtol.Tpo" -c -o xstrtol.o xstrtol.c; \
+then mv -f ".deps/xstrtol.Tpo" ".deps/xstrtol.Po"; else rm -f ".deps/xstrtol.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrtoul.o -MD -MP -MF ".deps/xstrtoul.Tpo" -c -o xstrtoul.o xstrtoul.c; \
+then mv -f ".deps/xstrtoul.Tpo" ".deps/xstrtoul.Po"; else rm -f ".deps/xstrtoul.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT xstrtoumax.o -MD -MP -MF ".deps/xstrtoumax.Tpo" -c -o xstrtoumax.o xstrtoumax.c; \
+then mv -f ".deps/xstrtoumax.Tpo" ".deps/xstrtoumax.Po"; else rm -f ".deps/xstrtoumax.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT yesno.o -MD -MP -MF ".deps/yesno.Tpo" -c -o yesno.o yesno.c; \
+then mv -f ".deps/yesno.Tpo" ".deps/yesno.Po"; else rm -f ".deps/yesno.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT fsusage.o -MD -MP -MF ".deps/fsusage.Tpo" -c -o fsusage.o fsusage.c; \
+then mv -f ".deps/fsusage.Tpo" ".deps/fsusage.Po"; else rm -f ".deps/fsusage.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT mktime.o -MD -MP -MF ".deps/mktime.Tpo" -c -o mktime.o mktime.c; \
+then mv -f ".deps/mktime.Tpo" ".deps/mktime.Po"; else rm -f ".deps/mktime.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT sig2str.o -MD -MP -MF ".deps/sig2str.Tpo" -c -o sig2str.o sig2str.c; \
+then mv -f ".deps/sig2str.Tpo" ".deps/sig2str.Po"; else rm -f ".deps/sig2str.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT vasnprintf.o -MD -MP -MF ".deps/vasnprintf.Tpo" -c -o vasnprintf.o vasnprintf.c; \
+then mv -f ".deps/vasnprintf.Tpo" ".deps/vasnprintf.Po"; else rm -f ".deps/vasnprintf.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT printf-args.o -MD -MP -MF ".deps/printf-args.Tpo" -c -o printf-args.o printf-args.c; \
+then mv -f ".deps/printf-args.Tpo" ".deps/printf-args.Po"; else rm -f ".deps/printf-args.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT printf-parse.o -MD -MP -MF ".deps/printf-parse.Tpo" -c -o printf-parse.o printf-parse.c; \
+then mv -f ".deps/printf-parse.Tpo" ".deps/printf-parse.Po"; else rm -f ".deps/printf-parse.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT asnprintf.o -MD -MP -MF ".deps/asnprintf.Tpo" -c -o asnprintf.o asnprintf.c; \
+then mv -f ".deps/asnprintf.Tpo" ".deps/asnprintf.Po"; else rm -f ".deps/asnprintf.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getndelim2.o -MD -MP -MF ".deps/getndelim2.Tpo" -c -o getndelim2.o getndelim2.c; \
+then mv -f ".deps/getndelim2.Tpo" ".deps/getndelim2.Po"; else rm -f ".deps/getndelim2.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT mountlist.o -MD -MP -MF ".deps/mountlist.Tpo" -c -o mountlist.o mountlist.c; \
+then mv -f ".deps/mountlist.Tpo" ".deps/mountlist.Po"; else rm -f ".deps/mountlist.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT readutmp.o -MD -MP -MF ".deps/readutmp.Tpo" -c -o readutmp.o readutmp.c; \
+then mv -f ".deps/readutmp.Tpo" ".deps/readutmp.Po"; else rm -f ".deps/readutmp.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT getcwd.o -MD -MP -MF ".deps/getcwd.Tpo" -c -o getcwd.o getcwd.c; \
+then mv -f ".deps/getcwd.Tpo" ".deps/getcwd.Po"; else rm -f ".deps/getcwd.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -DLIBDIR=\"/usr/local/lib\" -I. -I. -I..  -I.. -I.   -g -O2 -MT free.o -MD -MP -MF ".deps/free.Tpo" -c -o free.o free.c; \
+then mv -f ".deps/free.Tpo" ".deps/free.Po"; else rm -f ".deps/free.Tpo"; exit 1; fi
+rm -f libfetish.a
+ar cru libfetish.a acl.o getdate.o posixtm.o posixver.o strftime.o getopt.o getopt1.o hash.o hash-pjw.o addext.o argmatch.o backupfile.o basename.o c-strtod.o canon-host.o cloexec.o closeout.o cycle-check.o diacrit.o dirname.o dup-safer.o exclude.o exitfail.o filemode.o file-type.o fopen-safer.o fts.o full-read.o full-write.o gettime.o getugroups.o hard-locale.o human.o idcache.o isdir.o imaxtostr.o linebuffer.o localcharset.o long-options.o makepath.o mbswidth.o md5.o memcasecmp.o memcoll.o modechange.o offtostr.o path-concat.o physmem.o quote.o quotearg.o readtokens.o root-dev-ino.o safe-read.o safe-write.o same.o save-cwd.o savedir.o settime.o sha1.o stripslash.o time_r.o umaxtostr.o unicodeio.o userspec.o utimens.o version-etc.o xfts.o xgetcwd.o xgethostname.o xmalloc.o xmemcoll.o xnanosleep.o xreadlink.o xstrdup.o xstrndup.o xstrtod.o xstrtoimax.o xstrtol.o xstrtoul.o xstrtoumax.o yesno.o fsusage.o mktime.o sig2str.o vasnprintf.o printf-args.o printf-parse.o asnprintf.o getndelim2.o mountlist.o readutmp.o getcwd.o free.o 
+ranlib libfetish.a
+/bin/bash ./config.charset 'x86_64-unknown-linux-gnu' > t-charset.alias
+mv t-charset.alias charset.alias
+sed -e '/^#/d' -e 's/@''PACKAGE''@/coreutils/g' ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/coreutils/g' ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[3]: Leaving directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/lib'
+make[2]: Leaving directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/lib'
+Making all in src
+make[2]: Entering directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/src'
+make  all-am
+make[3]: Entering directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/src'
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT lbracket.o -MD -MP -MF ".deps/lbracket.Tpo" -c -o lbracket.o lbracket.c; \
+then mv -f ".deps/lbracket.Tpo" ".deps/lbracket.Po"; else rm -f ".deps/lbracket.Tpo"; exit 1; fi
+gcc  -g -O2   -o [  lbracket.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT chgrp.o -MD -MP -MF ".deps/chgrp.Tpo" -c -o chgrp.o chgrp.c; \
+then mv -f ".deps/chgrp.Tpo" ".deps/chgrp.Po"; else rm -f ".deps/chgrp.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT chown-core.o -MD -MP -MF ".deps/chown-core.Tpo" -c -o chown-core.o chown-core.c; \
+then mv -f ".deps/chown-core.Tpo" ".deps/chown-core.Po"; else rm -f ".deps/chown-core.Tpo"; exit 1; fi
+gcc  -g -O2   -o chgrp  chgrp.o chown-core.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT chown.o -MD -MP -MF ".deps/chown.Tpo" -c -o chown.o chown.c; \
+then mv -f ".deps/chown.Tpo" ".deps/chown.Po"; else rm -f ".deps/chown.Tpo"; exit 1; fi
+gcc  -g -O2   -o chown  chown.o chown-core.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT chmod.o -MD -MP -MF ".deps/chmod.Tpo" -c -o chmod.o chmod.c; \
+then mv -f ".deps/chmod.Tpo" ".deps/chmod.Po"; else rm -f ".deps/chmod.Tpo"; exit 1; fi
+gcc  -g -O2   -o chmod  chmod.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT cp.o -MD -MP -MF ".deps/cp.Tpo" -c -o cp.o cp.c; \
+then mv -f ".deps/cp.Tpo" ".deps/cp.Po"; else rm -f ".deps/cp.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT copy.o -MD -MP -MF ".deps/copy.Tpo" -c -o copy.o copy.c; \
+then mv -f ".deps/copy.Tpo" ".deps/copy.Po"; else rm -f ".deps/copy.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT cp-hash.o -MD -MP -MF ".deps/cp-hash.Tpo" -c -o cp-hash.o cp-hash.c; \
+then mv -f ".deps/cp-hash.Tpo" ".deps/cp-hash.Po"; else rm -f ".deps/cp-hash.Tpo"; exit 1; fi
+gcc  -g -O2   -o cp  cp.o copy.o cp-hash.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT dd.o -MD -MP -MF ".deps/dd.Tpo" -c -o dd.o dd.c; \
+then mv -f ".deps/dd.Tpo" ".deps/dd.Po"; else rm -f ".deps/dd.Tpo"; exit 1; fi
+gcc  -g -O2   -o dd  dd.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT dircolors.o -MD -MP -MF ".deps/dircolors.Tpo" -c -o dircolors.o dircolors.c; \
+then mv -f ".deps/dircolors.Tpo" ".deps/dircolors.Po"; else rm -f ".deps/dircolors.Tpo"; exit 1; fi
+gcc  -g -O2   -o dircolors  dircolors.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT du.o -MD -MP -MF ".deps/du.Tpo" -c -o du.o du.c; \
+then mv -f ".deps/du.Tpo" ".deps/du.Po"; else rm -f ".deps/du.Tpo"; exit 1; fi
+gcc  -g -O2   -o du  du.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT install.o -MD -MP -MF ".deps/install.Tpo" -c -o install.o install.c; \
+then mv -f ".deps/install.Tpo" ".deps/install.Po"; else rm -f ".deps/install.Tpo"; exit 1; fi
+gcc  -g -O2   -o ginstall  install.o copy.o cp-hash.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT link.o -MD -MP -MF ".deps/link.Tpo" -c -o link.o link.c; \
+then mv -f ".deps/link.Tpo" ".deps/link.Po"; else rm -f ".deps/link.Tpo"; exit 1; fi
+gcc  -g -O2   -o link  link.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ln.o -MD -MP -MF ".deps/ln.Tpo" -c -o ln.o ln.c; \
+then mv -f ".deps/ln.Tpo" ".deps/ln.Po"; else rm -f ".deps/ln.Tpo"; exit 1; fi
+gcc  -g -O2   -o ln  ln.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ls.o -MD -MP -MF ".deps/ls.Tpo" -c -o ls.o ls.c; \
+then mv -f ".deps/ls.Tpo" ".deps/ls.Po"; else rm -f ".deps/ls.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ls-dir.o -MD -MP -MF ".deps/ls-dir.Tpo" -c -o ls-dir.o ls-dir.c; \
+then mv -f ".deps/ls-dir.Tpo" ".deps/ls-dir.Po"; else rm -f ".deps/ls-dir.Tpo"; exit 1; fi
+gcc  -g -O2   -o dir  ls.o ls-dir.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ls-vdir.o -MD -MP -MF ".deps/ls-vdir.Tpo" -c -o ls-vdir.o ls-vdir.c; \
+then mv -f ".deps/ls-vdir.Tpo" ".deps/ls-vdir.Po"; else rm -f ".deps/ls-vdir.Tpo"; exit 1; fi
+gcc  -g -O2   -o vdir  ls.o ls-vdir.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ls-ls.o -MD -MP -MF ".deps/ls-ls.Tpo" -c -o ls-ls.o ls-ls.c; \
+then mv -f ".deps/ls-ls.Tpo" ".deps/ls-ls.Po"; else rm -f ".deps/ls-ls.Tpo"; exit 1; fi
+gcc  -g -O2   -o ls  ls.o ls-ls.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT mkdir.o -MD -MP -MF ".deps/mkdir.Tpo" -c -o mkdir.o mkdir.c; \
+then mv -f ".deps/mkdir.Tpo" ".deps/mkdir.Po"; else rm -f ".deps/mkdir.Tpo"; exit 1; fi
+gcc  -g -O2   -o mkdir  mkdir.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT mkfifo.o -MD -MP -MF ".deps/mkfifo.Tpo" -c -o mkfifo.o mkfifo.c; \
+then mv -f ".deps/mkfifo.Tpo" ".deps/mkfifo.Po"; else rm -f ".deps/mkfifo.Tpo"; exit 1; fi
+gcc  -g -O2   -o mkfifo  mkfifo.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT mknod.o -MD -MP -MF ".deps/mknod.Tpo" -c -o mknod.o mknod.c; \
+then mv -f ".deps/mknod.Tpo" ".deps/mknod.Po"; else rm -f ".deps/mknod.Tpo"; exit 1; fi
+gcc  -g -O2   -o mknod  mknod.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT mv.o -MD -MP -MF ".deps/mv.Tpo" -c -o mv.o mv.c; \
+then mv -f ".deps/mv.Tpo" ".deps/mv.Po"; else rm -f ".deps/mv.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT remove.o -MD -MP -MF ".deps/remove.Tpo" -c -o remove.o remove.c; \
+then mv -f ".deps/remove.Tpo" ".deps/remove.Po"; else rm -f ".deps/remove.Tpo"; exit 1; fi
+gcc  -g -O2   -o mv  mv.o copy.o cp-hash.o remove.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT nohup.o -MD -MP -MF ".deps/nohup.Tpo" -c -o nohup.o nohup.c; \
+then mv -f ".deps/nohup.Tpo" ".deps/nohup.Po"; else rm -f ".deps/nohup.Tpo"; exit 1; fi
+gcc  -g -O2   -o nohup  nohup.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT readlink.o -MD -MP -MF ".deps/readlink.Tpo" -c -o readlink.o readlink.c; \
+then mv -f ".deps/readlink.Tpo" ".deps/readlink.Po"; else rm -f ".deps/readlink.Tpo"; exit 1; fi
+gcc  -g -O2   -o readlink  readlink.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT rm.o -MD -MP -MF ".deps/rm.Tpo" -c -o rm.o rm.c; \
+then mv -f ".deps/rm.Tpo" ".deps/rm.Po"; else rm -f ".deps/rm.Tpo"; exit 1; fi
+gcc  -g -O2   -o rm  rm.o remove.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT rmdir.o -MD -MP -MF ".deps/rmdir.Tpo" -c -o rmdir.o rmdir.c; \
+then mv -f ".deps/rmdir.Tpo" ".deps/rmdir.Po"; else rm -f ".deps/rmdir.Tpo"; exit 1; fi
+gcc  -g -O2   -o rmdir  rmdir.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT shred.o -MD -MP -MF ".deps/shred.Tpo" -c -o shred.o shred.c; \
+then mv -f ".deps/shred.Tpo" ".deps/shred.Po"; else rm -f ".deps/shred.Tpo"; exit 1; fi
+gcc  -g -O2   -o shred  shred.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT stat.o -MD -MP -MF ".deps/stat.Tpo" -c -o stat.o stat.c; \
+then mv -f ".deps/stat.Tpo" ".deps/stat.Po"; else rm -f ".deps/stat.Tpo"; exit 1; fi
+gcc  -g -O2   -o stat  stat.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT sync.o -MD -MP -MF ".deps/sync.Tpo" -c -o sync.o sync.c; \
+then mv -f ".deps/sync.Tpo" ".deps/sync.Po"; else rm -f ".deps/sync.Tpo"; exit 1; fi
+gcc  -g -O2   -o sync  sync.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT touch.o -MD -MP -MF ".deps/touch.Tpo" -c -o touch.o touch.c; \
+then mv -f ".deps/touch.Tpo" ".deps/touch.Po"; else rm -f ".deps/touch.Tpo"; exit 1; fi
+gcc  -g -O2   -o touch  touch.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT unlink.o -MD -MP -MF ".deps/unlink.Tpo" -c -o unlink.o unlink.c; \
+then mv -f ".deps/unlink.Tpo" ".deps/unlink.Po"; else rm -f ".deps/unlink.Tpo"; exit 1; fi
+gcc  -g -O2   -o unlink  unlink.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT cat.o -MD -MP -MF ".deps/cat.Tpo" -c -o cat.o cat.c; \
+then mv -f ".deps/cat.Tpo" ".deps/cat.Po"; else rm -f ".deps/cat.Tpo"; exit 1; fi
+gcc  -g -O2   -o cat  cat.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT cksum.o -MD -MP -MF ".deps/cksum.Tpo" -c -o cksum.o cksum.c; \
+then mv -f ".deps/cksum.Tpo" ".deps/cksum.Po"; else rm -f ".deps/cksum.Tpo"; exit 1; fi
+gcc  -g -O2   -o cksum  cksum.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT comm.o -MD -MP -MF ".deps/comm.Tpo" -c -o comm.o comm.c; \
+then mv -f ".deps/comm.Tpo" ".deps/comm.Po"; else rm -f ".deps/comm.Tpo"; exit 1; fi
+gcc  -g -O2   -o comm  comm.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT csplit.o -MD -MP -MF ".deps/csplit.Tpo" -c -o csplit.o csplit.c; \
+then mv -f ".deps/csplit.Tpo" ".deps/csplit.Po"; else rm -f ".deps/csplit.Tpo"; exit 1; fi
+gcc  -g -O2   -o csplit  csplit.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT cut.o -MD -MP -MF ".deps/cut.Tpo" -c -o cut.o cut.c; \
+then mv -f ".deps/cut.Tpo" ".deps/cut.Po"; else rm -f ".deps/cut.Tpo"; exit 1; fi
+gcc  -g -O2   -o cut  cut.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT expand.o -MD -MP -MF ".deps/expand.Tpo" -c -o expand.o expand.c; \
+then mv -f ".deps/expand.Tpo" ".deps/expand.Po"; else rm -f ".deps/expand.Tpo"; exit 1; fi
+gcc  -g -O2   -o expand  expand.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT fmt.o -MD -MP -MF ".deps/fmt.Tpo" -c -o fmt.o fmt.c; \
+then mv -f ".deps/fmt.Tpo" ".deps/fmt.Po"; else rm -f ".deps/fmt.Tpo"; exit 1; fi
+gcc  -g -O2   -o fmt  fmt.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT fold.o -MD -MP -MF ".deps/fold.Tpo" -c -o fold.o fold.c; \
+then mv -f ".deps/fold.Tpo" ".deps/fold.Po"; else rm -f ".deps/fold.Tpo"; exit 1; fi
+gcc  -g -O2   -o fold  fold.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT head.o -MD -MP -MF ".deps/head.Tpo" -c -o head.o head.c; \
+then mv -f ".deps/head.Tpo" ".deps/head.Po"; else rm -f ".deps/head.Tpo"; exit 1; fi
+gcc  -g -O2   -o head  head.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT join.o -MD -MP -MF ".deps/join.Tpo" -c -o join.o join.c; \
+then mv -f ".deps/join.Tpo" ".deps/join.Po"; else rm -f ".deps/join.Tpo"; exit 1; fi
+gcc  -g -O2   -o join  join.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT md5sum.o -MD -MP -MF ".deps/md5sum.Tpo" -c -o md5sum.o md5sum.c; \
+then mv -f ".deps/md5sum.Tpo" ".deps/md5sum.Po"; else rm -f ".deps/md5sum.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT md5.o -MD -MP -MF ".deps/md5.Tpo" -c -o md5.o md5.c; \
+then mv -f ".deps/md5.Tpo" ".deps/md5.Po"; else rm -f ".deps/md5.Tpo"; exit 1; fi
+gcc  -g -O2   -o md5sum  md5sum.o md5.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT nl.o -MD -MP -MF ".deps/nl.Tpo" -c -o nl.o nl.c; \
+then mv -f ".deps/nl.Tpo" ".deps/nl.Po"; else rm -f ".deps/nl.Tpo"; exit 1; fi
+gcc  -g -O2   -o nl  nl.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT od.o -MD -MP -MF ".deps/od.Tpo" -c -o od.o od.c; \
+then mv -f ".deps/od.Tpo" ".deps/od.Po"; else rm -f ".deps/od.Tpo"; exit 1; fi
+gcc  -g -O2   -o od  od.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT paste.o -MD -MP -MF ".deps/paste.Tpo" -c -o paste.o paste.c; \
+then mv -f ".deps/paste.Tpo" ".deps/paste.Po"; else rm -f ".deps/paste.Tpo"; exit 1; fi
+gcc  -g -O2   -o paste  paste.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT pr.o -MD -MP -MF ".deps/pr.Tpo" -c -o pr.o pr.c; \
+then mv -f ".deps/pr.Tpo" ".deps/pr.Po"; else rm -f ".deps/pr.Tpo"; exit 1; fi
+gcc  -g -O2   -o pr  pr.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT ptx.o -MD -MP -MF ".deps/ptx.Tpo" -c -o ptx.o ptx.c; \
+then mv -f ".deps/ptx.Tpo" ".deps/ptx.Po"; else rm -f ".deps/ptx.Tpo"; exit 1; fi
+gcc  -g -O2   -o ptx  ptx.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT sha1sum.o -MD -MP -MF ".deps/sha1sum.Tpo" -c -o sha1sum.o sha1sum.c; \
+then mv -f ".deps/sha1sum.Tpo" ".deps/sha1sum.Po"; else rm -f ".deps/sha1sum.Tpo"; exit 1; fi
+gcc  -g -O2   -o sha1sum  md5sum.o sha1sum.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT sort.o -MD -MP -MF ".deps/sort.Tpo" -c -o sort.o sort.c; \
+then mv -f ".deps/sort.Tpo" ".deps/sort.Po"; else rm -f ".deps/sort.Tpo"; exit 1; fi
+gcc  -g -O2   -o sort  sort.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT split.o -MD -MP -MF ".deps/split.Tpo" -c -o split.o split.c; \
+then mv -f ".deps/split.Tpo" ".deps/split.Po"; else rm -f ".deps/split.Tpo"; exit 1; fi
+gcc  -g -O2   -o split  split.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT sum.o -MD -MP -MF ".deps/sum.Tpo" -c -o sum.o sum.c; \
+then mv -f ".deps/sum.Tpo" ".deps/sum.Po"; else rm -f ".deps/sum.Tpo"; exit 1; fi
+gcc  -g -O2   -o sum  sum.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT tac.o -MD -MP -MF ".deps/tac.Tpo" -c -o tac.o tac.c; \
+then mv -f ".deps/tac.Tpo" ".deps/tac.Po"; else rm -f ".deps/tac.Tpo"; exit 1; fi
+gcc  -g -O2   -o tac  tac.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT tail.o -MD -MP -MF ".deps/tail.Tpo" -c -o tail.o tail.c; \
+then mv -f ".deps/tail.Tpo" ".deps/tail.Po"; else rm -f ".deps/tail.Tpo"; exit 1; fi
+gcc  -g -O2   -o tail  tail.o ../lib/libfetish.a  ../lib/libfetish.a -lm    
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT tr.o -MD -MP -MF ".deps/tr.Tpo" -c -o tr.o tr.c; \
+then mv -f ".deps/tr.Tpo" ".deps/tr.Po"; else rm -f ".deps/tr.Tpo"; exit 1; fi
+gcc  -g -O2   -o tr  tr.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT tsort.o -MD -MP -MF ".deps/tsort.Tpo" -c -o tsort.o tsort.c; \
+then mv -f ".deps/tsort.Tpo" ".deps/tsort.Po"; else rm -f ".deps/tsort.Tpo"; exit 1; fi
+gcc  -g -O2   -o tsort  tsort.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT unexpand.o -MD -MP -MF ".deps/unexpand.Tpo" -c -o unexpand.o unexpand.c; \
+then mv -f ".deps/unexpand.Tpo" ".deps/unexpand.Po"; else rm -f ".deps/unexpand.Tpo"; exit 1; fi
+gcc  -g -O2   -o unexpand  unexpand.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT uniq.o -MD -MP -MF ".deps/uniq.Tpo" -c -o uniq.o uniq.c; \
+then mv -f ".deps/uniq.Tpo" ".deps/uniq.Po"; else rm -f ".deps/uniq.Tpo"; exit 1; fi
+gcc  -g -O2   -o uniq  uniq.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT wc.o -MD -MP -MF ".deps/wc.Tpo" -c -o wc.o wc.c; \
+then mv -f ".deps/wc.Tpo" ".deps/wc.Po"; else rm -f ".deps/wc.Tpo"; exit 1; fi
+gcc  -g -O2   -o wc  wc.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT basename.o -MD -MP -MF ".deps/basename.Tpo" -c -o basename.o basename.c; \
+then mv -f ".deps/basename.Tpo" ".deps/basename.Po"; else rm -f ".deps/basename.Tpo"; exit 1; fi
+gcc  -g -O2   -o basename  basename.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT date.o -MD -MP -MF ".deps/date.Tpo" -c -o date.o date.c; \
+then mv -f ".deps/date.Tpo" ".deps/date.Po"; else rm -f ".deps/date.Tpo"; exit 1; fi
+gcc  -g -O2   -o date  date.o ../lib/libfetish.a  ../lib/libfetish.a  
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT dirname.o -MD -MP -MF ".deps/dirname.Tpo" -c -o dirname.o dirname.c; \
+then mv -f ".deps/dirname.Tpo" ".deps/dirname.Po"; else rm -f ".deps/dirname.Tpo"; exit 1; fi
+gcc  -g -O2   -o dirname  dirname.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT echo.o -MD -MP -MF ".deps/echo.Tpo" -c -o echo.o echo.c; \
+then mv -f ".deps/echo.Tpo" ".deps/echo.Po"; else rm -f ".deps/echo.Tpo"; exit 1; fi
+gcc  -g -O2   -o echo  echo.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT env.o -MD -MP -MF ".deps/env.Tpo" -c -o env.o env.c; \
+then mv -f ".deps/env.Tpo" ".deps/env.Po"; else rm -f ".deps/env.Tpo"; exit 1; fi
+gcc  -g -O2   -o env  env.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT expr.o -MD -MP -MF ".deps/expr.Tpo" -c -o expr.o expr.c; \
+then mv -f ".deps/expr.Tpo" ".deps/expr.Po"; else rm -f ".deps/expr.Tpo"; exit 1; fi
+gcc  -g -O2   -o expr  expr.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT factor.o -MD -MP -MF ".deps/factor.Tpo" -c -o factor.o factor.c; \
+then mv -f ".deps/factor.Tpo" ".deps/factor.Po"; else rm -f ".deps/factor.Tpo"; exit 1; fi
+gcc  -g -O2   -o factor  factor.o ../lib/libfetish.a  ../lib/libfetish.a -lm 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT false.o -MD -MP -MF ".deps/false.Tpo" -c -o false.o false.c; \
+then mv -f ".deps/false.Tpo" ".deps/false.Po"; else rm -f ".deps/false.Tpo"; exit 1; fi
+gcc  -g -O2   -o false  false.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT hostname.o -MD -MP -MF ".deps/hostname.Tpo" -c -o hostname.o hostname.c; \
+then mv -f ".deps/hostname.Tpo" ".deps/hostname.Po"; else rm -f ".deps/hostname.Tpo"; exit 1; fi
+gcc  -g -O2   -o hostname  hostname.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT id.o -MD -MP -MF ".deps/id.Tpo" -c -o id.o id.c; \
+then mv -f ".deps/id.Tpo" ".deps/id.Po"; else rm -f ".deps/id.Tpo"; exit 1; fi
+gcc  -g -O2   -o id  id.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT kill.o -MD -MP -MF ".deps/kill.Tpo" -c -o kill.o kill.c; \
+then mv -f ".deps/kill.Tpo" ".deps/kill.Po"; else rm -f ".deps/kill.Tpo"; exit 1; fi
+gcc  -g -O2   -o kill  kill.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT logname.o -MD -MP -MF ".deps/logname.Tpo" -c -o logname.o logname.c; \
+then mv -f ".deps/logname.Tpo" ".deps/logname.Po"; else rm -f ".deps/logname.Tpo"; exit 1; fi
+gcc  -g -O2   -o logname  logname.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT pathchk.o -MD -MP -MF ".deps/pathchk.Tpo" -c -o pathchk.o pathchk.c; \
+then mv -f ".deps/pathchk.Tpo" ".deps/pathchk.Po"; else rm -f ".deps/pathchk.Tpo"; exit 1; fi
+gcc  -g -O2   -o pathchk  pathchk.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT printenv.o -MD -MP -MF ".deps/printenv.Tpo" -c -o printenv.o printenv.c; \
+then mv -f ".deps/printenv.Tpo" ".deps/printenv.Po"; else rm -f ".deps/printenv.Tpo"; exit 1; fi
+gcc  -g -O2   -o printenv  printenv.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT printf.o -MD -MP -MF ".deps/printf.Tpo" -c -o printf.o printf.c; \
+then mv -f ".deps/printf.Tpo" ".deps/printf.Po"; else rm -f ".deps/printf.Tpo"; exit 1; fi
+gcc  -g -O2   -o printf  printf.o ../lib/libfetish.a  ../lib/libfetish.a   
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT pwd.o -MD -MP -MF ".deps/pwd.Tpo" -c -o pwd.o pwd.c; \
+then mv -f ".deps/pwd.Tpo" ".deps/pwd.Po"; else rm -f ".deps/pwd.Tpo"; exit 1; fi
+gcc  -g -O2   -o pwd  pwd.o ../lib/libfetish.a  ../lib/libfetish.a 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT seq.o -MD -MP -MF ".deps/seq.Tpo" -c -o seq.o seq.c; \
+then mv -f ".deps/seq.Tpo" ".deps/seq.Po"; else rm -f ".deps/seq.Tpo"; exit 1; fi
+gcc  -g -O2   -o seq  seq.o ../lib/libfetish.a  ../lib/libfetish.a -lm 
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT sleep.o -MD -MP -MF ".deps/sleep.Tpo" -c -o sleep.o sleep.c; \
+then mv -f ".deps/sleep.Tpo" ".deps/sleep.Po"; else rm -f ".deps/sleep.Tpo"; exit 1; fi
+gcc  -g -O2   -o sleep  sleep.o ../lib/libfetish.a  ../lib/libfetish.a -lm    
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I.. -I. -I../lib -I../lib   -g -O2 -MT tee.o -MD -MP -MF ".deps/tee.Tpo" -c -o tee.o tee.c; \
+then mv -f ".deps/tee.Tpo" ".deps/tee.Po"; else rm -f ".deps/tee.Tpo"; exit 1; fi
+Makefile:1404: recipe for target 'tee.o' failed
+make[3]: Leaving directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/src'
+Makefile:922: recipe for target 'all' failed
+make[2]: Leaving directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1/src'
+Makefile:376: recipe for target 'all-recursive' failed
+make[1]: Leaving directory '/home/osboxes/oak/code/testcases/coreutils-5.2.1'
+Makefile:314: recipe for target 'all' failed
