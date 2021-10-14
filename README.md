@@ -4,8 +4,7 @@ Implementation flaws in cryptographic libraries, design flaws in underlying cryp
 
 
 A paper covering ALICE paper can be found [here](https://arxiv.org/abs/2004.09713).
-
-For more details about the code, how ot run it, and examples, see python/README.md
+For more details about the code associated with the paper, how ot run it, and examples, see python/README.md
 
 
 
