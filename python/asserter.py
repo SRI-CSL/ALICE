@@ -10,44 +10,53 @@ def _handle_timeout(signum, frame):
     raise TimeoutError('timeout')
 
 def print_mem(mem, start, size):
-    for i in xrange(0, size):
-        print mem[start+i].byte
+    for i in range(0, size):
+        print (mem[start+i].byte)
 
 def read_mem(mem, start,size):
     out = []
-    for i in xrange(0, size):
-        out.append(format(mem[start+i].byte.concrete, '02x'))
-    return ''.join(x for x in out)
+    print("I call read_mem")
+    for i in range(0, size):
+        out.append(format(mem[start+i].byte.concrete, b'02x'))
+    return b''.join(x for x in out)
 
 def read_byte_mem(mem, start, bytesize):
     out = []
-    for i in xrange(0, bytesize):
+    print("I call read_byte_mem")
+    for i in range(0, bytesize):
         out.append(mem[start+i].byte.concrete)
-    return str(bytearray(out))
+    return bytes(out)
 
 
 class CryptoAsserter:
     IN_ADDR = 0x2000
     OUT_ADDR = 0x3000
     IN_LEN = 9
-    TEST_STRING = "oakoakoak"+'\0'
+    TEST_STRING = b"oakoakoak"+b"\0"
 
     def __init__(self, angr_proj):
         self.p = angr_proj
 
     def __mem_set(self, mem, start_idx, size, val):
-         for i in xrange(0, size):
-            mem[start_idx+i].char = val
+         for i in range(0, size):
+            mem[start_idx+i].byte = val
 
     def __mem_cpy(self, mem, start_idx, size, copy):
-         for i in xrange(0, size):
-            mem[start_idx+i].char = copy[i]
+        print("copy = " + str(copy) + " size = " + str(size))
+        for i in range(0, size):
+            mem[start_idx+i].byte = copy[i]
 
     def assert_fn(self, fn_addr, out_bytelen, argv):
         argv_out = self.execute_fn(fn_addr, out_bytelen, argv)
+       
         for arg in argv_out:
+            print ("type expected output = " + str(type(arg.expected_output)))
+
+            print ("b1 = " + str(arg.expected_output is not None))
+            
+            #print ("b2 = " + str(arg.output[:out_bytelen] != arg.expected_output[:out_bytelen]))
             if arg.expected_output is not None and arg.output[:out_bytelen] != arg.expected_output[:out_bytelen]:
-                print 'Fn addr: ', hex(fn_addr), 'Expected Output: ', arg.expected_output[:out_bytelen].encode("hex"), ' output: ', arg.output[:out_bytelen].encode("hex")
+                print ('Fn addr: ', hex(fn_addr), 'Expected Output: ', str(arg.expected_output[:out_bytelen]), ' output: ', str(arg.output[:out_bytelen]) )# arg.output[:out_bytelen].encode("hex")) # encode("hex"), # arg.expected_output[:out_bytelen].encode("hex")
                 return False
         return True
 
@@ -85,7 +94,8 @@ class CryptoAsserter:
         for arg in argv:
             self.fill_state(init_state, arg)
         fn = self.p.factory.callable(fn_addr, base_state=init_state, concrete_only=True)
-        fn.perform_call(*[x.val for x in argv])
+        print ("type argv = " + str(type(argv)) + " type val = " + str(type(argv[0].val)))
+        fn.perform_call(*[str(x.val).encode() for x in argv])
         #self.perform_call(fn, *[x.val for x in argv])
         return fn
 
@@ -93,25 +103,25 @@ class CryptoAsserter:
         state = fn._project.factory.call_state(fn._addr, *args, cc=fn._cc, base_state = fn._base_state, ret_addr = fn._deadend_addr, toc = fn._toc)
         caller = fn._project.factory.simulation_manager(state)
         #print 'SS: ', dir(caller)
-        print 'Before IP: ', str(state.regs.rip)
-        print 'Before RSI: ', state.regs.rsi
-        print 'Before RDI: ', state.regs.rdi
+        print ('Before IP: ', str(state.regs.rip))
+        print ('Before RSI: ', state.regs.rsi)
+        print ('Before RDI: ', state.regs.rdi)
         final_state = None
         #while '46f875' not in str(caller.active[0].regs.rip) and len(caller.active) == 1:
         #while '46f93b' not in str(caller.active[0].regs.rip) and len(caller.active) == 1:
         while '46f2e0' not in str(caller.active[0].regs.rip) and len(caller.active) == 1:
-            print 'IP: ', str(caller.active[0].regs.rip)
+            print ('IP: ', str(caller.active[0].regs.rip))
             final_state = caller.active[0]
             caller.step()
             caller.prune()
-        print 'Caller active len: ', len(caller.active)
+        print ('Caller active len: ', len(caller.active))
         final_state = caller.active[0]
-        print 'After IP: ', final_state.regs.rip
-        print 'Str at 0x300: ', read_mem(final_state.mem, 0x300, 16)
-        print 'Str at 0x200: ', read_mem(final_state.mem, 0x200, 16)
-        print 'AFter RAX: ', final_state.regs.rax
-        print 'AFter RSI: ', final_state.regs.rsi
-        print 'AFter RDI: ', final_state.regs.rdi
+        print ('After IP: ', final_state.regs.rip)
+        print ('Str at 0x300: ', read_mem(final_state.mem, 0x300, 16))
+        print ('Str at 0x200: ', read_mem(final_state.mem, 0x200, 16))
+        print ('AFter RAX: ', final_state.regs.rax)
+        print ('AFter RSI: ', final_state.regs.rsi)
+        print ('AFter RDI: ', final_state.regs.rdi)
 
 
         exit(1)
@@ -139,7 +149,7 @@ class CryptoAsserter:
         signal.signal(signal.SIGALRM, _handle_timeout)
         signal.alarm(timeout_seconds)
 
-        print 'Call with params: ', self.IN_ADDR, in_len, self.OUT_ADDR
+        print ('Call with params: ', self.IN_ADDR, in_len, self.OUT_ADDR)
     
         try:
             h.perform_call(self.IN_ADDR, in_len, self.OUT_ADDR)
@@ -147,11 +157,11 @@ class CryptoAsserter:
             output = read_mem(h.result_state.mem, self.OUT_ADDR, out_len)
         except Exception as e:
             output = None
-            print 'Fn addr: ' + hex(fn_addr) + ' Asserter Exception: ' + str(e)
+            print ('Fn addr: ' + hex(fn_addr) + ' Asserter Exception: ' + str(e))
         finally:
             signal.alarm(0)
 
-        print output
+        print (output)
         return output
 
     def generate_base_state(self, in_str, in_len, out_len):
@@ -177,21 +187,21 @@ if __name__ == "__main__":
     digest = '67D3B0DB4ED851391320802385BF4B3A1EF9AFEC206BBA34D5F4C7A8891EC36FC3B8750DB3BB76D969D3DDC5E01D207803EEAB426FA7E3333BFE20D4D419FE2F'
     ass = CryptoAsserter(p)
 
-    print ass.get_fn_output(0x400ee4, TEST_STRING, IN_LEN, 20)
-    print ass.assert_fn_output(0x400ee4, digest, TEST_STRING, IN_LEN, 20)
+    print (ass.get_fn_output(0x400ee4, TEST_STRING, IN_LEN, 20))
+    print (ass.assert_fn_output(0x400ee4, digest, TEST_STRING, IN_LEN, 20))
     exit(1)
 
 
     s = p.factory.blank_state()
-    for i in xrange(0, 100):
+    for i in range(0, 100):
         s.mem[IN_ADDR+i].char = 'a'
         s.mem[OUT_ADDR+i].char = 'b'
 
-    for i in xrange(0, IN_LEN):
+    for i in range(0, IN_LEN):
         s.mem[IN_ADDR+i].char = TEST_STRING[i]
 
-    print 'Input: ' + read_mem(s.mem, IN_ADDR, IN_LEN)
-    print 'Output: ' + read_mem(s.mem, OUT_ADDR, 64)
+    print ('Input: ' + read_mem(s.mem, IN_ADDR, IN_LEN))
+    print ('Output: ' + read_mem(s.mem, OUT_ADDR, 64))
 
     h = p.factory.callable(0x401c18, base_state=s)
     h.perform_call(IN_ADDR, IN_LEN, OUT_ADDR)
@@ -202,6 +212,6 @@ if __name__ == "__main__":
     #print h._cc.int_args
     exit(1)
 
-    print 'Hash val: ' + read_mem(h.result_state.mem, OUT_ADDR, 64)
+    print ('Hash val: ' + read_mem(h.result_state.mem, OUT_ADDR, 64))
 
-    print '67D3B0DB4ED851391320802385BF4B3A1EF9AFEC206BBA34D5F4C7A8891EC36FC3B8750DB3BB76D969D3DDC5E01D207803EEAB426FA7E3333BFE20D4D419FE2F' == read_mem(h.result_state.mem, OUT_ADDR, 64).upper()
+    print ('67D3B0DB4ED851391320802385BF4B3A1EF9AFEC206BBA34D5F4C7A8891EC36FC3B8750DB3BB76D969D3DDC5E01D207803EEAB426FA7E3333BFE20D4D419FE2F' == read_mem(h.result_state.mem, OUT_ADDR, 64).upper())

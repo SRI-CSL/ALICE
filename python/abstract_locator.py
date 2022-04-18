@@ -1,10 +1,10 @@
 from abc import abstractmethod
-from binary import *
+from elf_binary import *
 
 class AbstractLocator:
 
     def __init__(self, binary, deepcopy=False):
-        if not isinstance(binary, Binary):
+        if not isinstance(binary, ElfBinary):
             raise TypeError("Type is not Binary: ", type(binary))
         self.binary = binary.copy() if deepcopy else binary
 

@@ -78,4 +78,4 @@ if __name__ == '__main__':
     old_size = 16
     new_size = 32
     esb = ExpandStaticBuffer(binary, buffer_addr, old_size, new_size)
-    print esb.functions_use_buffer()
+    print (esb.functions_use_buffer())

@@ -299,7 +299,7 @@ if __name__ == '__main__':
     angr_proj = angr.Project(exec_path, auto_load_libs=False)
     text_sec = angr_proj.loader.main_object.sections_map['.text']
 
-    startAnalysisFromEntry()
+    startAnalysisFromEntry() #emulate(binary.entrypoint)
     #stopAnalysisFromAddress(0x47a152)
     #stopAnalysisFromAddress(0x477e83)
     #setupImageWhitelist(['libc'])

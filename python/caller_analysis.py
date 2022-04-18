@@ -1,6 +1,7 @@
 from abstract_caller_analysis import AbstractCallerAnalysis
 import numpy as np
 from instruction import *
+import angr
 
 class CallerAnalysis(AbstractCallerAnalysis):
 
@@ -36,8 +37,7 @@ class CallerAnalysis(AbstractCallerAnalysis):
             sec = self.binary.angr_proj.loader.main_object.sections_map[section_name]
         except Exception as e:
             raise SectionNotFoundException("Section " + section_name + " not found: " + str(e))
-
-        content = self.binary.angr_proj.loader.memory.read_bytes(sec.vaddr, sec.memsize)
+        content = self.binary.angr_proj.loader.memory.load(sec.vaddr, sec.memsize)
         self.disassembly = self.binary.angr_proj.arch.capstone.disasm(bytearray(content), sec.vaddr)
 
     def gather_all_insts(self):
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     cda = CallerAnalysis(Binary('../testbench/bin/hash/md2.o'))
 
     for d in cda.insts:
-        print d.name(), hex(d.base_vaddr), hex(d.get_target_relative_addr()), hex(d.get_target_absolute_addr())
+        print (d.name(), hex(d.base_vaddr), hex(d.get_target_relative_addr()), hex(d.get_target_absolute_addr()))
 
     callers = cda.data_refs(0x400a80, 0x400b83)
     assert (set(callers) == {0x400678, 0x4009a3, 0x400705})

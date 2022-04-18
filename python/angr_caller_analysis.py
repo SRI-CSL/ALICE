@@ -15,7 +15,7 @@ class AngrCallerAnalysis(AbstractCallerAnalysis):
         self.disassembly = None
         self.insts = None
         #self.binary = binary
-        super(AngrCallerAnalysis, self).__init__(binary, deepcopy)
+        super(AngrCallerAnalysis, self).__init__(binary)
         self.simple_ca = CallerAnalysis(binary, deepcopy)
         if cfg is not None:
             self.cfg = cfg
@@ -53,7 +53,7 @@ class AngrCallerAnalysis(AbstractCallerAnalysis):
     # Based on cfg.get_node(caller_start).successors
     def get_inst_call_addr(self, caller_start, caller_end, call_target):
 
-        content = self.binary.angr_proj.loader.memory.read_bytes(caller_start, caller_end-caller_start)
+        content = self.binary.angr_proj.loader.memory.load(caller_start, caller_end-caller_start)
         insns = self.binary.angr_proj.arch.capstone.disasm(bytearray(content), caller_start)
         out = []
         for inst in insns:

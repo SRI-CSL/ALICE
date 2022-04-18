@@ -1,4 +1,5 @@
 import ahocorasick
+import binascii
 
 def add_element_to_dict(dic, key, val):
     if not key in dic:
@@ -53,7 +54,7 @@ def idx_to_bytes(byteidx, format):
     elif format == "bytearray":
         return byteidx
     else:
-        print 'Unsupported Format: ' + format
+        print ('Unsupported Format: ' + format)
         return -1
 
 def bytes_to_idx(bytes, format):
@@ -62,16 +63,16 @@ def bytes_to_idx(bytes, format):
     elif format == "hex":
         return bytes*2
     else:
-        print 'Unsupported Format: ' + format
+        print ('Unsupported Format: ' + format)
         return -1
 
 def parse_bytearray(bytearry, format):
     if format == "bytearray":
         return bytearry
     elif format == "hex":
-        return ''.join([x.encode("hex") for x in bytearry])
+        return ''.join([x for x in bytearry]) #binascii.a2b_hex(binascii.b2a_hex(bytearry)) #''.join([x for x in bytearry])
     else:
-        print 'Unsupported Format: ' + format
+        print ('Unsupported Format: ' + format)
         return []
 
 
@@ -82,7 +83,7 @@ def parse_hex(hex, format):
     elif format == "hex":
         return hex
     else:
-        print 'Unsupported Format: ' + format
+        print ('Unsupported Format: ' + format)
         return []
 
 def str_to_int(str, str_format, endian):

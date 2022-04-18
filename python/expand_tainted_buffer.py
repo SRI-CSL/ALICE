@@ -41,7 +41,7 @@ class ExpandTaintedBuffer:
         elb_calls = []
         term_conds = []
         for loop in self.lf.loops:
-            print loop
+            print (loop)
             found = False
             change_offsets = []
             for lb in loop.body_nodes:
@@ -68,7 +68,7 @@ class ExpandTaintedBuffer:
                     elb_calls.append(expand_local_buffer.ExpandLocalBufferCall(None, None, co, base_size, new_size))
 
                 le_insns = self._capstone_insns(loop.entry)
-                print 'Somehow need to change ins: ', le_insns[-2]
+                print ('Somehow need to change ins: ', le_insns[-2])
 
                 # TODO: (2) change loop termination condition
                 term_cond = self._get_loop_termination(loop.entry, self.buffer_original_size)
@@ -108,19 +108,19 @@ class ExpandTaintedBuffer:
 
 if __name__ == "__main__":
 
-    from binary import *
+    from elf_binary import *
 
     path = '../testbench/src/expand_buffer/bin/test1.o'
     binary = Binary(path)
     cfg = binary.angr_proj.analyses.CFGFast()
     main_fn = cfg.functions['main']
     elb = expand_local_buffer.ExpandLocalBuffer(binary, main_fn.addr, main_fn.addr+main_fn.size)
-    print 'Stack size: ', hex(elb.stack_size)
+    print ('Stack size: ', hex(elb.stack_size))
 
     etb = ExpandTaintedBuffer(binary, main_fn, 0x10, 0x10, 0x10)
 
     ecs, tcs = etb.find()
     for ec in ecs:
-        print 'Offset: ', hex(ec.stack_offset), 'Expand by', hex(ec.diff_size)
+        print ('Offset: ', hex(ec.stack_offset), 'Expand by', hex(ec.diff_size))
     for tc in tcs:
-        print 'TerminationCondition: ', hex(tc.before), ' ---> ', hex(tc.after)
+        print ('TerminationCondition: ', hex(tc.before), ' ---> ', hex(tc.after))

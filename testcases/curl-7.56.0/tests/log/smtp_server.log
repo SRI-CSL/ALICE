@@ -1,3 +1,0 @@
-12:42:11.735474 Failed to read input
-12:42:11.735542 Error: SMTP server, read zero
-12:42:11.735579 Exited from sysread_or_die() at ./ftpserver.pl line 2991. SMTP server, read zero

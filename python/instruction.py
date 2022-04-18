@@ -1,8 +1,8 @@
-from binary import *
+from elf_binary import *
 import sys
 from alice_util import parse_hex, str_to_int
 
-class AbstractInstruction(BinaryObject):
+class AbstractInstruction(ElfBinary):
 
     @staticmethod
     def get_opcode(format):

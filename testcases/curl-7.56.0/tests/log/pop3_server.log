@@ -1,3 +1,0 @@
-12:42:11.734272 Failed to read input
-12:42:11.734338 Error: POP3 server, read zero
-12:42:11.734376 Exited from sysread_or_die() at ./ftpserver.pl line 2991. POP3 server, read zero

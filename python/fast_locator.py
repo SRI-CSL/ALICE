@@ -1,7 +1,7 @@
 from caller_analysis import *
 from abstract_locator import AbstractLocator
 from desc import *
-from binary import *
+from elf_binary import *
 from alice_util import advanced_search
 from alice_logger import AliceLog
 import logging
@@ -25,7 +25,7 @@ class FastLocator(AbstractLocator):
             return []
 
         for bb in bbs:
-            addrs.append((bb.start_vaddr+bb.end_vaddr)/2)
+            addrs.append((bb.start_vaddr+bb.end_vaddr)/2) # why divide by 2?
 
         if self.binary.ca is None:
             self.binary.ca = CallerAnalysis(self.binary)

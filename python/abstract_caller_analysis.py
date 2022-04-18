@@ -2,11 +2,11 @@ from instruction import *
 from abc import abstractmethod
 import angr
 
-class AbstractCallerAnalysis(angr.Analyses):
+class AbstractCallerAnalysis(angr.AnalysesHub):
 #class AbstractCallerAnalysis:
 
     def __init__(self, binary, deepcopy=False):
-        if not isinstance(binary, Binary):
+        if not isinstance(binary, ElfBinary):
             raise TypeError("Type is not Binary: ", type(binary))
         self.binary = binary.copy() if deepcopy else binary
         super(AbstractCallerAnalysis, self).__init__(self.binary.angr_proj)

@@ -47,7 +47,7 @@ if __name__ == "__main__":
     assert (end == 0x400bc2)
 
     entries, exits = scoper.get_hierarchical_scopes(addrs[0])
-    print [hex(x) for x in entries]
+    print ([hex(x) for x in entries])
 
     # TODO: addressing is wrong!
     assert (set([0x400b3e, 0x400ee4]).issubset(set(entries)))
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     entries, exits = scoper.get_hierarchical_scopes(addrs[0])
     assert (set(entries) == set([0x4005d6, 0x400791, 0x40081a, 0x4008b1]))
 
-    print 'Testing Curl'
+    print ('Testing Curl')
 
     # Wrong
     binary = Binary('../testbench/bin/app/curl')
@@ -71,8 +71,8 @@ if __name__ == "__main__":
     addrs = locator.get_address_locations(MD5Desc)
 
 
-    print 'Gathered all address locations'
-    print [hex(x) for x in addrs]
+    print ('Gathered all address locations')
+    print ([hex(x) for x in addrs])
 
     assert (set(addrs) == set([0x59ad12, 0x599f52, 0x4cf9bd, 0x4d00cd]))
 
@@ -82,6 +82,6 @@ if __name__ == "__main__":
     s, e = scoper.get_function_scope(0x599f52)
     assert (s == 0x599f20 and e == 0x599f6f)
     s, e = scoper.get_function_scope(0x468607)
-    print hex(s), hex(e)
+    print (hex(s), hex(e))
     entries, exits = scoper.get_hierarchical_scopes(0x59ad12)
     assert (0x468606 in entries)

@@ -1,6 +1,0 @@
-12:42:11.422106 [CTRL] CLOSING server socket (cleanup)
-12:42:11.422336 [CTRL] CLOSING client socket (cleanup)
-12:42:11.422480 [CTRL] ABORTING
-12:42:11.422553 signalled to die
-12:42:11.422683 Error removing lock file log/serverlogs.lock error: 2 No such file or directory
-12:42:11.422771 ========> IPv4 sws (port 9013 pid: 2278) exits with signal (15)

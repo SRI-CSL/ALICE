@@ -37,14 +37,23 @@ class PatchDesc:
 SHA256Patch = PatchDesc('sha256', '../patch/sha256', 'generate_patch.sh', 'code', 'data', SHA256Desc)
 
 def generate_all_possible_args(input_bytes, input_len, output_bytes, in_addr=0x200, out_addr=0x300):
+
+    print("input bytes = " + str(input_bytes) + " output_bytes = " + str(output_bytes))
+    print("type input bytes = " + str(type(input_bytes)) + " type output_bytes = " + str(type(output_bytes)))
+    print("in_addr = " + str(in_addr) + " type = " + str(type(in_addr)))
+    
     input_arg = AliceArg(AliceArg.TYPE_BYTE_POINTER, in_addr, input_bytes)
     inlen_arg = AliceArg(AliceArg.TYPE_INT, input_len)
-    output_arg = AliceArg(AliceArg.TYPE_BYTE_POINTER, out_addr, input_bytes, output_bytes)
+    output_arg = AliceArg(AliceArg.TYPE_BYTE_POINTER, out_addr, output_bytes, output_bytes)
     # TODO: out_in_inlen cannot happen at the same time as out_in!!!!
     #return collections.OrderedDict([("out_in_inlen", (output_arg, input_arg, inlen_arg))])
     #return collections.OrderedDict([("out_in", (output_arg, input_arg, inlen_arg))])
     #return collections.OrderedDict([("in_inlen_out", (input_arg, inlen_arg, output_arg))])
     #return collections.OrderedDict([("in_inlen_out", (input_arg, inlen_arg, output_arg)), ("out_in", (output_arg, input_arg, inlen_arg))])
+
+    print("input_arg = " + str(input_arg.val).encode().hex() + " input_arg = " + str(input_arg.val) + " inlen_arg = " + str(inlen_arg.val) + " output_arg = " + str(output_arg.val).encode().hex())
+    
+    #return collections.OrderedDict([("in_inlen_out", (input_arg, inlen_arg, output_arg)), ("out_in", (output_arg, input_arg)), ("out_in_inlen", (output_arg, input_arg, inlen_arg)) ])
     return collections.OrderedDict([("in_inlen_out", (input_arg, inlen_arg, output_arg)), ("out_in", (output_arg, input_arg)), ("out_in_inlen", (output_arg, input_arg, inlen_arg)) ])
 
 

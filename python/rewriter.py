@@ -1,4 +1,4 @@
-from patcher import *
+from patcher import Patcher
 from expand_local_buffer import *
 import subprocess
 import collections

@@ -1,6 +1,6 @@
-from binary import *
+from elf_binary import *
 from capstone.x86 import *
-from patcher import *
+#from patcher import *
 from capstone import *
 from keystone import *
 from expand_tainted_buffer import *
@@ -31,8 +31,8 @@ def inst_pc_disp(inst):
             if out is not None:
                 raise NotImplementedError("Multiple PC displacement in single instruction: " + construct_asm(inst))
             out = disp
-    return out
-
+            return out
+        
 def op_access_stack(op):
     if op.type == X86_OP_REG:
         return op.reg in [X86_REG_RBP, X86_REG_RSP]
@@ -113,7 +113,7 @@ def replace_disp(assembly, old_disp, new_disp, absolute=True):
     if absolute:
         old_disp = abs(old_disp)
         new_disp = abs(new_disp)
-    # First try to replace hex(old_disp) first
+        # First try to replace hex(old_disp) first
     if assembly.count(hex(old_disp)) == 1:
         return assembly.replace(hex(old_disp), hex(new_disp).rstrip("L"))
     elif assembly.count(hex(old_disp)) > 1:
@@ -138,7 +138,7 @@ def stack_size_change(inst):
     # TODO: is it true?
     # Only way to modify stack size is through sub or add instruction
     if inst.mnemonic in ['subq', 'addq'] and inst.operands[ELB_DST_REG].type == X86_OP_REG \
-            and inst.operands[ELB_DST_REG].reg == X86_REG_RSP and inst.operands[ELB_SRC_REG].type == X86_OP_IMM:
+       and inst.operands[ELB_DST_REG].reg == X86_REG_RSP and inst.operands[ELB_SRC_REG].type == X86_OP_IMM:
         # sub instruction, stack size increases
         if inst.mnemonic == 'subq':
             return inst.operands[ELB_SRC_REG].imm
@@ -190,7 +190,7 @@ class ExpandLocalBufferPatch:
         ip = self.start_addr
         if assembly is None:
             assembly = self.new_assembly
-        
+            
         for asm in assembly:
             tmp = self.asm_single_inst(asm, ip)
             Log.info(hex(ip) + ": " + asm)
@@ -254,7 +254,7 @@ class ExpandLocalBufferPatch:
     def assign_labels(self):
         out_assembly = []
         labels = {}
-    
+        
         # Symbolize all jump/call/lea targets
         for inst in self.elb.assembly:
             if (inst.group(X86_GRP_JUMP) or inst.group(X86_GRP_CALL)) and len(inst.operands) == 1 and inst.operands[ELB_SRC_REG].type == X86_OP_IMM:
@@ -272,7 +272,7 @@ class ExpandLocalBufferPatch:
         for k,v in labels.items():
             Log.debug('Labels: ' + hex(k)+' -> '+v)
         return labels
-   
+    
     # Try to produce new assembly code after applying mod_assembly patch
     # We only need to know the size, correctness is not important here
     def rewrite_based_on_labels(self, new_vaddr=0):
@@ -289,7 +289,7 @@ class ExpandLocalBufferPatch:
             if inst.address in self.elb.mod_assembly:
                 new_assembly = self.elb.mod_assembly[inst.address]
 
-            # Replace all data mapping
+                # Replace all data mapping
             for old_addr, new_addr in self.data_mapping.items():
                 old_addr = int(old_addr)
                 new_addr = int(new_addr)
@@ -298,13 +298,13 @@ class ExpandLocalBufferPatch:
                     new_assembly = replace_disp(new_assembly, old_addr, new_addr, False)
                     Log.debug('Data access changes: ' + new_assembly + '--------->' + old_new_assembly)
                     
-            # Assign label to that absolute address
+                    # Assign label to that absolute address
             if (inst.group(X86_GRP_JUMP) or inst.group(X86_GRP_CALL)) and len(inst.operands) == 1 \
-                and inst.operands[ELB_SRC_REG].type == X86_OP_IMM and inst.operands[ELB_SRC_REG].imm in labels:
+               and inst.operands[ELB_SRC_REG].type == X86_OP_IMM and inst.operands[ELB_SRC_REG].imm in labels:
                 new_assembly = inst.mnemonic + ' ' + labels[inst.operands[ELB_SRC_REG].imm]
                 
-	    	    # sanity check
-    	    	Log.warning("Ins size for: "+hex(ip)+" "+new_assembly+" size: "+hex(inst.size))
+	        # sanity check
+                Log.warning("Ins size for: "+hex(ip)+" "+new_assembly+" size: "+hex(inst.size))
                 # TODO: this is heuristic that new inst size wont change
                 new_inst_size = inst.size
             else:
@@ -327,7 +327,7 @@ class ExpandLocalBufferPatch:
 
             out_assembly[ip] = {'new_assembly': new_assembly, 'old_assembly': construct_asm(inst), 'old_addr': inst.address, 'old_inst': inst}
             ip += new_inst_size
-        self.symbolized_assembly = out_assembly
+            self.symbolized_assembly = out_assembly
         return labels_to_new_addr
 
     # Rewrite the function w.r.t new_vaddr address
@@ -355,7 +355,7 @@ class ExpandLocalBufferPatch:
                 ass = ass.replace(label, hex(addr).rstrip("L"))
                 if old_ass != ass:
                     Log.debug('Change!: ' + old_ass + '----->' + ass + ' ' + label + ' ' + hex(addr))
-            
+                    
             out.append(ass)
 
             # For some reasons, nop produces unpredictable result, e.g., nopl 0(%rax) -> nop BYTE PTR [rax] or nop DWORD PTR [rax+0x0]
@@ -395,7 +395,7 @@ class ExpandLocalBufferPatch:
                     Log.debug('Change2!: ' + old_ass + '----->' + ass + ' ' + label + ' ' + hex(addr))
 
             out.append(ass)
-        self.symbolized_assembly = out
+            self.symbolized_assembly = out
 
 
 class ExpandBufferManager:
@@ -427,7 +427,7 @@ class ExpandBufferManager:
             if self.esbs[addr].buffer_old_size < old_size:
                 Log.warning('Skipping this in ESB')
                 return
-        
+            
         # Create dummy ELB, so that we will patch it 
         self.esbs[addr] = ExpandStaticBuffer(binary, addr, old_size, new_size)
         fn_use_buffer = self.esbs[addr].functions_use_buffer()
@@ -442,10 +442,10 @@ class ExpandBufferManager:
         fn_start, fn_end = self.scoper.get_function_scope(fn_entry)
         if hc_fn_end is not None:
             fn_end = hc_fn_end
-        elb = self.get_elb(fn_start, fn_end)
-        elb.force_insts.update(force_insts)
-        elb.add_elb_call(ExpandLocalBufferCall(None, None, stack_offset, old_size, new_size))
-        self.set_elb(elb)
+            elb = self.get_elb(fn_start, fn_end)
+            elb.force_insts.update(force_insts)
+            elb.add_elb_call(ExpandLocalBufferCall(None, None, stack_offset, old_size, new_size))
+            self.set_elb(elb)
 
     # Obsolete
     def process(self, fn_entry, call_output_reg, call_output_old_size, call_output_new_size):
@@ -453,11 +453,11 @@ class ExpandBufferManager:
         callers = self.binary.ca.code_refs(fn_entry)
         for caller in callers:
             self._process(caller, call_output_reg, call_output_old_size, call_output_new_size)
-    
+            
     def _process(self, call_addr, call_output_reg, call_output_old_size, call_output_new_size):
         fn_start, fn_end = self.scoper.get_function_scope(call_addr)
         elb = self.get_elb(fn_start, fn_end)
-           
+        
         stack_offset, src_reg = elb.add_call(call_addr, call_output_reg, call_output_old_size, call_output_new_size)
         if stack_offset is not None:
             Log.debug('Stack offset that needs to be expanded is at: ' + hex(stack_offset) + ' [' + str(call_output_old_size) + ' -> ' + str(call_output_new_size) + ']')
@@ -474,7 +474,7 @@ class ExpandBufferManager:
             elb = ExpandLocalBuffer(self.binary, fn_entry, fn_exit)
         else:
             elb = self.elbs[fn_entry]
-        
+            
         if elb.end_vaddr != fn_exit:
             raise ValueError('Wrong end vaddr for expand local buffer: ' + hex(fn_exit) + ' ' + hex(elb.end_vaddr))
         return elb
@@ -486,7 +486,7 @@ class ExpandBufferManager:
                 raise ValueError('Wrong end vaddr for expand local buffer: ' + hex(fn_exit) + ' ' + hex(self.elbs[fn_entry].end_vaddr))
 
         self.elbs[elb.start_vaddr] = elb
-            
+        
 class ExpandLocalBufferCall:
 
     def __init__(self, addr, reg, stack_offset, old_size, new_size):
@@ -654,8 +654,8 @@ class ExpandLocalBuffer:
         for ec in self.elb_calls:
             if ec.stack_offset == elb_call.stack_offset:
                 return
-        self.elb_calls.append(elb_call)
-        self.elb_calls.sort(key=operator.attrgetter('stack_offset'))
+            self.elb_calls.append(elb_call)
+            self.elb_calls.sort(key=operator.attrgetter('stack_offset'))
 
     def add_call(self, call_addr, call_output_reg, call_output_old_size, call_output_new_size):
         offset, call_output_src_reg = self.get_stack_offset(call_addr, call_output_reg)
@@ -665,12 +665,12 @@ class ExpandLocalBuffer:
         for elb_call in self.elb_calls:
             if elb_call.stack_offset == offset:
                 if elb_call.old_size != call_output_old_size \
-                    or elb_call.new_size != call_output_new_size or elb_call.reg != call_output_reg:
+                   or elb_call.new_size != call_output_new_size or elb_call.reg != call_output_reg:
                     #print hex(elb_call.addr), hex(call_addr), elb_call.old_size, call_output_old_size, elb_call.new_size, call_output_new_size, elb_call.reg, call_output_reg
                     raise ValueError('Something is wrong here')
                 return offset, None
-        self.elb_calls.append(ExpandLocalBufferCall(call_addr, call_output_reg, offset, call_output_old_size, call_output_new_size))
-        self.elb_calls.sort(key=operator.attrgetter('stack_offset'))
+            self.elb_calls.append(ExpandLocalBufferCall(call_addr, call_output_reg, offset, call_output_old_size, call_output_new_size))
+            self.elb_calls.sort(key=operator.attrgetter('stack_offset'))
         return offset, call_output_src_reg
 
     def get_stack_offset(self, call_addr, call_output_reg):
@@ -725,7 +725,7 @@ class ExpandLocalBuffer:
                 continue
 
             if stack_size_change(inst) != 0:
-                print 'StackSizeChange from: ', current_stack_size, ' to: ', current_stack_size+stack_size_change(inst), 'by inst: ', construct_asm(inst)
+                print ('StackSizeChange from: ', current_stack_size, ' to: ', current_stack_size+stack_size_change(inst), 'by inst: ', construct_asm(inst))
                 current_stack_size += stack_size_change(inst)
 
             inst_asm = construct_asm(inst)

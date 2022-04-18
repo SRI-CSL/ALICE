@@ -60,7 +60,7 @@ class HashDesc(CryptoDesc):
     def __repr__(self):
         return self.name
 
-GLOBAL_INPUT = "oakoakoak\0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+GLOBAL_INPUT = b"oakoakoak\0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 GLOBAL_INPUT_LEN = 9 # Only consider till null terminating character
 
 # ------------------------ Defined Cryptographic Primitives ---------------------------------------
@@ -73,7 +73,7 @@ RIPEMD160Desc = HashDesc('ripemd160', sha1_hex_const, [], [], [], False, digest_
 
 # MD5 Description
 md5_hex_const = ['01234567', '89abcdef', 'fedcba98', '76543210']
-MD5Desc = HashDesc('md5', md5_hex_const, ['f0e1d2c3'], [], [], False, digest_size=16, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": 'acd796382c9e95fb43696ca1c28826fb'}])
+MD5Desc = HashDesc('md5', md5_hex_const, ['f0e1d2c3'], [], [], False, digest_size=16, sample_ios=[{"input": GLOBAL_INPUT, "input-len": 9, "output": b'acd796382c9e95fb43696ca1c28826fb'}])
 
 
 # SHA2-512 - https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
